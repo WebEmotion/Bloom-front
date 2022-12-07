@@ -102,6 +102,6 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 Version in `src/assets/version.json` must be the same as the one in the `Versions` table in the DB
 
 ## Start Proyect
-1. Install dependences `npm install`
-2. Execute proyect `npm start`
-3. Create build proyect `npm run build`
+1. Install dependences `yarn install`
+2. Execute proyect `yarn start`
+3. Create build proyect `yarn build`
