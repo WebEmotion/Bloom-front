@@ -1,0 +1,651 @@
+.table {
+  padding: 0;
+  margin-bottom: 2rem;
+  .thead {
+    display: flex;
+    .th {
+      width: 20%;
+      color: $pink;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      h3 {
+        margin: 0;
+        @media screen and (max-width: $break-medium) {
+          font-size: small;
+        }
+      }
+    }
+  }
+  .tbody {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid $blue;
+    &:hover {
+      opacity: 0.8;
+    }
+    .td {
+      width: 20%;
+      color: $blue;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      background-color: $blue-light;
+      margin: 0;
+      margin-right: 4px;
+      margin-left: 4px;
+      @media screen and (max-width: $break-medium) {
+        margin-right: 2px;
+        margin-left: 2px;
+      }
+      &:last-child {
+        margin-right: 0;
+        margin-left: 4px;
+        @media screen and (max-width: $break-medium) {
+          margin-right: 0;
+          margin-left: 2px;
+        }
+      }
+      &:first-child {
+        margin-right: 4px;
+        margin-left: 0;
+        @media screen and (max-width: $break-medium) {
+          margin-right: 2px;
+          margin-left: 0;
+        }
+      }
+      .tcontent {
+        width: 100%;
+        margin: 0;
+        padding: 0.5rem;
+        &:last-child {
+          border: none;
+        }
+        @media screen and (max-width: $break-medium) {
+          font-size: small;
+          padding: 4px;
+        }
+      }
+    }
+    &:last-child {
+      border-bottom: none;
+      .td {
+        border-radius: 0 0 20px 20px;
+      }
+    }
+    &:first-child {
+      .td {
+        border-radius: 20px 20px 0 0;
+      }
+    }
+  }
+}
+
+.form-input {
+  width: 100%;
+  background: #ffffffcc;
+  border: none !important;
+  max-width: 200px;
+  border-radius: 2px !important;
+  &:focus {
+    box-shadow: 0 0 0 0.1rem $pink-light !important;
+    border: none !important;
+  }
+}
+.form-area {
+  width: 100%;
+  background: #ffffffcc;
+  border: none !important;
+  margin-bottom: 0.5rem;
+  border-radius: 2px !important;
+  &:focus {
+    box-shadow: 0 0 0 0.1rem $pink-light !important;
+    border: none !important;
+  }
+}
+
+.form-text {
+  font-family: "Poppins-Medium";
+  color: $white;
+  text-align: center;
+}
+
+.form-label {
+  font-family: "Poppins-Regular";
+  color: $white;
+  padding-right: 1rem;
+  font-size: medium;
+  min-width: 100px;
+  text-align: end;
+  @media screen and (max-width: $break-medium) {
+    font-size: small;
+    min-width: 80px;
+    padding-right: 4px;
+  }
+}
+
+.fc-toolbar-chunk {
+  display: flex !important;
+}
+
+.login-dialog {
+  min-width: 60%;
+  @media screen and (max-width: $break-medium) {
+    min-width: 90%;
+  }
+  .p-dialog-header {
+    background: #000000aa !important;
+    color: #ffffff !important;
+  }
+  .p-dialog-content {
+    background: #000000aa !important;
+    color: #ffffff !important;
+  }
+  .p-dialog-header-icon {
+    color: #ffffff !important;
+    &:hover {
+      background: $pink !important;
+    }
+  }
+  .p-dialog-footer {
+    background: #000000aa !important;
+    color: #ffffff !important;
+    padding-bottom: 0 !important;
+  }
+}
+
+.loader-login {
+  text-align: center;
+  display: contents;
+}
+
+.p-toast {
+  max-width: 90vw;
+}
+
+.info-t-c {
+  font-family: "Poppins-Regular";
+  color: white;
+  margin-top: 20;
+  margin-bottom: calc(40vh - 50px);
+}
+
+.login-container {
+  background-color: #12161f;
+}
+.login-text {
+  color: $white;
+}
+.login-title {
+  font-family: "Poppins-Bold";
+  text-transform: uppercase;
+  text-align: center;
+  color: $pink;
+}
+.login-divider {
+  height: 0;
+  border-bottom: 1px solid white;
+}
+.login-row {
+  font-size: 18px;
+  color: $white;
+  margin-bottom: -20px;
+  justify-content: center;
+}
+.login-iconBtn {
+  background-color: "transparent";
+  color: $white;
+  border: none;
+  font-size: 24px;
+  margin-top: 8px;
+  margin-right: 20px;
+  outline: none;
+}
+.login-input {
+  margin-top: 10px;
+}
+.login-btn {
+  background-color: $pink;
+  border: none;
+  font-family: "Poppins-Regular";
+  margin: 10px;
+  width: 150px;
+  border-radius: 30px !important;
+  &:hover {
+    background: $pink !important;
+  }
+  &:hover {
+    background: $pink !important;
+  }
+}
+.login-fullDivider {
+  height: 0;
+  border-bottom: 2px solid white;
+  margin-top: 30px;
+  border-radius: "50px";
+}
+.login-label {
+  font-family: "Poppins-Regular";
+  height: 30px;
+  margin-top: 15px;
+  font-size: 15px;
+  text-align: end;
+}
+.login-modal {
+  overflow: auto;
+  max-height: 90vh;
+}
+.login-modalSpecial {
+  overflow: auto;
+  max-height: 80vh;
+}
+.login-paragraph {
+  font-family: "Poppins-Regular";
+  font-size: 14px;
+  color: $white;
+  text-align: center;
+  margin-top: 20px;
+}
+.login-checkbox {
+  margin-top: 20px;
+}
+.login-btn2 {
+  background-color: $pink;
+  border: none;
+  font-family: "Poppins-Regular";
+  margin: 10px;
+  width: 150px;
+  margin-top: 30px;
+  border-radius: 30px !important;
+  &:hover {
+    background: $pink !important;
+  }
+  &:focus {
+    background: $pink !important;
+  }
+}
+
+.login-prompt {
+  font-family: "Poppins-Regular";
+  height: 30;
+  margin-top: 15px;
+  font-size: 12px;
+}
+.login-alert {
+  position: "fixed";
+  right: 20px;
+  bottom: 20px;
+  font-family: "Poppins-Regular";
+  z-index: 200;
+}
+.login-header {
+  background-color: $pink;
+  border: none;
+  border-radius: 0;
+}
+.login-headerTitle {
+  color: $white;
+  font-family: "Poppins-Regular";
+  margin: 0;
+  font-size: 16px;
+}
+.login-info {
+  font-family: "Poppins-Regular";
+  color: $white;
+  margin-top: 20px;
+  margin-bottom: calc(40vh - 50px);
+}
+.login-backdrop {
+  background-color: "black";
+  opacity: 0.6;
+}
+.login-closeBtn {
+  position: absolute;
+  right: 20px;
+  top: 24px;
+  background-color: $pink;
+  border-radius: 100px;
+  color: $white;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  border-radius: 10px !important;
+  &:hover {
+    background: $pink !important;
+    box-shadow: 0 0 0 0.1rem $pink-light !important;
+  }
+  &:focus {
+    box-shadow: 0 0 0 0.1rem $pink-light !important;
+  }
+}
+.login-closeBtn2 {
+  position: absolute;
+  right: 20px;
+  top: 14px;
+  background-color: $pink;
+  border-radius: 100px;
+  color: $white;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  border-radius: 10px !important;
+  &:hover {
+    background: $pink !important;
+    box-shadow: 0 0 0 0.1rem $pink-light !important;
+  }
+  &:focus {
+    box-shadow: 0 0 0 0.1rem $pink-light !important;
+  }
+}
+
+.classes-sub {
+  color: $blue;
+  text-align: center;
+}
+
+.decoration {
+  text-decoration: underline;
+}
+
+.selected-bundles {
+  background: $blue !important;
+}
+.btn-secondary {
+  &:hover,
+  &:focus {
+    opacity: 0.9;
+    background: $blue !important;
+  }
+}
+.danger-button {
+  font-family: "Poppins-Regular" !important;
+}
+
+.p-autocomplete-dd .p-autocomplete-dropdown {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  background: $pink !important;
+  border-color: $pink-light !important;
+  &:hover {
+    background: $pink !important;
+    border-color: $pink-light !important;
+    opacity: 0.9;
+  }
+}
+
+.p-autocomplete-dd .p-autocomplete-input {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  color: black !important;
+  background: #ffffffcc !important;
+  font-size: 0.875rem !important;
+  padding: 0.4375rem 0.4375rem !important;
+}
+
+// .p-autocomplete-input {
+//   font-size: 0.875rem;
+//   padding: 0.4375rem 0.4375rem;
+//   width: 100%;
+//   background: #ffffffcc !important;
+//   border: none !important;
+//   max-width: 200px;
+//   border-radius: 2px !important;
+//   &:focus {
+//     box-shadow: 0 0 0 0.1rem $pink-light !important;
+//     border: none !important;
+//   }
+// }
+
+.datatable-responsive-demo
+  .p-datatable-responsive-demo
+  .p-datatable-tbody
+  > tr
+  > td
+  .p-column-title {
+  display: none;
+}
+
+@media screen and (max-width: 40em) {
+  .datatable-responsive-demo
+    .p-datatable.p-datatable-responsive-demo
+    .p-datatable-thead
+    > tr
+    > th,
+  .datatable-responsive-demo
+    .p-datatable.p-datatable-responsive-demo
+    .p-datatable-tfoot
+    > tr
+    > td {
+    display: none !important;
+  }
+
+  .datatable-responsive-demo
+    .p-datatable.p-datatable-responsive-demo
+    .p-datatable-tbody
+    > tr
+    > td {
+    text-align: left;
+    display: block;
+    width: 100%;
+    float: left;
+    clear: left;
+    border: 0 none;
+  }
+
+  .datatable-responsive-demo
+    .p-datatable.p-datatable-responsive-demo
+    .p-datatable-tbody
+    > tr
+    > td
+    .p-column-title {
+    padding: 0.4rem;
+    min-width: 30%;
+    display: inline-block;
+    margin: -0.4em 1em -0.4em -0.4rem;
+    font-weight: bold;
+  }
+
+  .datatable-responsive-demo
+    .p-datatable.p-datatable-responsive-demo
+    .p-datatable-tbody
+    > tr
+    > td:last-child {
+    border-bottom: 1px solid var(--surface-d);
+  }
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+  background: $pink !important;
+  border-color: $pink-light !important;
+  color: #ffffff;
+}
+
+.home-item-profile {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 2rem;
+  z-index: 20;
+}
+// .p-tieredmenu-overlay .p-connected-overlay-enter-done {
+//   position: fixed !important;
+// }
+
+#overlay_tmenu {
+  display: flex !important;
+}
+.p-tieredmenu ul {
+  width: 100% !important;
+}
+
+
+/* margin-top: 400 & without margin-bottom, normal (stage down), margin-top: 100px & margin-bottom: 400px for 180° (stage up) */
+.mapa-cycling {
+  height: auto !important;
+  border-width: 1px !important;
+  margin-bottom: 400px !important;
+  margin-top: 100px !important;
+  transform: scale(1) !important;
+  @media screen and (max-width: $break-medium) {
+    margin-top: 200px !important;
+    transform: scale(0.5) !important;
+  }
+}
+
+.mapa-cycling-list {
+  height: 100vh !important;
+  width: 100vw !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.header-mis-clases {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: baseline !important;
+  justify-content: space-between !important;
+  @media screen and (max-width: $break-medium) {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+  }
+}
+
+.icon-deleted {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: flex;
+  justify-content: flex-end;
+  margin: 2px;
+  &:hover {
+    color: red;
+  }
+}
+
+.classes-taken {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: flex;
+  justify-content: flex-end;
+  margin: 2px;
+  font-size: 8px;
+}
+
+.btn-link-pass {
+  color: $pink !important;
+  &:focus {
+    box-shadow: none;
+  }
+}
+.ui-fileupload-buttonbar {
+  background: transparent none;
+  border: none;
+}
+
+.ui-fileupload-content {
+  display: none;
+}
+
+.ui-fileupload-buttonbar .ui-fileupload-choose {
+  background-color: rgba(142, 103, 64, 0.98);
+}
+
+.p-progress-spinner-circle {
+  animation-name: ui-progress-spinner-color;
+}
+
+.p-progress-spinner-svg {
+  padding: 20px;
+}
+
+.p-progress-spinner {
+  background-color: white;;
+  border-radius: 20px;
+  border: 1px solid #ebebeb;
+}
+
+.scale-in {
+  animation-name: scale-in;
+  animation-duration: 200ms;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.opacity-in {
+  animation-name: opacity-in;
+  animation-duration: 200ms;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.scale-out {
+  animation-name: scale-out;
+  animation-duration: 200ms;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.opacity-out {
+  animation-name: opacity-out;
+  animation-duration: 200ms;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes ui-progress-spinner-color {
+  100%,
+  0% {
+      stroke: $pink;
+  }
+  100% {
+      stroke: $pink;
+  }
+}
+
+@keyframes opacity-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes opacity-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes scale-out {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}

@@ -1,0 +1,760 @@
+.custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: "Poppins-Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Poppins-Regular"),
+    url("../../static/fonts/Poppins-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins-Medium";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Poppins-Medium"),
+    url("../../static/fonts/Poppins-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins-Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Poppins-Bold"),
+    url("../../static/fonts/Poppins-Bold.ttf") format("truetype");
+}
+
+@import "./varibles.scss";
+@import "./animations.scss";
+@import "./classes.scss";
+
+body,
+html {
+  user-select: none;
+  background: transparent;
+  overscroll-behavior: none;
+  margin: 0;
+  font-family: "Poppins-Regular";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #495057;
+}
+
+.footer {
+  text-align: center;
+  font-family: "Poppins-Medium";
+  color: $blue;
+  font-size: small;
+  margin: 1rem;
+  @media screen and (max-width: 768px) {
+    margin-bottom: 25%;
+  }
+}
+
+.footer-2 {
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  font-family: "Poppins-Medium";
+  color: $blue;
+  font-size: small;
+  margin: 1rem;
+  width: 100%;
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  z-index: -1;
+  background: $gradient-dark;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.home {
+  z-index: 10;
+  text-align: end;
+  font-family: "Poppins-Bold";
+  color: $white;
+  margin-right: 8rem;
+  @media screen and (max-width: $break-medium) {
+    margin: 0;
+  }
+  h1 {
+    @media screen and (min-width: $break-medium) {
+      font-size: 3rem;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.member-item {
+  background-color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  transition: 300ms linear all;
+  border-radius: 10px;
+}
+
+.member-item:hover {
+  background-color: #ececec;
+  cursor: pointer;
+}
+
+.administracion {
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  font-family: "Poppins-Bold";
+  color: $white;
+  min-height: 100vh;
+}
+
+.light-button {
+  border: 1px solid #ffffff !important;
+  border-radius: 10px !important;
+  color: $white !important;
+  background: transparent !important;
+  font-family: "Poppins-Regular" !important;
+  margin-bottom: 1rem !important;
+  min-width: 100px;
+  &:hover {
+    background: #00000044 !important;
+    box-shadow: 0 0 0 0.1rem #f8f9fa !important;
+  }
+  &:focus {
+    box-shadow: 0 0 0 0.1rem #f8f9fa !important;
+  }
+  @media screen and (max-width: $break-medium) {
+    font-size: small;
+    padding: 0.5rem;
+  }
+}
+
+.menu-button {
+  border: 1px solid $pink !important;
+  border-radius: 10px !important;
+  color: $pink !important;
+  background: transparent !important;
+  font-family: "Poppins-Regular" !important;
+  width: 100%;
+  &:hover {
+    box-shadow: 0 0 0 0.1rem $pink !important;
+  }
+  &:focus {
+    color: $white !important;
+    background: $pink !important;
+    box-shadow: 0 0 0 0.1rem $pink !important;
+  }
+  &:active {
+    color: $white !important;
+    background: $pink !important;
+  }
+  @media screen and (max-width: $break-medium) {
+    margin-bottom: 4px;
+    margin-top: 4px;
+    font-size: smaller !important;
+    padding: 6px 0 !important;
+  }
+}
+
+.active {
+  color: $white !important;
+  background: $pink !important;
+}
+
+.slider {
+  position: fixed;
+  height: 100vh !important;
+  img {
+    padding-left: calc(100% / 12 * 3);
+    @media screen and (max-width: 768px) {
+      padding: 0;
+      height: 100%;
+    }
+  }
+}
+
+#ReactBackgroundSlider {
+  figure {
+    left: calc(100% / 12 * 3) !important;
+    position: fixed !important;
+    @media screen and (max-width: 768px) {
+      left: 0 !important;
+      height: 100%;
+    }
+  }
+}
+
+.custombar-login {
+  .p-scrollpanel-bar {
+    @media screen and (max-width: $break-medium) {
+      display: none;
+    }
+  }
+}
+
+.custombar {
+  .p-scrollpanel-content {
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    @media screen and (min-width: $break-medium) {
+    }
+  }
+
+  .p-scrollpanel-wrapper {
+    border-right: 10px solid $white;
+  }
+
+  .p-scrollpanel-bar {
+    background-color: $blue;
+    opacity: 1;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: $pink;
+    }
+  }
+}
+
+.social {
+  margin: 5px;
+  &:hover {
+    text-shadow: $shadow;
+  }
+  &:focus {
+    text-shadow: $shadow;
+  }
+  @media screen and (max-width: $break-medium) {
+    text-align: center;
+  }
+}
+
+// Menu
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  margin: 1rem;
+  opacity: 1;
+  .menu-button {
+    background-color: $pink !important;
+    color: $white !important;
+    border-color: $white !important;
+    box-shadow: $shadow-light;
+  }
+}
+
+// Intructores
+.title-page {
+  font-family: "Poppins-Regular";
+  color: $blue;
+  text-align: center;
+  padding-left: 100px;
+  @media screen and (max-width: $break-medium) {
+    padding-left: 0;
+  }
+}
+
+.p-fileupload-buttonbar {
+  background: transparent none;
+  border: none;
+}
+
+.p-fileupload-buttonbar .p-button {
+  background-color: $pink !important;
+  border: none;
+}
+
+.p-fileupload-row .p-button {
+  background-color: $pink !important;
+  border: none;
+}
+
+.blue-bloom {
+  background-color: $blue;
+}
+
+.card-profile {
+  width: 75px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  user-select: none;
+  padding: 0;
+  background-color: white !important;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  span {
+    display: none;
+  }
+  i {
+    font-size: 2rem;
+  }
+  @media screen and (max-width: $break-medium) {
+    width: 54px !important;
+    height: 54px !important;
+    i {
+      font-size: 1.4rem !important;
+    }
+  }
+  &.primary-box {
+    background-color: $pink;
+    padding: 0;
+    color: $white;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.item-text-profile {
+  text-align: center;
+  color: $pink;
+  @media screen and (max-width: $break-medium) {
+    font-size: 0.8rem;
+  }
+}
+
+.card {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  user-select: none;
+  padding: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  span {
+    display: none;
+  }
+  i {
+    font-size: 4rem;
+  }
+  @media screen and (max-width: $break-medium) {
+    margin-top: 1rem;
+    width: 92px !important;
+    height: 92px !important;
+    i {
+      font-size: 2.5rem !important;
+    }
+  }
+  &.primary-box {
+    background-color: $pink;
+    padding: 0;
+    color: $white;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+  &.items-profile {
+    transition: all 0.5s;
+    width: 140px;
+    height: 140px;
+    @media screen and (max-width: $break-medium) {
+      width: 100px !important;
+      height: 100px !important;
+    }
+    &:hover {
+      transform: scale(1.04);
+    }
+  }
+}
+.item-profile {
+  transition: all 0.5s;
+  width: 75px;
+  height: 75px;
+  @media screen and (max-width: $break-medium) {
+    width: 54px !important;
+    height: 54px !important;
+  }
+  &:hover {
+    transform: scale(1.04);
+  }
+}
+.item-text {
+  color: $pink;
+  font-size: 1.5rem;
+  @media screen and (max-width: $break-medium) {
+    font-size: 1rem;
+  }
+}
+
+.dialog {
+  width: 50vw;
+  @media screen and (max-width: $break-medium) {
+    width: 90vw;
+    height: 75vh;
+  }
+}
+
+.p-dialog .p-dialog-footer {
+  padding: 1rem 1rem 1rem 1rem;
+}
+
+.subtitle {
+  color: $pink;
+}
+.simple-button {
+  border: 1px solid #ffffff !important;
+  color: $white !important;
+  background: $pink-light !important;
+  font-family: "Poppins-Regular" !important;
+  margin-bottom: 1rem !important;
+  min-width: 100px;
+  box-shadow: $shadow;
+  border-radius: 10px !important;
+  &:hover {
+    background: $pink !important;
+    box-shadow: 0 0 0 0.1rem $pink-light !important;
+  }
+  &:focus {
+    box-shadow: 0 0 0 0.1rem $pink-light !important;
+  }
+  @media screen and (max-width: $break-medium) {
+    font-size: small;
+    padding: 0.5rem;
+  }
+}
+.rounded-button {
+  border: none !important;
+  border-radius: 30px !important;
+  color: $white !important;
+  background: $pink !important;
+  font-family: "Poppins-Regular" !important;
+  margin-bottom: 1rem !important;
+  min-width: 100px;
+  box-shadow: $shadow;
+  font-size: medium;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  &:hover {
+    background: $pink !important;
+    box-shadow: 0 0 0 0.1rem $pink-light !important;
+  }
+  &:focus {
+    box-shadow: 0 0 0 0.1rem $pink-light !important;
+  }
+  @media screen and (max-width: $break-medium) {
+    font-size: small;
+    padding: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+.p-carousel .p-carousel-indicators .p-carousel-indicator.p-highlight button {
+  background: $pink;
+  color: #ffffff;
+}
+.product-item {
+  .product-item-content {
+    border: 1px solid var(--surface-d);
+    border-radius: 3px;
+    margin: 0.3rem;
+    text-align: center;
+    padding: 2rem 0;
+  }
+
+  .product-image {
+    width: 50%;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  }
+}
+.clases {
+  transition: 0.3s ease-in-out;
+  background-color: $pink;
+  color: $white;
+  border-radius: 15px !important;
+}
+
+.p-carousel-item {
+  .product-item-content {
+    transition: 0.3s ease-in-out;
+    background-color: $pink;
+    color: $white;
+  }
+  // &:nth-child(3n + 1) {}
+}
+
+.p-carousel-item-start,
+.p-carousel-item-end {
+  transition: 0.5s ease-in-out;
+  @media screen and (min-width: 1024px) {
+    margin-bottom: 20px;
+    transform: translateY(20px);
+    .product-item-content {
+      background-color: $blue;
+      color: $white;
+      .simple-button {
+        display: none;
+        background-color: transparent !important;
+        box-shadow: 0 0 0 0.1rem #fff !important;
+      }
+      .p-button-pink-buy {
+        display: none;
+      }
+    }
+  }
+}
+
+.p-button-info {
+  background: $blue !important;
+  border: 1px solid $blue !important;
+}
+
+.p-button-pink {
+  color: $white;
+  background: $pink !important;
+  border: 1px solid $pink !important;
+  margin: 2px;
+  @media screen and (max-width: $break-medium) {
+    transform: scale(0.8);
+  }
+}
+
+.p-button-pink-buy {
+  color: $white;
+  background: $pink-light !important;
+  border: 1px solid $pink-light !important;
+  margin: 2px;
+  border-radius: 30px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  @media screen and (max-width: $break-medium) {
+    transform: scale(0.8);
+  }
+}
+
+.p-button-cancel {
+  color: black;
+  background: #e7e7e7 !important;
+  border: 1px solid #e7e7e7 !important;
+  margin: 2px;
+  @media screen and (max-width: $break-medium) {
+    transform: scale(0.8);
+  }
+}
+
+.p-button-pink-s:disabled {
+  color: $white;
+  background: "red" !important;
+  border: 1px solid $pink !important;
+  margin: 2px;
+  @media screen and (max-width: $break-medium) {
+    transform: scale(0.8);
+  }
+}
+
+.fila {
+  display: inline;
+  margin: 2px;
+  @media screen and (max-width: $break-medium) {
+    transform: scale(0.8);
+  }
+}
+
+.makeStyles-orbit-1393 {
+  border: none !important;
+}
+
+.scale {
+  height: 80vh;
+  margin-bottom: -25vh;
+  margin-top: 5vh;
+  @media screen and (max-width: $break-medium) {
+    margin-top: -15vh !important;
+    transform: scale(0.5);
+  }
+}
+
+.card-transparent {
+  background-color: #000000aa;
+  border-radius: 2px;
+  height: 85vh;
+  padding-bottom: 1rem;
+  @media screen and (max-width: $break-medium) {
+    height: 80vh;
+  }
+
+  .p-checkbox .p-checkbox-box.p-highlight {
+    border-color: $pink !important;
+    background: $pink !important;
+  }
+
+  .p-field-checkbox > label,
+  .p-field-radiobutton > label {
+    color: $white !important;
+    font-size: small;
+    @media screen and (max-width: $break-medium) {
+      font-size: small;
+    }
+  }
+}
+
+.card-white-transparent {
+  height: 75%;
+  margin: 2rem;
+  @media screen and (max-width: $break-medium) {
+    height: 70%;
+    margin-top: 2.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .p-card-body {
+    .p-card-title {
+      color: $blue;
+      text-align: center;
+      font-family: "Poppins-Regular";
+      margin-top: 0.5rem;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.scroll-panel-terminos {
+  height: 45vh;
+  @media screen and (max-width: $break-medium) {
+    height: 35vh;
+  }
+}
+.card-transparent-welcome {
+  background-color: #000000aa;
+  border-radius: 2px;
+  height: 75vh;
+  padding-bottom: 1rem;
+  @media screen and (max-width: $break-medium) {
+    height: 60vh;
+  }
+}
+.card-transparent-contact {
+  background-color: #000000aa;
+  border-radius: 2px;
+  height: auto;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  @media screen and (max-width: $break-medium) {
+    height: auto;
+    margin-top: 3rem;
+  }
+}
+.welcome {
+  color: $white;
+  text-align: center;
+  margin-bottom: 0;
+  margin-top: 0;
+  font-family: "Poppins-Bold";
+}
+.confirmation {
+  color: $white;
+  text-align: center;
+  margin-bottom: 0;
+  margin-top: 0;
+  font-family: "Poppins-Regular";
+  letter-spacing: 2px;
+}
+.welcome-content {
+  color: $white;
+  text-align: center;
+  margin-bottom: 0;
+  margin-top: 0;
+  font-family: "Poppins-Regular";
+}
+.welcome-content-link {
+  color: $pink;
+  text-decoration: none;
+  text-align: center;
+  font-family: "Poppins-Medium";
+  font-size: large;
+  text-decoration: underline;
+  text-decoration-color: $pink !important;
+}
+.iconSocialMedia {
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-size: 26px;
+  margin-right: 20px;
+  outline: none;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.spDialog {
+  width: 40vw;
+  @media screen and (max-width: $break-medium) {
+    width: 90vw;
+  }
+}
+
+.datatable-responsive-demo
+  .p-datatable-responsive-demo
+  .p-datatable-tbody
+  > tr
+  > td
+  .p-column-title {
+  display: none;
+}
+
+@media screen and (max-width: 40em) {
+  .datatable-responsive-demo
+    .p-datatable.p-datatable-responsive-demo
+    .p-datatable-thead
+    > tr
+    > th,
+  .datatable-responsive-demo
+    .p-datatable.p-datatable-responsive-demo
+    .p-datatable-tfoot
+    > tr
+    > td {
+    display: none !important;
+  }
+
+  .datatable-responsive-demo
+    .p-datatable.p-datatable-responsive-demo
+    .p-datatable-tbody
+    > tr
+    > td {
+    text-align: left;
+    display: block;
+    width: 100%;
+    float: left;
+    clear: left;
+    border: 0 none;
+  }
+
+  .datatable-responsive-demo
+    .p-datatable.p-datatable-responsive-demo
+    .p-datatable-tbody
+    > tr
+    > td
+    .p-column-title {
+    padding: 0.4rem;
+    min-width: 30%;
+    display: inline-block;
+    margin: -0.4em 1em -0.4em -0.4rem;
+    font-weight: bold;
+  }
+
+  .datatable-responsive-demo
+    .p-datatable.p-datatable-responsive-demo
+    .p-datatable-tbody
+    > tr
+    > td:last-child {
+    border-bottom: 1px solid var(--surface-d);
+  }
+}
