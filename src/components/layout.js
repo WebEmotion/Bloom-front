@@ -169,7 +169,7 @@ const Layout = inject("RootStore")(
                   className="custombar"
                 >
                   <div className="p-grid p-justify-center"></div>
-                  {!store.token && (<div className="p-col-12">
+{/* {!store.token && (<div className="p-col-12">
                     <Button
                       className={
                         page === "home"
@@ -192,7 +192,7 @@ const Layout = inject("RootStore")(
                         onClick={toggleLogin}
                       />
                     </div>
-                  )}
+                  )} */}
 
                   {store.token && !store.isAdmin && (
                     <div className="p-col-12">
@@ -246,7 +246,7 @@ const Layout = inject("RootStore")(
                       />
                     </div>
                   )}
-                  {store.token && store.isAdmin && (
+                 {/*  {store.token && store.isAdmin && (
                     <div className="p-col-12">
                       <Button
                         className={
@@ -271,7 +271,7 @@ const Layout = inject("RootStore")(
                         onClick={() => navigate("/frontdesk/lugares")}
                       />
                     </div>
-                  )}
+                  )} */}
 
                   {store.token && store.isAdmin && (
                     <div className="p-col-12">
