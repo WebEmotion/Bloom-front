@@ -488,7 +488,7 @@ const Layout = inject("RootStore")(
           </Dialog>
           <div
             className="p-col-3 p-shadow-3 p-d-none p-d-md-inline-flex"
-            style={{ zIndex: 2, background: `#fff` }}
+            style={{ zIndex: 2, background: `#000` }}
           >
             <div
               className="p-grid p-justify-center p-align-start vertical-container"
