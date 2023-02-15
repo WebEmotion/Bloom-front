@@ -179,7 +179,7 @@ const Layout = inject("RootStore")(
                       label="HOME"
                       onClick={() => navigate("/")}
                     />
-                  </div>)}
+                  </div>)} */}
                   {!store.token && (
                     <div className="p-col-12">
                       <Button
@@ -192,7 +192,7 @@ const Layout = inject("RootStore")(
                         onClick={toggleLogin}
                       />
                     </div>
-                  )} */}
+                  )} 
 
                   {store.token && !store.isAdmin && (
                     <div className="p-col-12">
