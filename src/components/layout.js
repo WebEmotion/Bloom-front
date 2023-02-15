@@ -844,18 +844,18 @@ const Layout = inject("RootStore")(
                       page === "contacto"
                       ? 2
                       : 0,
-                  color: page === "home" ? 'white' : '#00000055',
+                  color: page === "home" ? 'white' : '#3eb978',
                   textShadow: page === "home" ? '2px 1px 7px rgba(0,0,0,0.46)' : 'none'
                 }}
               >
-                Bloom Cycling Studio - Derechos Reservados{" "}
+                Casa Bloom - Derechos Reservados{" "}
                 {new Date().getFullYear()}
                 <br />
                 <Link to="/terminosycondiciones" style={{ textDecoration: "none" }}>
-                  <small style={{ color: page === "home" ? 'white' : '#00000055' }} className="footer">Terminos y Condiciones del Servicio</small>
+                  <small style={{ color: page === "home" ? 'white' : '#3eb978' }} className="footer">Terminos y Condiciones del Servicio</small>
                 </Link>
                 <br/>
-                <a href="https://wa.me/+525580510715?text=Quiero Bloom" target="_blank" rel="noopener noreferrer" style={{ color: page === "home" ? 'white' : '#00000055', textDecoration: 'none', display: 'flex', justifyContent: 'center', alignItems: 'center' }}><WhatsappCircle/><span style={{ marginLeft: 10 }}>5580510715</span></a>
+                <a href="https://wa.me/+525580510715?text=Quiero Bloom" target="_blank" rel="noopener noreferrer" style={{ color: page === "home" ? 'white' : '#3eb978', textDecoration: 'none', display: 'flex', justifyContent: 'center', alignItems: 'center' }}><WhatsappCircle/><span style={{ marginLeft: 10 }}>5580510715</span></a>
               </footer>
             </div>
           </div>
