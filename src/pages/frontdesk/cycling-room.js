@@ -804,7 +804,7 @@ const IndexPage = inject("RootStore")(
                   >
                     <h1 className="fila">C</h1>
 
-                    {/* divs for a tree that occupies 2 places */}
+                   {/* divs for a tree that occupies 2 places */}
                     <div></div>
                     <div>
                       <div
@@ -824,7 +824,51 @@ const IndexPage = inject("RootStore")(
                         marginLeft: 65
                         }}
                       >
-                       
+                        <div className="p-grid p-align-center p-justify-center">
+                          <div className="p-col-12">
+                            <img
+                              style={{
+                                maxWidth: "100%",
+                                display: "none"
+                                /* marginBottom: "0.5rem",
+                                marginTop: -30,
+                                marginRight: 30 */
+                              }}
+                              src={Tree}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        style={{
+                          width: 80,
+                          height: 80,
+                          borderRadius: '100%',
+                          position: "absolute",
+                          transform: "translateX(-80px)",
+                          display: "flex",
+                          alignItems: "center",
+                          color: "#fff",
+                          textAlign: "center",
+                          justifyContent: "center",
+                          marginLeft: 60
+                        }}
+                      >
+                        <div className="p-grid p-align-center p-justify-center">
+                          <div className="p-col-12">
+                            <p
+                              style={{
+                                marginBottom: 0,
+                                color: 'black'
+                              }}
+                              >
+                              The Soul
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
                     {
                       [1, 2, 3, 4, 5, 6, 7].map(n => (
                         <Button
@@ -852,8 +896,8 @@ const IndexPage = inject("RootStore")(
                     <div></div>
                     <div></div>
                     <div></div>
-<div></div>
-<div></div>
+                    <div></div>
+                    <div></div>
                     {/* divs for a tree that occupies 2 places */}
                     <div></div>
                     <div></div>
