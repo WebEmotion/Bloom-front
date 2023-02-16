@@ -292,15 +292,7 @@ const IndexPage = inject("RootStore")(
             name = "A5"
             id = 23
             break
-          case "A6":
-            name = "A6"
-            id = 24
-            break
-          case "A7":
-            name = "A7"
-            id = 25
-            break
-
+         
           case "B1":
             name = "B1"
             id = 11
@@ -337,6 +329,18 @@ const IndexPage = inject("RootStore")(
             name = "B9"
             id = 26
             break
+            case "B10":
+            name = "B10"
+            id = 24
+            break
+            case "B11":
+            name = "B11"
+            id = 25
+            break
+            case "B12":
+            name = "B12"
+            id = 10
+            break
 
           case "C1":
             name = "C1"
@@ -365,18 +369,6 @@ const IndexPage = inject("RootStore")(
           case "C7":
             name = "C7"
             id = 7
-            break
-          case "C8":
-            name = "C8"
-            id = 8
-            break
-          case "C9":
-            name = "C9"
-            id = 9
-            break
-          case "C10":
-            name = "C10"
-            id = 10
             break
         }
 
@@ -832,53 +824,9 @@ const IndexPage = inject("RootStore")(
                         marginLeft: 65
                         }}
                       >
-                        <div className="p-grid p-align-center p-justify-center">
-                          <div className="p-col-12">
-                            <img
-                              style={{
-                                maxWidth: "100%",
-                                display: "none"
-                                /* marginBottom: "0.5rem",
-                                marginTop: -30,
-                                marginRight: 30 */
-                              }}
-                              src={Tree}
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        style={{
-                          width: 80,
-                          height: 80,
-                          borderRadius: '100%',
-                          position: "absolute",
-                          transform: "translateX(-80px)",
-                          display: "flex",
-                          alignItems: "center",
-                          color: "#fff",
-                          textAlign: "center",
-                          justifyContent: "center",
-                          marginLeft: 60
-                        }}
-                      >
-                        <div className="p-grid p-align-center p-justify-center">
-                          <div className="p-col-12">
-                            <p
-                              style={{
-                                marginBottom: 0,
-                                color: 'black'
-                              }}
-                              >
-                              The Soul
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
+                       
                     {
-                      [1, 2, 3, 4, 5, 6, 7, 8, 9].map(n => (
+                      [1, 2, 3, 4, 5, 6, 7].map(n => (
                         <Button
                           label={`${n}`}
                           className={`${occupiedSeats.includes(`C${n}`) ? 'p-button-rounded-c-o' : "p-button-rounded-c"} ${occupiedSeats.includes(`C${n}`) ? '' : "p-button-pink"}`}
@@ -904,7 +852,8 @@ const IndexPage = inject("RootStore")(
                     <div></div>
                     <div></div>
                     <div></div>
-
+<div></div>
+<div></div>
                     {/* divs for a tree that occupies 2 places */}
                     <div></div>
                     <div></div>
@@ -934,7 +883,7 @@ const IndexPage = inject("RootStore")(
                   >
                     <h1 className="fila">B</h1>
                     {
-                      [1, 2, 3, 4, 5, 6, 7, 8, 9].map(n => (
+                      [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(n => (
                         <Button
                           label={`${n}`}
                           className={`${occupiedSeats.includes(`B${n}`) ? 'p-button-rounded-c-o' : "p-button-rounded-c"} ${occupiedSeats.includes(`B${n}`) ? '' : "p-button-pink"}`}
@@ -950,6 +899,8 @@ const IndexPage = inject("RootStore")(
                     }
                     <h1 className="fila">B</h1>
                     {/* Number of divs is same userCircle number + 1 */}
+                    <div></div>
+                    <div></div>
                     <div></div>
                     <div></div>
                     <div></div>
@@ -1049,7 +1000,7 @@ const IndexPage = inject("RootStore")(
                   >
                     <h1 className="fila">A</h1>
                     {
-                      [1, 2, 3, 4, 5, 6, 7].map(n => (
+                      [1, 2, 3, 4, 5].map(n => (
                         <Button
                           label={`${n}`}
                           className={`${occupiedSeats.includes(`A${n}`) ? 'p-button-rounded-c-o' : "p-button-rounded-c"} ${occupiedSeats.includes(`A${n}`) ? '' : "p-button-pink"}`}
