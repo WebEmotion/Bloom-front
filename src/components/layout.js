@@ -169,7 +169,7 @@ const Layout = inject("RootStore")(
                   className="custombar"
                 >
                   <div className="p-grid p-justify-center"></div>
-{/* {!store.token && (<div className="p-col-12">
+                  {!store.token && (<div className="p-col-12">
                     <Button
                       className={
                         page === "home"
@@ -179,7 +179,7 @@ const Layout = inject("RootStore")(
                       label="HOME"
                       onClick={() => navigate("/")}
                     />
-                  </div>)} */}
+                  </div>)}
                   {!store.token && (
                     <div className="p-col-12">
                       <Button
@@ -192,7 +192,7 @@ const Layout = inject("RootStore")(
                         onClick={toggleLogin}
                       />
                     </div>
-                  )} 
+                  )}
 
                   {store.token && !store.isAdmin && (
                     <div className="p-col-12">
@@ -246,7 +246,7 @@ const Layout = inject("RootStore")(
                       />
                     </div>
                   )}
-                 {/*  {store.token && store.isAdmin && (
+                  {store.token && store.isAdmin && (
                     <div className="p-col-12">
                       <Button
                         className={
@@ -271,7 +271,7 @@ const Layout = inject("RootStore")(
                         onClick={() => navigate("/frontdesk/lugares")}
                       />
                     </div>
-                  )} */}
+                  )}
 
                   {store.token && store.isAdmin && (
                     <div className="p-col-12">
@@ -488,7 +488,7 @@ const Layout = inject("RootStore")(
           </Dialog>
           <div
             className="p-col-3 p-shadow-3 p-d-none p-d-md-inline-flex"
-            style={{ zIndex: 2, background: `#000` }}
+            style={{ zIndex: 2, background: `#fff` }}
           >
             <div
               className="p-grid p-justify-center p-align-start vertical-container"
@@ -844,18 +844,18 @@ const Layout = inject("RootStore")(
                       page === "contacto"
                       ? 2
                       : 0,
-                  color: page === "home" ? '#3eb978' : '#3eb978',
+                  color: page === "home" ? 'white' : '#00000055',
                   textShadow: page === "home" ? '2px 1px 7px rgba(0,0,0,0.46)' : 'none'
                 }}
               >
-                Casa Bloom - Derechos Reservados{" "}
+                Bloom Cycling Studio - Derechos Reservados{" "}
                 {new Date().getFullYear()}
                 <br />
                 <Link to="/terminosycondiciones" style={{ textDecoration: "none" }}>
-                  <small style={{ color: page === "home" ? '#3eb978' : '#3eb978' }} className="footer">Terminos y Condiciones del Servicio</small>
+                  <small style={{ color: page === "home" ? 'white' : '#00000055' }} className="footer">Terminos y Condiciones del Servicio</small>
                 </Link>
                 <br/>
-                <a href="https://wa.me/+525580510715?text=Quiero Bloom" target="_blank" rel="noopener noreferrer" style={{ color: page === "home" ? '#3eb978' : '#3eb978', textDecoration: 'none', display: 'flex', justifyContent: 'center', alignItems: 'center' }}><WhatsappCircle/><span style={{ marginLeft: 10 }}>5580510715</span></a>
+                <a href="https://wa.me/+525580510715?text=Quiero Bloom" target="_blank" rel="noopener noreferrer" style={{ color: page === "home" ? 'white' : '#00000055', textDecoration: 'none', display: 'flex', justifyContent: 'center', alignItems: 'center' }}><WhatsappCircle/><span style={{ marginLeft: 10 }}>5580510715</span></a>
               </footer>
             </div>
           </div>
