@@ -469,14 +469,22 @@ const IndexPage = inject("RootStore")(
           <Button label="Clásicos" style={{ backgroundColor: '#3eb978', color: '#fff', borderRadius: 50, border: 'none', marginRight: 10, width: 150 }} onClick={() => {
             setShowSpecial(false)
             setShowGrupal(false)
+            setShowFlow(false)
           }} />
           {state.specialBundles.length > 2 && <Button label="Especiales" style={{ backgroundColor: '#788ba5', color: '#fff', borderRadius: 50, border: 'none', width: 150, marginRight: 10 }} onClick={() => {
             setShowSpecial(true)
+            setShowFlow(false)
             setShowGrupal(false)
           }} />}
           {state.groupBundles.length > 2 && allowGrupal && <Button label="Grupales" style={{ backgroundColor: '#3eb978', color: '#fff', borderRadius: 50, border: 'none', width: 150 }} onClick={() => {
             setShowSpecial(false)
+            setShowFlow(false)
             setShowGrupal(true)
+          }} />}
+           {state.flowBundles.length > 2 && <Button label="FLOW" style={{ backgroundColor: '#3eb978', color: '#fff', borderRadius: 50, border: 'none', width: 150 }} onClick={() => {
+            setShowSpecial(false)
+            setShowGrupal(false)
+            setShowFlow(true)
           }} />}
         </div>
         <div className="p-grid p-align-center p-justify-center p-mt-2">
@@ -510,6 +518,19 @@ const IndexPage = inject("RootStore")(
             <Carousel
             id='car2'
               value={state.groupBundles}
+              numVisible={3}
+              numScroll={1}
+              responsiveOptions={responsiveOptions}
+              className="custom-carousel"
+              circular
+              autoplayInterval={5000}
+              itemTemplate={productTemplate}
+            />
+          </div>}
+          {showFlow && <div className="p-col-12">
+            <Carousel
+            id='car2'
+              value={state.flowBundles}
               numVisible={3}
               numScroll={1}
               responsiveOptions={responsiveOptions}
