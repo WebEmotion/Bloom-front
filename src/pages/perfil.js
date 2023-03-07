@@ -8,9 +8,9 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Item from "../components/item-profile"
 
-import Historial from "../assets/images/web2.jpg"
-import MisClases from "../assets/images/web4.jpg"
-import Configuracion from "../assets/images/web8.jpg"
+import Historial from "../assets/images/rode-1.png"
+import MisClases from "../assets/images/historial.png"
+import Configuracion from "../assets/images/config.jpg"
 
 import * as Constants from '../environment/index'
 import * as moment from 'moment'
