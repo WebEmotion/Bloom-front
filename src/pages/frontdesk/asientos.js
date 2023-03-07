@@ -236,7 +236,7 @@ const IndexPage = inject("RootStore")(
             free: false
           })
         }} />
-        <Button label="Aceptar" style={{ color: 'white', backgroundColor: '#d78676', fontWeight: 'bold' }} className="p-button-text p-button-pink" autoFocus onClick={async () => {
+        <Button label="Aceptar" style={{ color: 'white', backgroundColor: '#3eb978', fontWeight: 'bold' }} className="p-button-text p-button-pink" autoFocus onClick={async () => {
           await cancelBookingRequest()
         }} />
       </div>
@@ -531,7 +531,7 @@ const IndexPage = inject("RootStore")(
             </div>
             <div className="p-col-12 p-md-3">
               <div className="p-grid p-justify-center">
-                <ItemProfile color="#d78676" icon="pi pi-user" store={store} />
+                <ItemProfile color="#3eb978" icon="pi pi-user" store={store} />
               </div>
             </div>
           </div>

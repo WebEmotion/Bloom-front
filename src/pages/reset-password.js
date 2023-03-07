@@ -109,7 +109,7 @@ const IndexPage = inject("RootStore")(
               <span className="p-input-icon-right">
                 <i
                   className={password === "" ? "pi pi-exclamation-circle" : ""}
-                  style={{ color: "#d78676" }}
+                  style={{ color: "#3eb978" }}
                 />
 
                 <InputText
@@ -133,7 +133,7 @@ const IndexPage = inject("RootStore")(
                   className={
                     passwordConf === "" ? "pi pi-exclamation-circle" : ""
                   }
-                  style={{ color: "#d78676" }}
+                  style={{ color: "#3eb978" }}
                 />
 
                 <InputText

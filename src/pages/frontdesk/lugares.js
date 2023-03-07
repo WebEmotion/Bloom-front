@@ -57,7 +57,7 @@ const EventItemWithCancel = ({ hour, seat, instructor, isPass, onPress, disabled
         <p style={{ color: disabled ? '#00000050' : '#b24934', margin: 0, marginTop: "5px" }}>{hour}</p>
         <p style={{ color: disabled ? '#00000030' : '#495057', margin: 0 }}>{instructor}</p>
         <p style={{ color: disabled ? '#00000030' : '#b24934', margin: 0 }}>Outdoors</p>
-        <p style={{ color: disabled ? '#00000030' : '#495057', margin: 0, marginTop: !isPass.length > 0 ? "0.5rem" : 0, marginBottom: !isPass.length > 0 ? "0.4rem" : 0 }}>Lugar <div style={{ borderRadius: "15px", background: "#d78676", color: "#fff", paddingLeft: "4px", paddingRight: "4px", display: "inline" }}>{seat.number}</div></p>
+        <p style={{ color: disabled ? '#00000030' : '#495057', margin: 0, marginTop: !isPass.length > 0 ? "0.5rem" : 0, marginBottom: !isPass.length > 0 ? "0.4rem" : 0 }}>Lugar <div style={{ borderRadius: "15px", background: "#3eb978", color: "#fff", paddingLeft: "4px", paddingRight: "4px", display: "inline" }}>{seat.number}</div></p>
         {isPass.length > 0 && (<p style={{ color: disabled ? '#00000030' : 'gray', margin: 0 }}>+ {isPass.length} pase</p>)}
         {isPass.length > 0 && (<p style={{ color: disabled ? '#00000030' : 'gray', margin: 0 }}>Lugar {isPass[0].Seat.number}</p>)}
       </div>
@@ -701,7 +701,7 @@ const IndexPage = inject("RootStore")(
             type="Grid"
             height={100}
             width={100}
-            color="#d78676"
+            color="#3eb978"
           />
           <p>Cargando...</p>
         </div>
@@ -725,7 +725,7 @@ const IndexPage = inject("RootStore")(
             </div>
             <div className="p-col-12 p-md-3">
               <div className="p-grid p-justify-center">
-                <ItemProfile color="#d78676" icon="pi pi-user" store={store} />
+                <ItemProfile color="#3eb978" icon="pi pi-user" store={store} />
               </div>
             </div>
           </div>
@@ -737,7 +737,7 @@ const IndexPage = inject("RootStore")(
           </div>
           <div className="p-d-flex p-jc-end" style={{ marginTop: -35 }}>
             <div className="p-mr-2">
-              <Button label="Nueva clase" icon="pi pi-plus" style={{ backgroundColor: '#d78676', borderRadius: 50, border: 'none' }} onClick={()=>{navigate('/frontdesk/nueva-clase')}} />
+              <Button label="Nueva clase" icon="pi pi-plus" style={{ backgroundColor: '#3eb978', borderRadius: 50, border: 'none' }} onClick={()=>{navigate('/frontdesk/nueva-clase')}} />
             </div>
           </div>
           {showList &&
@@ -795,7 +795,7 @@ const IndexPage = inject("RootStore")(
               <table style={{ borderCollapse: 'collapse', width: '100%', marginBottom: 100, marginTop: 20, tableLayout: 'fixed', minWidth: 800 }}>
               <thead>
                   <tr>
-                    <th style={{ color: '#d78676' }}>
+                    <th style={{ color: '#3eb978' }}>
                       {state.days[0].name}
                       <p style={{ margin: 0 }}>{state.days[0].number}</p>
                     </th>

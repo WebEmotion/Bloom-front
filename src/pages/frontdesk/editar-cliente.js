@@ -636,7 +636,7 @@ const NuevaClase = inject("RootStore")(observer(({ RootStore }) => {
                     number: 0
                 })
             }} />
-            <Button label="Aceptar" style={{ color: 'white', backgroundColor: '#d78676', fontWeight: 'bold' }} disabled={updatedClasses.number === 0} className="p-button-text p-button-pink" autoFocus onClick={() => {
+            <Button label="Aceptar" style={{ color: 'white', backgroundColor: '#3eb978', fontWeight: 'bold' }} disabled={updatedClasses.number === 0} className="p-button-text p-button-pink" autoFocus onClick={() => {
                 updateClassNumber()
             }} />
         </div>
@@ -870,7 +870,7 @@ const NuevaClase = inject("RootStore")(observer(({ RootStore }) => {
                 </div>
                 <div className="p-col-12 p-md-3">
                     <div className="p-grid p-justify-center">
-                        <ItemProfile color="#d78676" icon="pi pi-user" store={store} />
+                        <ItemProfile color="#3eb978" icon="pi pi-user" store={store} />
                     </div>
                 </div>
             </div>

@@ -299,7 +299,7 @@ const NuevoInstructor = inject("RootStore")(observer(({ RootStore }) => {
                 setDeleteModalInstructor(false)
                 setSelectedInstructor(true)
             }} />
-            <Button label="Aceptar" disabled={(instructor && instructor.scheduleExists) ? selectedInstructor : false} style={{ color: 'white', backgroundColor: '#d78676', fontWeight: 'bold' }} className="p-button-text p-button-pink" autoFocus onClick={async () => {
+            <Button label="Aceptar" disabled={(instructor && instructor.scheduleExists) ? selectedInstructor : false} style={{ color: 'white', backgroundColor: '#3eb978', fontWeight: 'bold' }} className="p-button-text p-button-pink" autoFocus onClick={async () => {
                 await deleteInstructorRequest()
                 setDeleteModalInstructor(false)
                 setSelectedInstructor(true)
@@ -312,7 +312,7 @@ const NuevoInstructor = inject("RootStore")(observer(({ RootStore }) => {
             <Button label="Cancelar" className="p-button-text" style={{ color: 'black', fontWeight: 'bold' }} onClick={() => {
                 setReactivateModalInstructor(false)
             }} />
-            <Button label="Aceptar" style={{ color: 'white', backgroundColor: '#d78676', fontWeight: 'bold' }} className="p-button-text p-button-pink" autoFocus onClick={async () => {
+            <Button label="Aceptar" style={{ color: 'white', backgroundColor: '#3eb978', fontWeight: 'bold' }} className="p-button-text p-button-pink" autoFocus onClick={async () => {
                 await reactivateInstructor()
                 setReactivateModalInstructor(false)
             }} />
@@ -395,7 +395,7 @@ const NuevoInstructor = inject("RootStore")(observer(({ RootStore }) => {
                 </div>
                 <div className="p-col-12 p-md-3">
                     <div className="p-grid p-justify-center">
-                        <ItemProfile color="#d78676" icon="pi pi-user" store={store} />
+                        <ItemProfile color="#3eb978" icon="pi pi-user" store={store} />
                     </div>
                 </div>
             </div>
@@ -462,7 +462,7 @@ const NuevoInstructor = inject("RootStore")(observer(({ RootStore }) => {
                         <div className="p-col-9">
                             <label 
                                 htmlFor="myInput" 
-                                style={{ backgroundColor: '#d78676', border: '1px solid #d78676 !important', margin: '2px', borderRadius: 20, color: '#ffffff', padding: 5, cursor: 'pointer' }}
+                                style={{ backgroundColor: '#3eb978', border: '1px solid #3eb978 !important', margin: '2px', borderRadius: 20, color: '#ffffff', padding: 5, cursor: 'pointer' }}
                             >
                                 <i 
                                     className="pi pi-file" 
@@ -495,7 +495,7 @@ const NuevoInstructor = inject("RootStore")(observer(({ RootStore }) => {
                         <div className="p-col-9">
                             <label 
                                 htmlFor="myInput2" 
-                                style={{ backgroundColor: '#d78676', border: '1px solid #d78676 !important', margin: '2px', borderRadius: 20, color: '#ffffff', padding: 5, cursor: 'pointer' }}
+                                style={{ backgroundColor: '#3eb978', border: '1px solid #3eb978 !important', margin: '2px', borderRadius: 20, color: '#ffffff', padding: 5, cursor: 'pointer' }}
                             >
                                 <i 
                                     className="pi pi-file" 

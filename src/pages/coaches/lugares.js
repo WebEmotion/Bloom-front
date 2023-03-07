@@ -95,7 +95,7 @@ const CoachesLugares = inject("RootStore")(observer(({ RootStore }) => {
             return (
                 <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
                     <p style={{ margin: 0 }}>{seat}</p>
-                    <img src='https://img.icons8.com/material-rounded/200/ffffff/user-male-circle.png' style={{ backgroundColor: '#d78676', width: 50, height: 50, borderRadius: '100%' }} />
+                    <img src='https://img.icons8.com/material-rounded/200/ffffff/user-male-circle.png' style={{ backgroundColor: '#3eb978', width: 50, height: 50, borderRadius: '100%' }} />
                     <p style={{ margin: 0, height: 20, whiteSpace: 'nowrap', maxWidth: 100, textOverflow: 'ellipsis', overflow: 'hidden' }}>{name}</p>
                 </div>
             )
@@ -113,14 +113,14 @@ const CoachesLugares = inject("RootStore")(observer(({ RootStore }) => {
             <div className="p-d-flex p-flex-column p-jc-center p-ai-center" style={{ width: '100%' }}>
                 <img src={img} style={{ backgroundColor: '#aaa', borderRadius: '100%', height: 80, width: 80, objectFit: 'cover' }} />
                 <p style={{ margin: 0 }}>{name}</p>
-                <a onClick={logout} style={{ cursor: 'pointer', color: '#d78676' }}>Cerrar sesión</a>
+                <a onClick={logout} style={{ cursor: 'pointer', color: '#3eb978' }}>Cerrar sesión</a>
             </div>
         )
         return (
             <div className="p-d-flex p-flex-column p-jc-center p-ai-center" style={{ width: '100%' }}>
-                <img src="https://img.icons8.com/material-rounded/200/ffffff/user-male-circle.png" style={{ backgroundColor: '#d78676', borderRadius: '100%', height: 80, width: 80, objectFit: 'cover' }} />
+                <img src="https://img.icons8.com/material-rounded/200/ffffff/user-male-circle.png" style={{ backgroundColor: '#3eb978', borderRadius: '100%', height: 80, width: 80, objectFit: 'cover' }} />
                 <p style={{ margin: 0 }}>{name}</p>
-                <a onClick={logout} style={{ cursor: 'pointer', color: '#d78676' }}>Cerrar sesión</a>
+                <a onClick={logout} style={{ cursor: 'pointer', color: '#3eb978' }}>Cerrar sesión</a>
             </div>
         )
     }

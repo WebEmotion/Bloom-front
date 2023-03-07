@@ -97,7 +97,7 @@ const IndexPage = inject("RootStore")(
             type="Grid"
             height={100}
             width={100}
-            color="#d78676"
+            color="#3eb978"
           />
           <p>Cargando...</p>
         </div>
@@ -132,12 +132,12 @@ const IndexPage = inject("RootStore")(
             </div>
             <div className="p-col-12 p-md-3">
               <div className="p-grid p-justify-center">
-                <Item color="#d78676" icon="pi pi-user" store={store} />
+                <Item color="#3eb978" icon="pi pi-user" store={store} />
               </div>
             </div>
           </div>
           <div className="p-grid p-align-center p-justify-center" style={{ marginTop: 0 }}>
-            <h3 style={{ color: "#d78676", marginBottom: "0.5rem" }}>
+            <h3 style={{ color: "#3eb978", marginBottom: "0.5rem" }}>
               COMPRAS
             </h3>
             <div className="p-col-12 table">
@@ -165,12 +165,12 @@ const IndexPage = inject("RootStore")(
                     <div className="tbody" key={index} style={{ cursor: item.Bundle.isEspecial ? 'pointer' : 'default' }} onClick={() => {
                       item.Bundle.isEspecial && showDetails(item)
                     }}>
-                      <div className="td" style={{backgroundColor: item.Bundle.isEspecial ? '#d7867630' : '#788ba555'}}>
+                      <div className="td" style={{backgroundColor: item.Bundle.isEspecial ? '#3eb97830' : '#788ba555'}}>
                         <p className="tcontent" key={index}>
                           {item.Bundle.name}
                         </p>
                       </div>
-                      <div className="td" style={{backgroundColor: item.Bundle.isEspecial ? '#d7867630' : '#788ba555'}}>
+                      <div className="td" style={{backgroundColor: item.Bundle.isEspecial ? '#3eb97830' : '#788ba555'}}>
                         <p className="tcontent" key={index} >
                           ${" "}
                           {item.Bundle.offer > 0
@@ -178,17 +178,17 @@ const IndexPage = inject("RootStore")(
                             : item.Bundle.price}
                         </p>
                       </div>
-                      <div className="td" style={{backgroundColor: item.Bundle.isEspecial ? '#d7867630' : '#788ba555'}}>
+                      <div className="td" style={{backgroundColor: item.Bundle.isEspecial ? '#3eb97830' : '#788ba555'}}>
                         <p className="tcontent" key={index} >
                           {getTransactionDate(item)}
                         </p>
                       </div>
-                      <div className="td" style={{backgroundColor: item.Bundle.isEspecial ? '#d7867630' : '#788ba555'}}>
+                      <div className="td" style={{backgroundColor: item.Bundle.isEspecial ? '#3eb97830' : '#788ba555'}}>
                         <p className="tcontent" key={index} >
                           {item.expirationDate.substring(0, 10)}
                         </p>
                       </div>
-                      <div className="td" style={{backgroundColor: item.Bundle.isEspecial ? '#d7867630' : '#788ba555', color: item.isCanceled ? '#D44949' : hasExpired(item) ? "#d78676" : "#788ba5 !important"}}>
+                      <div className="td" style={{backgroundColor: item.Bundle.isEspecial ? '#3eb97830' : '#788ba555', color: item.isCanceled ? '#D44949' : hasExpired(item) ? "#3eb978" : "#788ba5 !important"}}>
                         <p
                           className="tcontent"
                           key={index}

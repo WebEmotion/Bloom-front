@@ -36,7 +36,7 @@ const IndexPage = inject("RootStore")(
           </div>
           {store.token && (
             <div className="p-col-fixed" style={{ width: "100px" }}>
-              <Item color="#d78676" icon="pi pi-user" store={store} />
+              <Item color="#3eb978" icon="pi pi-user" store={store} />
             </div>
           )}
         </div>

@@ -578,7 +578,7 @@ const IndexPage = inject("RootStore")(
               free: false
             })
           }} />
-          <Button label="Aceptar" style={{ color: 'white', backgroundColor: '#d78676', fontWeight: 'bold' }} className="p-button-text p-button-pink" autoFocus onClick={async () => {
+          <Button label="Aceptar" style={{ color: 'white', backgroundColor: '#3eb978', fontWeight: 'bold' }} className="p-button-text p-button-pink" autoFocus onClick={async () => {
             await cancelBookingRequest()
           }} />
         </div>
@@ -693,7 +693,7 @@ const IndexPage = inject("RootStore")(
             </div>
             <div className="p-col-12 p-md-3">
               <div className="p-grid p-justify-center">
-                <Item color="#d78676" icon="pi pi-user" store={store} />
+                <Item color="#3eb978" icon="pi pi-user" store={store} />
               </div>
             </div>
           </div>
@@ -736,7 +736,7 @@ const IndexPage = inject("RootStore")(
                   }}
                 />
                 <Button
-                  style={{ margin: "3px 20px 3px 0px", backgroundColor: '#d78676', borderColor: '#d78676', border: selectedGroup ? '6px solid #495057' : '' }}
+                  style={{ margin: "3px 20px 3px 0px", backgroundColor: '#3eb978', borderColor: '#3eb978', border: selectedGroup ? '6px solid #495057' : '' }}
                   label="Reserva grupal"
                   className="p-button-rounded"
                   disabled={!selectedGroup}

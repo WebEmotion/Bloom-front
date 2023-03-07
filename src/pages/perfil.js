@@ -63,7 +63,7 @@ const IndexPage = inject("RootStore")(
         {checkToken()}
         <SEO title="Perfil" />
         <div className="p-d-flex p-flex-column p-align-center p-justify-center">
-          <Item color="#d78676" icon="pi pi-user" store={store} />
+          <Item color="#3eb978" icon="pi pi-user" store={store} />
           <span style={{ fontSize: 12, color: '#788ba5' }}>{store.email}</span>
         </div>
 
@@ -165,7 +165,7 @@ const IndexPage = inject("RootStore")(
         {state && <div className="p-grid p-align-center p-justify-center">
           <p
             style={{
-              color: "#d78676",
+              color: "#3eb978",
               marginTop: "4rem",
               textAlign: "center",
             }}

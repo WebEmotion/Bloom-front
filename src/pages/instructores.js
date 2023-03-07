@@ -36,7 +36,7 @@ const IndexPage = inject("RootStore")(
     // const items = [
     //   {
     //     name: "Diana",
-    //     color: "#d78676",
+    //     color: "#3eb978",
     //     icon: "pi pi-user",
     //   },
     //   {
@@ -46,7 +46,7 @@ const IndexPage = inject("RootStore")(
     //   },
     //   {
     //     name: "Sandra",
-    //     color: "#d78676",
+    //     color: "#3eb978",
     //     icon: "pi pi-user",
     //   },
     //   {
@@ -56,7 +56,7 @@ const IndexPage = inject("RootStore")(
     //   },
     //   {
     //     name: "Paula",
-    //     color: "#d78676",
+    //     color: "#3eb978",
     //     icon: "pi pi-user",
     //   },
     //   {
@@ -79,7 +79,7 @@ const IndexPage = inject("RootStore")(
           </div>
           {store.token && (
             <div className="p-col-fixed" style={{ width: "100px" }}>
-              <ItemProfile color="#d78676" icon="pi pi-user" store={store} />
+              <ItemProfile color="#3eb978" icon="pi pi-user" store={store} />
             </div>
           )}
         </div>

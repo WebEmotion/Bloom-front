@@ -222,7 +222,7 @@ const EditarClase = inject("RootStore")(observer(({ RootStore }) => {
         return (
             <div>
                 <Button disabled={false} style={{ color: '#333', fontWeight: 'bold' }} label="Cancelar" className="p-button-text" onClick={() => { setState({ ...state, displayCancel: false }) }} />
-                <Button disabled={false} style={{ color: '#d78676', fontWeight: 'bold' }} label="Continuar" className="p-button-text" onClick={deleteSchedule} />
+                <Button disabled={false} style={{ color: '#3eb978', fontWeight: 'bold' }} label="Continuar" className="p-button-text" onClick={deleteSchedule} />
             </div>
         );
     }
@@ -234,7 +234,7 @@ const EditarClase = inject("RootStore")(observer(({ RootStore }) => {
                 <Button disabled={false} style={{ color: '#333', fontWeight: 'bold' }} label="Actualizar" className="p-button-text" onClick={() => {
                     updateSchedule(false)
                 }} />
-                <Button disabled={false} style={{ color: '#d78676', fontWeight: 'bold' }} label="Actualizar y enviar correo" className="p-button-text" onClick={() => {
+                <Button disabled={false} style={{ color: '#3eb978', fontWeight: 'bold' }} label="Actualizar y enviar correo" className="p-button-text" onClick={() => {
                     updateSchedule(true)
                 }} />
             </div>
@@ -267,7 +267,7 @@ const EditarClase = inject("RootStore")(observer(({ RootStore }) => {
                 </div>
                 <div className="p-col-12 p-md-3">
                     <div className="p-grid p-justify-center">
-                        <ItemProfile color="#d78676" icon="pi pi-user" store={store} />
+                        <ItemProfile color="#3eb978" icon="pi pi-user" store={store} />
                     </div>
                 </div>
             </div>
@@ -300,7 +300,7 @@ const EditarClase = inject("RootStore")(observer(({ RootStore }) => {
                     <div className='p-d-flex p-jc-center p-ai-center' style={{ marginTop: 30 }}>
                         <div className="p-mr-2">Lugares reservados:</div>
                         <div className="p-mr-2">{state.current && state.current.available}</div>
-                        <a style={{ color: '#d78676', cursor: 'pointer', marginLeft: 20 }} onClick={() => {
+                        <a style={{ color: '#3eb978', cursor: 'pointer', marginLeft: 20 }} onClick={() => {
                             navigate("/frontdesk/asientos", {
                                 state: {
                                     id: state.current.id,

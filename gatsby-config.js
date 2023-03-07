@@ -26,7 +26,7 @@ module.exports = {
         short_name: `Bloom`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#d78676`,
+        theme_color: `#3eb978`,
         display: `standalone`,
         icon: `src/assets/icons/logo.png`, // This path is relative to the root of the site.
       },

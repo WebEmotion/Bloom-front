@@ -181,7 +181,7 @@ const IndexPage = inject("RootStore")(
                   style={{
                     background: store.pictureUrl
                       ? `url(${store.pictureUrl})`
-                      : "#d78676",
+                      : "#3eb978",
                     backgroundPosition: "center",
                     backgroundRepeat: "no-repeat",
                     backgroundSize: "cover",
@@ -197,7 +197,7 @@ const IndexPage = inject("RootStore")(
               </div>
               <div
                 className="p-as-center item-text-profile"
-                style={{ color: "#d78676" }}
+                style={{ color: "#3eb978" }}
               >
                 {store.name}
               </div>

@@ -20,7 +20,7 @@ const IndexPage = inject("RootStore")(
             type="Grid"
             height={100}
             width={100}
-            color="#d78676"
+            color="#3eb978"
           />
           <p>Cargando...</p>
         </div>

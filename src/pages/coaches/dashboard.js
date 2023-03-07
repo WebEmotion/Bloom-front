@@ -116,14 +116,14 @@ const CoachDashboard = inject("RootStore")(observer(({ RootStore }) => {
             <div className="p-d-flex p-flex-column p-jc-center p-ai-center" style={{ width: '100%' }}>
                 <img src={img} style={{ backgroundColor: '#aaa', borderRadius: '100%', height: 80, width: 80, objectFit: 'cover' }} />
                 <p style={{ margin: 0 }}>{name}</p>
-                <a onClick={logout} style={{ cursor: 'pointer', color: '#d78676' }}>Cerrar sesión</a>
+                <a onClick={logout} style={{ cursor: 'pointer', color: '#3eb978' }}>Cerrar sesión</a>
             </div>
         )
         return (
             <div className="p-d-flex p-flex-column p-jc-center p-ai-center" style={{ width: '100%' }}>
-                <img src="https://img.icons8.com/material-rounded/200/ffffff/user-male-circle.png" style={{ backgroundColor: '#d78676', borderRadius: '100%', height: 80, width: 80, objectFit: 'cover' }} />
+                <img src="https://img.icons8.com/material-rounded/200/ffffff/user-male-circle.png" style={{ backgroundColor: '#3eb978', borderRadius: '100%', height: 80, width: 80, objectFit: 'cover' }} />
                 <p style={{ margin: 0 }}>{name}</p>
-                <a onClick={logout} style={{ cursor: 'pointer', color: '#d78676' }}>Cerrar sesión</a>
+                <a onClick={logout} style={{ cursor: 'pointer', color: '#3eb978' }}>Cerrar sesión</a>
             </div>
         )
     }
@@ -251,7 +251,7 @@ const CoachDashboard = inject("RootStore")(observer(({ RootStore }) => {
                 <table style={{ borderCollapse: 'collapse', width: '100%', marginBottom: 100, marginTop: 20, tableLayout: 'fixed', minWidth: 800 }}>
                     <thead>
                         <tr>
-                            <th style={{ color: '#d78676' }}>
+                            <th style={{ color: '#3eb978' }}>
                                 {state.days[0].name}
                                 <p style={{ margin: 0 }}>{state.days[0].number}</p>
                             </th>

@@ -595,7 +595,7 @@ const IndexPage = inject("RootStore")(
             </div>
             <div className="p-col-12 p-md-3">
               <div className="p-grid p-justify-center">
-                <Item color="#d78676" icon="pi pi-user" store={store} />
+                <Item color="#3eb978" icon="pi pi-user" store={store} />
               </div>
             </div>
           </div>

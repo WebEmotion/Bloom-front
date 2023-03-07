@@ -43,11 +43,13 @@ const IndexPage = inject("RootStore")(
     const location = useLocation()
     const [showSpecial, setShowSpecial] = useState(true)
     const [showGrupal, setShowGrupal] = useState(false)
+    const [showFlow, setShowFlow] = useState(false)
     const [allowGrupal, setAllowGrupal] = useState(true)
     const [state, setState] = useState({
       bundles: [],
       specialBundles: [],
       groupBundles: [],
+      flowBundles: [],
       loading: true,
       displayBuy: false,
       displaySuccess: false,
@@ -459,12 +461,12 @@ const IndexPage = inject("RootStore")(
         <div className="p-grid p-align-center p-justify-center" style={{ marginTop: "2rem" }}>
           <div className="p-col-12 p-md-12">
             <h1 className="title-page" style={{ paddingLeft: 0, color: "" }}>
-              PAQUETES {showSpecial && !showGrupal ? 'ESPECIALES' : showGrupal ? 'GRUPALES' : 'CLÁSICOS'}
+              PAQUETES {showSpecial && !showGrupal ? 'ESPECIALES' : showGrupal ? 'GRUPALES' : showFlow ? 'PAQUETES FLOW' : 'CLÁSICOS'}
             </h1>
           </div>
         </div>
         <div className="p-d-flex p-jc-center p-ai-center">
-          <Button label="Clásicos" style={{ backgroundColor: '#d78676', color: '#fff', borderRadius: 50, border: 'none', marginRight: 10, width: 150 }} onClick={() => {
+          <Button label="Clásicos" style={{ backgroundColor: '#3eb978', color: '#fff', borderRadius: 50, border: 'none', marginRight: 10, width: 150 }} onClick={() => {
             setShowSpecial(false)
             setShowGrupal(false)
           }} />
@@ -472,7 +474,7 @@ const IndexPage = inject("RootStore")(
             setShowSpecial(true)
             setShowGrupal(false)
           }} />}
-          {state.groupBundles.length > 2 && allowGrupal && <Button label="Grupales" style={{ backgroundColor: '#d78676', color: '#fff', borderRadius: 50, border: 'none', width: 150 }} onClick={() => {
+          {state.groupBundles.length > 2 && allowGrupal && <Button label="Grupales" style={{ backgroundColor: '#3eb978', color: '#fff', borderRadius: 50, border: 'none', width: 150 }} onClick={() => {
             setShowSpecial(false)
             setShowGrupal(true)
           }} />}
@@ -522,7 +524,7 @@ const IndexPage = inject("RootStore")(
           <div className="p-col-4 p-md-2">
             <Img
               style={{
-                maxWidth: "100%",
+                maxWidth: "60%",
                 marginTop: "0.5rem",
               }}
               fluid={images.bloom.childImageSharp.fluid}

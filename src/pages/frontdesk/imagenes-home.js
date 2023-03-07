@@ -214,7 +214,7 @@ const Imagenes = inject("RootStore")(observer(({ RootStore }) => {
                 </div>
                 <div className="p-col-12 p-md-3">
                     <div className="p-grid p-justify-center">
-                        <ItemProfile color="#d78676" icon="pi pi-user" store={store} />
+                        <ItemProfile color="#3eb978" icon="pi pi-user" store={store} />
                     </div>
                 </div>
             </div>
