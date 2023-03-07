@@ -66,12 +66,11 @@ const IndexPage = inject("RootStore")(
         </div>
         <div className="p-grid p-align-center p-justify-center">
           <div className="p-col-12">
-          <p>Cortijo Santa María de los Alamares,<br/>
-          Camino a los Azulejos #1 Rancho Los Azulejos Valle Escondido Ciudad López Mateos,<br/>
-          Estado de México CP 52970</p>
+          <p>Dr. Jorge Jiménez Cantú, Hda.Valle Escondido,<br/>
+          Av. Jorge Jiménez Cantú, Bosque Esmeralda, 52937 Cd López Mateos, Méx.,</p>
           </div>
           <div className="p-col-12">
-          <div class="mapouter"><div class="gmap_canvas"><iframe width="100%" height="300" id="gmap_canvas" src="https://maps.google.com/maps?q=bloom%20cycling&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div></div>
+          <div class="mapouter"><div class="gmap_canvas"><iframe width="100%" height="300" id="gmap_canvas" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2587.310242914668!2d-99.30101261617091!3d19.57062099835302!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d21b1f6e100d53%3A0x2114afbba85fcbe0!2sCasa%20Bloom!5e0!3m2!1ses!2sus!4v1678216641445!5m2!1ses!2sus%22" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div></div>
           </div>
         </div>
       </Layout>
