@@ -242,7 +242,7 @@ const IndexPage = inject("RootStore")(
 
       //console.log(id, classes, reserv)
      /* if(!id && !classes && !reserv) {
-        navigate("/mis-clases")
+        navigate("/mis-clases-flow")
       }*/
 
       loadSeats(id, classes)
@@ -563,7 +563,7 @@ const IndexPage = inject("RootStore")(
           free: false,
           selectedBooking: null
         })
-        navigate("/mis-clases")
+        navigate("/mis-clases-flow")
         //await update()
       } else {
         toast.current.show({ severity: 'warn', summary: 'Lo sentimos', detail: response.message });
@@ -728,7 +728,7 @@ const IndexPage = inject("RootStore")(
               setSelected(null)
               setOpenSuccess(false)
               if (!store.isAdmin) {
-                navigate("/mis-clases")
+                navigate("/mis-clases-flow")
               }
             }}
             maximizable
