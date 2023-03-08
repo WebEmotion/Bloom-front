@@ -241,7 +241,9 @@ const IndexPage = inject("RootStore")(
       const reserv = window.history.state?.booking
 
       //console.log(id, classes, reserv)
-     
+     /* if(!id && !classes && !reserv) {
+        navigate("/mis-clases")
+      }*/
 
       loadSeats(id, classes)
       setMyClasses(classes)
@@ -986,9 +988,9 @@ const IndexPage = inject("RootStore")(
                       [1, 2, 3, 4, 5, 6, 7, 8].map(n => (
                         <Button
                           label={`${n}`}
-                          className={`${occupiedSeats.includes(`A${n}`) ? 'p-button-rounded-c-o' : "p-button-rounded-c"} ${occupiedSeats.includes(`A${n}`) ? '' : "p-button-pink"}`}
+                          className={`${occupiedSeats.includes(`${n}`) ? 'p-button-rounded-c-o' : "p-button-rounded-c"} ${occupiedSeats.includes(`${n}`) ? '' : "p-button-pink"}`}
                           style={{ fontWeight: 'bold' }}
-                          badge={selected && selected.name === `A${n}` && occupiedSeats.length === 0 ? "✓" :  selectedPasses && selectedPasses.name === `A${n}`  && occupiedSeats.length === 0 ? "✓" : selectedGroup && selectedGroup.name === `A${n}`  && occupiedSeats.length === 0 ? "✓" : ""}
+                          badge={selected && selected.name === `${n}` && occupiedSeats.length === 0 ? "✓" :  selectedPasses && selectedPasses.name === `A${n}`  && occupiedSeats.length === 0 ? "✓" : selectedGroup && selectedGroup.name === `A${n}`  && occupiedSeats.length === 0 ? "✓" : ""}
                           disabled={isOccupied(`A${n}`)}
                           onClick={() => {
                             selectSeat(`A${n}`)
@@ -997,7 +999,7 @@ const IndexPage = inject("RootStore")(
                         </Button>
                       ))
                     }
-                    <h1 className="fila">A</h1>
+                    <h1 className="fila"></h1>
                     {/* Number of divs is same userCircle number + 1 */}
                     <div></div>
                     <div></div>
