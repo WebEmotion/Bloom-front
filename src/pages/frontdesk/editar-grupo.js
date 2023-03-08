@@ -339,7 +339,7 @@ const FamilyPage = inject("RootStore")(
                                 icon="pi pi-save"
                                 className="p-button"
                                 disabled={!edited}
-                                style={{ width: "auto", position: 'fixed', right: 30, top: 20, color: 'white', borderRadius: 10, backgroundColor: '#788ba5', border: 'none', opacity: edited ? 1 : 0, transition: '300ms linear all' }}
+                                style={{ width: "auto", position: 'fixed', right: 30, top: 20, color: 'white', borderRadius: 10, backgroundColor: '#3eb978', border: 'none', opacity: edited ? 1 : 0, transition: '300ms linear all' }}
                                 onClick={() => {
                                     updateName()
                                 }}
@@ -352,7 +352,7 @@ const FamilyPage = inject("RootStore")(
                                 fontFamily: 'Poppins-Bold',
                                 textAlign: 'center',
                                 width: '50%',
-                                color: '#788ba5',
+                                color: '#3eb978',
                                 textTransform: 'uppercase'
                             }} onChange={changeTitle.bind(this)}/>
                         </div>

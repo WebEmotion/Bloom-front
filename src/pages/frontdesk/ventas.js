@@ -732,7 +732,7 @@ const IndexPage = inject("RootStore")(
                   }}
                   className="login-btn btn-secondary"
                   label="Pagar"
-                  style={{ width: "90%", background: "#788ba5" }}
+                  style={{ width: "90%", background: "#3eb978" }}
                   disabled={selected.length === 0}
                 />
                 <Button

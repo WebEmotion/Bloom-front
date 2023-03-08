@@ -32,7 +32,7 @@ const IndexPage = inject("RootStore")(
           data.data.forEach(element => {
             let temp = element
             temp.selected = false
-            temp.color = "#788ba5"
+            temp.color = "#3eb978"
             temp.icon = "pi pi-user"
             newList.push(temp)
           })

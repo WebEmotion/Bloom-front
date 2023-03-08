@@ -31,7 +31,7 @@ const UserCircle = ({ image, name, lastname, seat }) => {
     return (
         <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
             <p style={{margin: 0}}>{seat}</p>
-            <img src='https://www.wheelybikerental.com/newsite/wp-content/uploads/2017/01/bici-icon-white-400x400.png' style={{ backgroundColor: '#788ba5', width: 50, height: 50, borderRadius: '100%', padding: 5 }} />
+            <img src='https://www.wheelybikerental.com/newsite/wp-content/uploads/2017/01/bici-icon-white-400x400.png' style={{ backgroundColor: '#3eb978', width: 50, height: 50, borderRadius: '100%', padding: 5 }} />
             <p style={{ margin: 0 }}> </p>
         </div>
     )
@@ -104,7 +104,7 @@ const Reservaciones = inject("RootStore")(
                                 style={{
                                     height: 50,
                                     width: 100,
-                                    backgroundColor: "#788ba5",
+                                    backgroundColor: "#3eb978",
                                     display: "none",
                                 }}
                             />
@@ -217,7 +217,7 @@ const Reservaciones = inject("RootStore")(
                                 style={{
                                     height: 50,
                                     width: 100,
-                                    backgroundColor: "#788ba5",
+                                    backgroundColor: "#3eb978",
                                     display: "none",
                                 }}
                             />
@@ -262,7 +262,7 @@ const Reservaciones = inject("RootStore")(
                                     width: 130,
                                     height: 130,
                                     borderRadius: '100%',
-                                    backgroundColor: "#788ba5",
+                                    backgroundColor: "#3eb978",
                                     position: "absolute",
                                     transform: "translateX(-80px)",
                                     display: "flex",

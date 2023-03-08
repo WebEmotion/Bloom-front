@@ -165,12 +165,12 @@ const IndexPage = inject("RootStore")(
                     <div className="tbody" key={index} style={{ cursor: item.Bundle.isEspecial ? 'pointer' : 'default' }} onClick={() => {
                       item.Bundle.isEspecial && showDetails(item)
                     }}>
-                      <div className="td" style={{backgroundColor: item.Bundle.isEspecial ? '#3eb97830' : '#788ba555'}}>
+                      <div className="td" style={{backgroundColor: item.Bundle.isEspecial ? '#3eb97830' : '#3eb97855'}}>
                         <p className="tcontent" key={index}>
                           {item.Bundle.name}
                         </p>
                       </div>
-                      <div className="td" style={{backgroundColor: item.Bundle.isEspecial ? '#3eb97830' : '#788ba555'}}>
+                      <div className="td" style={{backgroundColor: item.Bundle.isEspecial ? '#3eb97830' : '#3eb97855'}}>
                         <p className="tcontent" key={index} >
                           ${" "}
                           {item.Bundle.offer > 0
@@ -178,17 +178,17 @@ const IndexPage = inject("RootStore")(
                             : item.Bundle.price}
                         </p>
                       </div>
-                      <div className="td" style={{backgroundColor: item.Bundle.isEspecial ? '#3eb97830' : '#788ba555'}}>
+                      <div className="td" style={{backgroundColor: item.Bundle.isEspecial ? '#3eb97830' : '#3eb97855'}}>
                         <p className="tcontent" key={index} >
                           {getTransactionDate(item)}
                         </p>
                       </div>
-                      <div className="td" style={{backgroundColor: item.Bundle.isEspecial ? '#3eb97830' : '#788ba555'}}>
+                      <div className="td" style={{backgroundColor: item.Bundle.isEspecial ? '#3eb97830' : '#3eb97855'}}>
                         <p className="tcontent" key={index} >
                           {item.expirationDate.substring(0, 10)}
                         </p>
                       </div>
-                      <div className="td" style={{backgroundColor: item.Bundle.isEspecial ? '#3eb97830' : '#788ba555', color: item.isCanceled ? '#D44949' : hasExpired(item) ? "#3eb978" : "#788ba5 !important"}}>
+                      <div className="td" style={{backgroundColor: item.Bundle.isEspecial ? '#3eb97830' : '#3eb97855', color: item.isCanceled ? '#D44949' : hasExpired(item) ? "#3eb978" : "#3eb978 !important"}}>
                         <p
                           className="tcontent"
                           key={index}

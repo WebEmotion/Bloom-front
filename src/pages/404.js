@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 const NotFoundPage = () => (
   <Layout>
     <SEO title="404: Página no encontrada" />
-    <h1 style={{textAlign: "center", color: "#788ba5"}}>404: Upps! Parece que te quedaste sin energía.</h1>
+    <h1 style={{textAlign: "center", color: "#3eb978"}}>404: Upps! Parece que te quedaste sin energía.</h1>
   </Layout>
 )
 

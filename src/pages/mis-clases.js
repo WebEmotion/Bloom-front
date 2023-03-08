@@ -45,7 +45,7 @@ const EventItem = ({ item, hour, instructor, onPress, disabled, isReserved, onAl
       <div 
         className={`eventItem ${isReserved ? 'reserved' : ''}`} 
         style={{ 
-          backgroundColor: forbidden && isReserved ? '#ffffff' : forbidden ? '#788ba5' : disabled ? '#00000020' : isReserved ? '#ffffff' : now >= end ? '#00000020' : !havePackage && !canReservate ? '#788ba5' : '#eecbc4', 
+          backgroundColor: forbidden && isReserved ? '#ffffff' : forbidden ? '#3eb978' : disabled ? '#00000020' : isReserved ? '#ffffff' : now >= end ? '#00000020' : !havePackage && !canReservate ? '#3eb978' : '#eecbc4', 
           border: isReserved ? "1px solid" : '',
           cursor: forbidden && isReserved ? 'pointer' : isReserved && !(now >= end) ? 'pointer' : forbidden ? 'not-allowed' : disabled ? 'not-allowed' : now >= end ? 'not-allowed' : readonly ? 'default' : !havePackage && !canReservate ? 'not-allowed' : 'pointer' }} 
           disabled={now >= end} 
@@ -1030,17 +1030,17 @@ const IndexPage = inject("RootStore")(
           </p>
         </div>}
         {!store.isAdmin && showCalendar && store.token && <div className="p-col-12 header-mis-clases">
-          <p style={{ margin: 0, marginLeft: "2px", marginRight: "2px", color: "#788ba5" }}>
+          <p style={{ margin: 0, marginLeft: "2px", marginRight: "2px", color: "#3eb978" }}>
             Clases disponibles: <strong>{myClasses && myClasses.isUnlimited ? 'Ilimitadas' : `${myClasses ? myClasses.pending : ''}`}</strong>
           </p>
         </div>}
         {!store.isAdmin && showCalendar && store.token && <div className="p-col-12 header-mis-clases">
-          <p style={{ margin: 0, marginLeft: "2px", marginRight: "2px", color: "#788ba5" }}>
+          <p style={{ margin: 0, marginLeft: "2px", marginRight: "2px", color: "#3eb978" }}>
             Pases tomados: <strong>{myClasses && myClasses.takenPasses}</strong>
           </p>
         </div>}
         {!store.isAdmin && showCalendar && store.token && <div className="p-col-12 header-mis-clases">
-          <p style={{ margin: 0, marginLeft: "2px", marginRight: "2px", color: "#788ba5" }}>
+          <p style={{ margin: 0, marginLeft: "2px", marginRight: "2px", color: "#3eb978" }}>
             Pases disponibles: <strong>{myClasses && myClasses.pendingPasses}</strong>
           </p>
         </div>}
@@ -1051,7 +1051,7 @@ const IndexPage = inject("RootStore")(
           </p>
         </div>}
         {!store.isAdmin && inGrup && showCalendar && store.token && <div className="p-col-12 header-mis-clases">
-          <p style={{ margin: 0, marginLeft: "2px", marginRight: "2px", color: "#788ba5" }}>
+          <p style={{ margin: 0, marginLeft: "2px", marginRight: "2px", color: "#3eb978" }}>
             Clases grupales disponibles: <strong>{myClasses && myClasses.isUnlimitedGroup ? 'Ilimitadas' : `${myClasses ? myClasses.pendingGroup : ''}`}</strong>
           </p>
         </div>}
@@ -1069,7 +1069,7 @@ const IndexPage = inject("RootStore")(
                 setShowCalendar(true)
               }
             }} />
-            <Button style={{ marginTop: 20, marginLeft: 20, backgroundColor: '#788ba5', borderColor: '#788ba5' }} label={showCalendar ? "Cancelar" : "Reservar pase"} className="p-button-rounded" disabled={myClasses && myClasses.pendingPasses <= 0} onClick={() => {
+            <Button style={{ marginTop: 20, marginLeft: 20, backgroundColor: '#3eb978', borderColor: '#3eb978' }} label={showCalendar ? "Cancelar" : "Reservar pase"} className="p-button-rounded" disabled={myClasses && myClasses.pendingPasses <= 0} onClick={() => {
               if (showCalendar) {
                 setShowCalendar(false)
               } else {
@@ -1119,7 +1119,7 @@ const IndexPage = inject("RootStore")(
           <Indicator style={{ marginLeft: 10 }} color="#3eb978" label="Clases disponibles" />
           <Indicator style={{ marginLeft: 10 }} color="#00000020" label="Clases pasadas" />
           {store.token && <Indicator style={{ marginLeft: 10 }} color="white" label="Clases reservadas" borderStyle="1px solid black" />}
-          {store.token && <Indicator style={{ marginLeft: 10 }} color="#788ba5" label="Clases fuera de vigencia/Sin clases" />}
+          {store.token && <Indicator style={{ marginLeft: 10 }} color="#3eb978" label="Clases fuera de vigencia/Sin clases" />}
         </div>}
         {/* <Button icon="pi pi-angle-left" className='p-button-rounded' style={{ height: 30, width: 30, backgroundColor: 'white', border: 'none', color: 'black', marginLeft: 10 }} onClick={() => {
             setWeek(week - 1)

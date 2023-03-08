@@ -94,7 +94,7 @@ const IndexPage = inject("RootStore")(
           <h1
             style={{
               textAlign: "center",
-              color: "#788ba5",
+              color: "#3eb978",
               fontFamily: "Poppins-Regular",
             }}
           >

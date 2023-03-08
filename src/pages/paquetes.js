@@ -471,7 +471,7 @@ const IndexPage = inject("RootStore")(
             setShowGrupal(false)
             setShowFlow(false)
           }} />
-          {state.specialBundles.length > 2 && <Button label="Especiales" style={{ backgroundColor: '#788ba5', color: '#fff', borderRadius: 50, border: 'none', width: 150, marginRight: 10 }} onClick={() => {
+          {state.specialBundles.length > 2 && <Button label="Especiales" style={{ backgroundColor: '#3eb978', color: '#fff', borderRadius: 50, border: 'none', width: 150, marginRight: 10 }} onClick={() => {
             setShowSpecial(true)
             setShowFlow(false)
             setShowGrupal(false)

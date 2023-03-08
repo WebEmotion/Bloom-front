@@ -64,7 +64,7 @@ const IndexPage = inject("RootStore")(
         <SEO title="Perfil" />
         <div className="p-d-flex p-flex-column p-align-center p-justify-center">
           <Item color="#3eb978" icon="pi pi-user" store={store} />
-          <span style={{ fontSize: 12, color: '#788ba5' }}>{store.email}</span>
+          <span style={{ fontSize: 12, color: '#3eb978' }}>{store.email}</span>
         </div>
 
         <div
@@ -87,7 +87,7 @@ const IndexPage = inject("RootStore")(
             </div>
             <div
               className="p-as-center item-text"
-              style={{ color: "#788ba5" }}
+              style={{ color: "#3eb978" }}
             >
               Mis clases
             </div>
@@ -108,7 +108,7 @@ const IndexPage = inject("RootStore")(
             </div>
             <div
               className="p-as-center item-text"
-              style={{ color: "#788ba5" }}
+              style={{ color: "#3eb978" }}
             >
               Historial
             </div>
@@ -129,7 +129,7 @@ const IndexPage = inject("RootStore")(
             </div>
             <div
               className="p-as-center item-text"
-              style={{ color: "#788ba5" }}
+              style={{ color: "#3eb978" }}
             >
               Configuración
             </div>
@@ -156,7 +156,7 @@ const IndexPage = inject("RootStore")(
             </div>
             <div
               className="p-as-center item-text"
-              style={{ color: "#788ba5" }}
+              style={{ color: "#3eb978" }}
             >
               Mi grupo
             </div>

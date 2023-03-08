@@ -241,7 +241,9 @@ const IndexPage = inject("RootStore")(
       const reserv = window.history.state?.booking
 
       //console.log(id, classes, reserv)
-      
+      if(!id && !classes && !reserv) {
+        navigate("/mis-clases")
+      }
 
       loadSeats(id, classes)
       setMyClasses(classes)
@@ -585,7 +587,7 @@ const IndexPage = inject("RootStore")(
     return (
       <Layout page="perfil">
         <div style={{ overflow: "scroll" }}>
-          <SEO title="Cycling Room" />
+          <SEO title="FLOW ROOM" />
           <Toast ref={el => (toast.current = el)} />
           <Dialog header="Cancelar reserva" className="spDialog" visible={cancelation.display} footer={renderFooterComplete} onHide={() => {
                 setCancelation({
@@ -757,7 +759,7 @@ const IndexPage = inject("RootStore")(
           <div className="p-grid p-align-center" style={{ marginTop: "2rem" }}>
             <div className="p-col-12 p-md-9">
               <h1 className="title-page" style={{ paddingLeft: 0 }}>
-                CYCLING ROOM
+                FLOW ROOM
               </h1>
             </div>
             <div className="p-col-12 p-md-3">
@@ -772,7 +774,7 @@ const IndexPage = inject("RootStore")(
           >
             {seats.length > 0 &&  <div className={getUpdatedMembersList()[1].length > 0 ? 'p-col-5' : 'p-col-10'} style={{ zIndex: 10 }}>
               <div className="p-row">
-                {!store.isAdmin && <p style={{ color: '#788ba5', fontWeight: 'bold' }}>{isClass ? 'Estás usando una clase' : isGrupal ? 'Estás usando una clase grupal' : 'Estás usando un pase'}</p>}
+                {!store.isAdmin && <p style={{ color: '#3eb978', fontWeight: 'bold' }}>{isClass ? 'Estás usando una clase' : isGrupal ? 'Estás usando una clase grupal' : 'Estás usando un pase'}</p>}
                 <p>Fecha: {seats[0] && `${seats[0].date.substring(0, 10)}`}</p>
                 <p>
                   Horario: {seats[0] && seats[0].start.substring(0, 5)} -{" "}
@@ -793,7 +795,7 @@ const IndexPage = inject("RootStore")(
                   onClick={() => openConfirmBookingModal()}
                 />
                 <Button
-                  style={{ margin: "3px 20px 3px 0px", backgroundColor: '#788ba5', borderColor: '#788ba5', border: selectedPasses ? '6px solid #495057' : ''  }}
+                  style={{ margin: "3px 20px 3px 0px", backgroundColor: '#3eb978', borderColor: '#3eb978', border: selectedPasses ? '6px solid #495057' : ''  }}
                   label="Reservar con pase"
                   className="p-button-rounded"
                   disabled={!selectedPasses}
@@ -816,7 +818,7 @@ const IndexPage = inject("RootStore")(
             </div>}
             {seats.length > 0 && getUpdatedMembersList()[1].length > 0 && <div className="p-col-5">
               <div className="p-row">
-                <p style={{ color: '#788ba5', fontWeight: 'bold' }}>Miembros de tu grupo en esta clase:</p>
+                <p style={{ color: '#3eb978', fontWeight: 'bold' }}>Miembros de tu grupo en esta clase:</p>
                 {getUpdatedMembersList()[1].map((elem, index) => (
                   <p>{elem.name} {elem.lastname ? elem.lastname : ''} - Lugar: {elem.number}</p>
                 ))}
@@ -850,129 +852,7 @@ const IndexPage = inject("RootStore")(
                         style={{
                           height: 50,
                           width: 100,
-                          backgroundColor: "#788ba5",
-                          display: "none",
-                        }}
-                      />
-                    }
-                    open
-                    autoClose={false}
-                    orbitRadius={300}
-                    //86 normal(stage down), 266 for 180° (stage up)
-                    rotation={266}
-                    orbitStyle={() => ({
-                      border: "none",
-                      zIndex: 0,
-                      position: "absolute",
-                      borderRadius: "100%",
-                    })}
-                  >
-                    <h1 className="fila">C</h1>
-
-                    {/* divs for a tree that occupies 2 places */}
-                    <div></div>
-                    <div>
-                      <div
-                        style={{
-                        width: 70,
-                        height: 70,
-                        borderRadius: '100%',
-                        backgroundColor: "#7aa578",
-                        position: "absolute",
-                        transform: "translateX(-80px)",
-                        display: "flex",
-                        alignItems: "center",
-                        color: "#fff",
-                        textAlign: "center",
-                        justifyContent: "center",
-                        marginTop: "-40px",
-                        marginLeft: 65
-                        }}
-                      >
-                        <div className="p-grid p-align-center p-justify-center">
-                          <div className="p-col-12">
-                            <img
-                              style={{
-                                maxWidth: "100%",
-                                display: "none"
-                                /* marginBottom: "0.5rem",
-                                marginTop: -30,
-                                marginRight: 30 */
-                              }}
-                              src={Tree}
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        style={{
-                          width: 80,
-                          height: 80,
-                          borderRadius: '100%',
-                          position: "absolute",
-                          transform: "translateX(-80px)",
-                          display: "flex",
-                          alignItems: "center",
-                          color: "#fff",
-                          textAlign: "center",
-                          justifyContent: "center",
-                          marginLeft: 60
-                        }}
-                      >
-                        <div className="p-grid p-align-center p-justify-center">
-                          <div className="p-col-12">
-                            <p
-                              style={{
-                                marginBottom: 0,
-                                color: 'black'
-                              }}
-                              >
-                              The Soul
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {
-                      [1, 2, 3, 4, 5, 6, 7, 8, 9].map(n => (
-                        <Button
-                          label={`${n}`}
-                          className={`${occupiedSeats.includes(`C${n}`) ? 'p-button-rounded-c-o' : "p-button-rounded-c"} ${occupiedSeats.includes(`C${n}`) ? '' : "p-button-pink"}`}
-                          style={{ fontWeight: 'bold' }}
-                          badge={selected && selected.name === `C${n}` && occupiedSeats.length === 0 ? "✓" : selectedPasses && selectedPasses.name === `C${n}`  && occupiedSeats.length === 0 ? "✓" : selectedGroup && selectedGroup.name === `C${n}`  && occupiedSeats.length === 0 ? "✓" : ""}
-                          disabled={isOccupied(`C${n}`)}
-                          onClick={() => {
-                            selectSeat(`C${n}`)
-                          }}
-                        >
-                        </Button>
-                      ))
-                    }
-                    <h1 className="fila">C</h1>
-                    {/* Number of divs is same userCircle number + 1 */}
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-
-                    {/* divs for a tree that occupies 2 places */}
-                    <div></div>
-                    <div></div>
-                  </Planet>
-                  <Planet
-                    centerContent={
-                      <div
-                        style={{
-                          height: 50,
-                          width: 100,
-                          backgroundColor: "#788ba5",
+                          backgroundColor: "#3eb978",
                           display: "none",
                         }}
                       />
@@ -989,9 +869,9 @@ const IndexPage = inject("RootStore")(
                       borderRadius: "100%",
                     })}
                   >
-                    <h1 className="fila">B</h1>
+                    <h1 className="fila"></h1>
                     {
-                      [1, 2, 3, 4, 5, 6, 7, 8, 9].map(n => (
+                      [1, 2, 3, 4, 5, 6, 7, 8].map(n => (
                         <Button
                           label={`${n}`}
                           className={`${occupiedSeats.includes(`B${n}`) ? 'p-button-rounded-c-o' : "p-button-rounded-c"} ${occupiedSeats.includes(`B${n}`) ? '' : "p-button-pink"}`}
@@ -1005,9 +885,8 @@ const IndexPage = inject("RootStore")(
                         </Button>
                       ))
                     }
-                    <h1 className="fila">B</h1>
+                    <h1 className="fila"></h1>
                     {/* Number of divs is same userCircle number + 1 */}
-                    <div></div>
                     <div></div>
                     <div></div>
                     <div></div>
@@ -1026,7 +905,7 @@ const IndexPage = inject("RootStore")(
                             width: 130,
                             height: 130,
                             borderRadius: '100%',
-                            backgroundColor: "#788ba5",
+                            backgroundColor: "#3eb978",
                             position: "absolute",
                             transform: "translateX(-80px)",
                             display: "flex",
@@ -1104,9 +983,9 @@ const IndexPage = inject("RootStore")(
                       borderRadius: "100%",
                     })}
                   >
-                    <h1 className="fila">A</h1>
+                    <h1 className="fila"></h1>
                     {
-                      [1, 2, 3, 4, 5, 6, 7].map(n => (
+                      [1, 2, 3, 4, 5, 6, 7, 8].map(n => (
                         <Button
                           label={`${n}`}
                           className={`${occupiedSeats.includes(`A${n}`) ? 'p-button-rounded-c-o' : "p-button-rounded-c"} ${occupiedSeats.includes(`A${n}`) ? '' : "p-button-pink"}`}
@@ -1122,6 +1001,7 @@ const IndexPage = inject("RootStore")(
                     }
                     <h1 className="fila">A</h1>
                     {/* Number of divs is same userCircle number + 1 */}
+                    <div></div>
                     <div></div>
                     <div></div>
                     <div></div>

@@ -22,7 +22,7 @@ const IndexPage = inject("RootStore")(
             if(!element.isDeleted) {
               let temp = element
               temp.selected = false
-              temp.color= "#788ba5"
+              temp.color= "#3eb978"
               temp.icon= "pi pi-user"
               newList.push(temp)
             }
@@ -41,7 +41,7 @@ const IndexPage = inject("RootStore")(
     //   },
     //   {
     //     name: "Jorge",
-    //     color: "#788ba5",
+    //     color: "#3eb978",
     //     icon: "pi pi-user",
     //   },
     //   {
@@ -51,7 +51,7 @@ const IndexPage = inject("RootStore")(
     //   },
     //   {
     //     name: "Alejandro",
-    //     color: "#788ba5",
+    //     color: "#3eb978",
     //     icon: "pi pi-user",
     //   },
     //   {
@@ -61,7 +61,7 @@ const IndexPage = inject("RootStore")(
     //   },
     //   {
     //     name: "Marco",
-    //     color: "#788ba5",
+    //     color: "#3eb978",
     //     icon: "pi pi-user",
     //   },
     // ]
