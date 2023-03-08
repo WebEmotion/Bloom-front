@@ -871,12 +871,12 @@ const IndexPage = inject("RootStore")(
                   >
                     <h1 className="fila"></h1>
                     {
-                      [1, 2, 3, 4, 5, 6, 7, 8].map(n => (
+                      [9, 10, 11, 12, 13, 14, 15, 16].map(n => (
                         <Button
                           label={`${n}`}
-                          className={`${occupiedSeats.includes(`B${n}`) ? 'p-button-rounded-c-o' : "p-button-rounded-c"} ${occupiedSeats.includes(`B${n}`) ? '' : "p-button-pink"}`}
+                          className={`${occupiedSeats.includes(`${n}`) ? 'p-button-rounded-c-o' : "p-button-rounded-c"} ${occupiedSeats.includes(`${n}`) ? '' : "p-button-pink"}`}
                           style={{ fontWeight: 'bold' }}
-                          badge={selected && selected.name === `B${n}` && occupiedSeats.length === 0 ? "✓" : selectedPasses && selectedPasses.name === `B${n}`  && occupiedSeats.length === 0 ? "✓" : selectedGroup && selectedGroup.name === `B${n}`  && occupiedSeats.length === 0 ? "✓" : ""}
+                          badge={selected && selected.name === `${n}` && occupiedSeats.length === 0 ? "✓" : selectedPasses && selectedPasses.name === `${n}`  && occupiedSeats.length === 0 ? "✓" : selectedGroup && selectedGroup.name === `${n}`  && occupiedSeats.length === 0 ? "✓" : ""}
                           disabled={isOccupied(`B${n}`)}
                           onClick={() => {
                             selectSeat(`B${n}`)
