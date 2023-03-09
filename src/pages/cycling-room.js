@@ -898,7 +898,7 @@ const IndexPage = inject("RootStore")(
                     autoClose={false}
                     orbitRadius={300}
                     //86 normal(stage down), 266 for 180° (stage up)
-                    rotation={266}
+                    rotation={300}
                     orbitStyle={() => ({
                       border: "none",
                       zIndex: 0,
@@ -914,12 +914,12 @@ const IndexPage = inject("RootStore")(
                       [1, 2, 3, 4, 5, 6, 7, 8, 9].map(n => (
                         <Button
                           label={`${n}`}
-                          className={`${occupiedSeats.includes(`C${n}`) ? 'p-button-rounded-c-o' : "p-button-rounded-c"} ${occupiedSeats.includes(`C${n}`) ? '' : "p-button-pink"}`}
+                          className={`${occupiedSeats.includes(`${n}`) ? 'p-button-rounded-c-o' : "p-button-rounded-c"} ${occupiedSeats.includes(`${n}`) ? '' : "p-button-pink"}`}
                           style={{ fontWeight: 'bold' }}
-                          badge={selected && selected.name === `C${n}` && occupiedSeats.length === 0 ? "✓" : selectedPasses && selectedPasses.name === `C${n}`  && occupiedSeats.length === 0 ? "✓" : selectedGroup && selectedGroup.name === `C${n}`  && occupiedSeats.length === 0 ? "✓" : ""}
-                          disabled={isOccupied(`C${n}`)}
+                          badge={selected && selected.name === `${n}` && occupiedSeats.length === 0 ? "✓" : selectedPasses && selectedPasses.name === `${n}`  && occupiedSeats.length === 0 ? "✓" : selectedGroup && selectedGroup.name === `${n}`  && occupiedSeats.length === 0 ? "✓" : ""}
+                          disabled={isOccupied(`${n}`)}
                           onClick={() => {
-                            selectSeat(`C${n}`)
+                            selectSeat(`${n}`)
                           }}
                         >
                         </Button>
