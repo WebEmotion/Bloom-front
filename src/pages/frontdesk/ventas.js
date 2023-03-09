@@ -687,16 +687,7 @@ const IndexPage = inject("RootStore")(
                   className="p-grid p-justify-between p-align-center p-mt-2 p-mb-2"
                   style={{ width: "100%" }}
                 >
-                <strong>Codigo de descuento</strong>
-                <ListBox
-                  optionLabel="codediscount"
-                  options={selected}
-                  onChange={discounts => {
-                    removeItem(discounts.value)
-                  }}
-                  style={{ width: "50%" }}
-                  itemTemplate={itemTemplate}
-                />
+                <InputText value={discounts.discountCode} placeholder="Ingrese un código de descuento" onChange={handleDiscountCodeChange.bind(this)} />
                   <strong>Total:</strong>${(total * (1 - (discounts.discount / 100))).toFixed(2)}
   
                 </div>
