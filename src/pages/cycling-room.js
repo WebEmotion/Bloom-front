@@ -911,7 +911,7 @@ const IndexPage = inject("RootStore")(
                     {/* divs for a tree that occupies 2 places */}
 
                     {
-                      [1, 2, 3, 4, 5, 6, 7, 8, 9].map(n => (
+                      [1, 2, 3, 4, 5, 6, 7].map(n => (
                         <Button
                           label={`${n}`}
                           className={`${occupiedSeats.includes(`${n}`) ? 'p-button-rounded-c-o' : "p-button-rounded-c"} ${occupiedSeats.includes(`${n}`) ? '' : "p-button-pink"}`}
@@ -933,12 +933,6 @@ const IndexPage = inject("RootStore")(
                     <div></div>
                     <div></div>
                     <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-
-                    {/* divs for a tree that occupies 2 places */}
                     <div></div>
                     <div></div>
                   </Planet>
