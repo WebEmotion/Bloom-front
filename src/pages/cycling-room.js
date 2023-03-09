@@ -911,7 +911,7 @@ const IndexPage = inject("RootStore")(
                     {/* divs for a tree that occupies 2 places */}
 
                     {
-                      [1, 2, 3, 4, 5, 6, 7, 8].map(n => (
+                      [18, 19, 20, 21, 22, 23, 24, 25].map(n => (
                         <Button
                           label={`${n}`}
                           className={`${occupiedSeats.includes(`${n}`) ? 'p-button-rounded-c-o' : "p-button-rounded-c"} ${occupiedSeats.includes(`${n}`) ? '' : "p-button-pink"}`}
@@ -952,7 +952,7 @@ const IndexPage = inject("RootStore")(
                     autoClose={false}
                     orbitRadius={240}
                     //86 normal (stage down), 265 for 180° (stage up)
-                    rotation={86}
+                    rotation={265}
                     orbitStyle={() => ({
                       border: "none",
                       zIndex: 0,
@@ -962,7 +962,7 @@ const IndexPage = inject("RootStore")(
                   >
                     <h1 className="fila"></h1>
                     {
-                      [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(n => (
+                      [17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6].map(n => (
                         <Button
                           label={`${n}`}
                           className={`${occupiedSeats.includes(`${n}`) ? 'p-button-rounded-c-o' : "p-button-rounded-c"} ${occupiedSeats.includes(`${n}`) ? '' : "p-button-pink"}`}
@@ -1078,26 +1078,24 @@ const IndexPage = inject("RootStore")(
                       borderRadius: "100%",
                     })}
                   >
-                    <h1 className="fila">A</h1>
+                    <h1 className="fila"></h1>
                     {
-                      [1, 2, 3, 4, 5, 6, 7].map(n => (
+                      [1, 2, 3, 4, 5].map(n => (
                         <Button
                           label={`${n}`}
-                          className={`${occupiedSeats.includes(`A${n}`) ? 'p-button-rounded-c-o' : "p-button-rounded-c"} ${occupiedSeats.includes(`A${n}`) ? '' : "p-button-pink"}`}
+                          className={`${occupiedSeats.includes(`${n}`) ? 'p-button-rounded-c-o' : "p-button-rounded-c"} ${occupiedSeats.includes(`${n}`) ? '' : "p-button-pink"}`}
                           style={{ fontWeight: 'bold' }}
-                          badge={selected && selected.name === `A${n}` && occupiedSeats.length === 0 ? "✓" :  selectedPasses && selectedPasses.name === `A${n}`  && occupiedSeats.length === 0 ? "✓" : selectedGroup && selectedGroup.name === `A${n}`  && occupiedSeats.length === 0 ? "✓" : ""}
-                          disabled={isOccupied(`A${n}`)}
+                          badge={selected && selected.name === `${n}` && occupiedSeats.length === 0 ? "✓" :  selectedPasses && selectedPasses.name === `${n}`  && occupiedSeats.length === 0 ? "✓" : selectedGroup && selectedGroup.name === `${n}`  && occupiedSeats.length === 0 ? "✓" : ""}
+                          disabled={isOccupied(`${n}`)}
                           onClick={() => {
-                            selectSeat(`A${n}`)
+                            selectSeat(`${n}`)
                           }}
                         >
                         </Button>
                       ))
                     }
-                    <h1 className="fila">A</h1>
+                    <h1 className="fila"></h1>
                     {/* Number of divs is same userCircle number + 1 */}
-                    <div></div>
-                    <div></div>
                     <div></div>
                     <div></div>
                     <div></div>
