@@ -432,7 +432,7 @@ const Layout = inject("RootStore")(
                     <div className="p-col-12">
                       <Button
                         className={
-                          page === "horarios"
+                          page === "horarios-flow"
                             ? "p-button menu-button active"
                             : "p-button menu-button"
                         }
@@ -804,8 +804,21 @@ const Layout = inject("RootStore")(
                             ? "p-button menu-button active"
                             : "p-button menu-button"
                         }
-                        label="HORARIOS"
+                        label="HORARIOS CYCLING"
                         onClick={() => navigate("/mis-clases")}
+                      />
+                    </div>
+                  )}
+                  {!store.token && (
+                    <div className="p-col-12">
+                      <Button
+                        className={
+                          page === "horarios-flow"
+                            ? "p-button menu-button active"
+                            : "p-button menu-button"
+                        }
+                        label="HORARIOS FLOW"
+                        onClick={() => navigate("/mis-clases-flow")}
                       />
                     </div>
                   )}
