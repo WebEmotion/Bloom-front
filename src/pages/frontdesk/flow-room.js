@@ -777,12 +777,12 @@ const IndexPage = inject("RootStore")(
                                             [9, 10, 11, 12, 13, 14, 15, 16].map(n => (
                                                 <Button
                                                     label={`${n}`}
-                                                    className={`${occupiedSeats.includes(`B${n}`) ? 'p-button-rounded-c-o' : "p-button-rounded-c"} ${occupiedSeats.includes(`B${n}`) ? '' : "p-button-pink"}`}
+                                                    className={`${occupiedSeats.includes(`${n}`) ? 'p-button-rounded-c-o' : "p-button-rounded-c"} ${occupiedSeats.includes(`${n}`) ? '' : "p-button-pink"}`}
                                                     style={{ fontWeight: 'bold' }}
-                                                    badge={selected && selected.name === `B${n}` ? "✓" : selectedPasses && selectedPasses.name === `B${n}` ? "✓" : selectedGroup && selectedGroup.name === `B${n}` ? "✓" : ""}
-                                                    disabled={isOccupied(`B${n}`)}
+                                                    badge={selected && selected.name === `${n}` ? "✓" : selectedPasses && selectedPasses.name === `${n}` ? "✓" : selectedGroup && selectedGroup.name === `${n}` ? "✓" : ""}
+                                                    disabled={isOccupied(`${n}`)}
                                                     onClick={() => {
-                                                        selectSeat(`B${n}`)
+                                                        selectSeat(`${n}`)
                                                     }}
                                                 >
                                                 </Button>
@@ -891,12 +891,12 @@ const IndexPage = inject("RootStore")(
                                             [1, 2, 3, 4, 5, 6, 7, 8].map(n => (
                                                 <Button
                                                     label={`${n}`}
-                                                    className={`${occupiedSeats.includes(`A${n}`) ? 'p-button-rounded-c-o' : "p-button-rounded-c"} ${occupiedSeats.includes(`A${n}`) ? '' : "p-button-pink"}`}
+                                                    className={`${occupiedSeats.includes(`${n}`) ? 'p-button-rounded-c-o' : "p-button-rounded-c"} ${occupiedSeats.includes(`${n}`) ? '' : "p-button-pink"}`}
                                                     style={{ fontWeight: 'bold' }}
-                                                    badge={selected && selected.name === `A${n}` ? "✓" : selectedPasses && selectedPasses.name === `A${n}` ? "✓" : selectedGroup && selectedGroup.name === `A${n}` ? "✓" : ""}
-                                                    disabled={isOccupied(`A${n}`)}
+                                                    badge={selected && selected.name === `${n}` ? "✓" : selectedPasses && selectedPasses.name === `${n}` ? "✓" : selectedGroup && selectedGroup.name === `${n}` ? "✓" : ""}
+                                                    disabled={isOccupied(`${n}`)}
                                                     onClick={() => {
-                                                        selectSeat(`A${n}`)
+                                                        selectSeat(`${n}`)
                                                     }}
                                                 >
                                                 </Button>

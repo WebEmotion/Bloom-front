@@ -877,9 +877,9 @@ const IndexPage = inject("RootStore")(
                           className={`${occupiedSeats.includes(`${n}`) ? 'p-button-rounded-c-o' : "p-button-rounded-c"} ${occupiedSeats.includes(`${n}`) ? '' : "p-button-pink"}`}
                           style={{ fontWeight: 'bold' }}
                           badge={selected && selected.name === `${n}` && occupiedSeats.length === 0 ? "✓" : selectedPasses && selectedPasses.name === `${n}`  && occupiedSeats.length === 0 ? "✓" : selectedGroup && selectedGroup.name === `${n}`  && occupiedSeats.length === 0 ? "✓" : ""}
-                          disabled={isOccupied(`B${n}`)}
+                          disabled={isOccupied(`${n}`)}
                           onClick={() => {
-                            selectSeat(`B${n}`)
+                            selectSeat(`${n}`)
                           }}
                         >
                         </Button>
@@ -990,10 +990,10 @@ const IndexPage = inject("RootStore")(
                           label={`${n}`}
                           className={`${occupiedSeats.includes(`${n}`) ? 'p-button-rounded-c-o' : "p-button-rounded-c"} ${occupiedSeats.includes(`${n}`) ? '' : "p-button-pink"}`}
                           style={{ fontWeight: 'bold' }}
-                          badge={selected && selected.name === `${n}` && occupiedSeats.length === 0 ? "✓" :  selectedPasses && selectedPasses.name === `A${n}`  && occupiedSeats.length === 0 ? "✓" : selectedGroup && selectedGroup.name === `A${n}`  && occupiedSeats.length === 0 ? "✓" : ""}
-                          disabled={isOccupied(`A${n}`)}
+                          badge={selected && selected.name === `${n}` && occupiedSeats.length === 0 ? "✓" :  selectedPasses && selectedPasses.name === `${n}`  && occupiedSeats.length === 0 ? "✓" : selectedGroup && selectedGroup.name === `${n}`  && occupiedSeats.length === 0 ? "✓" : ""}
+                          disabled={isOccupied(`${n}`)}
                           onClick={() => {
-                            selectSeat(`A${n}`)
+                            selectSeat(`${n}`)
                           }}
                         >
                         </Button>
