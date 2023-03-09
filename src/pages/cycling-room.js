@@ -888,7 +888,7 @@ const IndexPage = inject("RootStore")(
                       <div
                         style={{
                           height: 50,
-                          width: 50,
+                          width: 100,
                           backgroundColor: "#3eb978",
                           display: "none",
                         }}
@@ -898,7 +898,7 @@ const IndexPage = inject("RootStore")(
                     autoClose={false}
                     orbitRadius={300}
                     //86 normal(stage down), 266 for 180° (stage up)
-                    rotation={280}
+                    rotation={266}
                     orbitStyle={() => ({
                       border: "none",
                       zIndex: 0,
@@ -911,7 +911,7 @@ const IndexPage = inject("RootStore")(
                     {/* divs for a tree that occupies 2 places */}
 
                     {
-                      [1, 2, 3, 4, 5, 6, 7].map(n => (
+                      [1, 2, 3, 4, 5, 6, 7, 8].map(n => (
                         <Button
                           label={`${n}`}
                           className={`${occupiedSeats.includes(`${n}`) ? 'p-button-rounded-c-o' : "p-button-rounded-c"} ${occupiedSeats.includes(`${n}`) ? '' : "p-button-pink"}`}
@@ -927,6 +927,7 @@ const IndexPage = inject("RootStore")(
                     }
                     <h1 className="fila"></h1>
                     {/* Number of divs is same userCircle number + 1 */}
+                    <div></div>
                     <div></div>
                     <div></div>
                     <div></div>
@@ -959,7 +960,7 @@ const IndexPage = inject("RootStore")(
                       borderRadius: "100%",
                     })}
                   >
-                    <h1 className="fila">B</h1>
+                    <h1 className="fila"></h1>
                     {
                       [1, 2, 3, 4, 5, 6, 7, 8, 9].map(n => (
                         <Button
@@ -975,7 +976,7 @@ const IndexPage = inject("RootStore")(
                         </Button>
                       ))
                     }
-                    <h1 className="fila">B</h1>
+                    <h1 className="fila"></h1>
                     {/* Number of divs is same userCircle number + 1 */}
                     <div></div>
                     <div></div>
