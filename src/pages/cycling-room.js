@@ -888,7 +888,7 @@ const IndexPage = inject("RootStore")(
                       <div
                         style={{
                           height: 50,
-                          width: 100,
+                          width: 50,
                           backgroundColor: "#3eb978",
                           display: "none",
                         }}
