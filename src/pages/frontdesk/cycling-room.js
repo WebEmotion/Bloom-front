@@ -272,104 +272,108 @@ const IndexPage = inject("RootStore")(
         var name = ""
         var id = 0
         switch(seat) {
-          case "A1":
-            name = "A1"
-            id = 19
-            break
-          case "A2":
-            name = "A2"
-            id = 20
-            break
-          case "A3":
-            name = "A3"
-            id = 21
-            break
-          case "A4":
-            name = "A4"
-            id = 22
-            break
-          case "A5":
-            name = "A5"
-            id = 23
-            break
-         
-          case "B1":
-            name = "B1"
-            id = 11
-            break
-          case "B2":
-            name = "B2"
-            id = 12
-            break
-          case "B3":
-            name = "B3"
-            id = 13
-            break
-          case "B4":
-            name = "B4"
-            id = 14
-            break
-          case "B5":
-            name = "B5"
-            id = 15
-            break
-          case "B6":
-            name = "B6"
-            id = 16
-            break
-          case "B7":
-            name = "B7"
-            id = 17
-            break
-          case "B8":
-            name = "B8"
-            id = 18
-            break
-          case "B9":
-            name = "B9"
-            id = 26
-            break
-            case "B10":
-            name = "B10"
-            id = 24
-            break
-            case "B11":
-            name = "B11"
-            id = 25
-            break
-            case "B12":
-            name = "B12"
-            id = 10
-            break
+          case "1":
+          name = "1"
+          id = 1
+          break
+        case "2":
+          name = "2"
+          id = 2
+          break
+        case "3":
+          name = "3"
+          id = 3
+          break
+        case "4":
+          name = "4"
+          id = 4
+          break
+        case "5":
+          name = "5"
+          id = 5
+          break
+        case "6":
+          name = "6"
+          id = 6
+          break
+        case "7":
+          name = "7"
+          id = 7
+          break
 
-          case "C1":
-            name = "C1"
-            id = 1
-            break
-          case "C2":
-            name = "C2"
-            id = 2
-            break
-          case "C3":
-            name = "C3"
-            id = 3
-            break
-          case "C4":
-            name = "C4"
-            id = 4
-            break
-          case "C5":
-            name = "C5"
-            id = 5
-            break
-          case "C6":
-            name = "C6"
-            id = 6
-            break
-          case "C7":
-            name = "C7"
-            id = 7
-            break
+        case "8":
+          name = "8"
+          id = 8
+          break
+        case "9":
+          name = "9"
+          id = 9
+          break
+        case "10":
+          name = "10"
+          id = 10
+          break
+        case "11":
+          name = "11"
+          id = 11
+          break
+        case "12":
+          name = "12"
+          id = 12
+          break
+        case "13":
+          name = "13"
+          id = 13
+          break
+        case "14":
+          name = "14"
+          id = 14
+          break
+        case "15":
+          name = "15"
+          id = 15
+          break
+        case "16":
+          name = "16"
+          id = 16
+          break
+
+        case "17":
+          name = "17"
+          id = 17
+          break
+        case "18":
+          name = "18"
+          id = 18
+          break
+        case "19":
+          name = "19"
+          id = 19
+          break
+        case "20":
+          name = "20"
+          id = 20
+          break
+        case "21":
+          name = "21"
+          id = 21
+          break
+        case "22":
+          name = "22"
+          id = 22
+          break
+        case "23":
+          name = "23"
+          id = 23
+          break
+        case "24":
+          name = "24"
+          id = 24
+          break
+        case "25":
+          name = "25"
+          id = 25
+          break
         }
 
         //console.log(name, id)
@@ -802,7 +806,7 @@ const IndexPage = inject("RootStore")(
                       borderRadius: "100%",
                     })}
                   >
-                    <h1 className="fila">C</h1>
+                    <h1 className="fila"></h1>
 
                    {/* divs for a tree that occupies 2 places */}
                     <div></div>
@@ -854,18 +858,7 @@ const IndexPage = inject("RootStore")(
                           marginLeft: 60
                         }}
                       >
-                        <div className="p-grid p-align-center p-justify-center">
-                          <div className="p-col-12">
-                            <p
-                              style={{
-                                marginBottom: 0,
-                                color: 'black'
-                              }}
-                              >
-                              The Soul
-                            </p>
-                          </div>
-                        </div>
+                        
                       </div>
                     </div>
 
