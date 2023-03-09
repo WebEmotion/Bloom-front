@@ -952,7 +952,7 @@ const IndexPage = inject("RootStore")(
                     autoClose={false}
                     orbitRadius={240}
                     //86 normal (stage down), 265 for 180° (stage up)
-                    rotation={265}
+                    rotation={86}
                     orbitStyle={() => ({
                       border: "none",
                       zIndex: 0,
@@ -962,15 +962,15 @@ const IndexPage = inject("RootStore")(
                   >
                     <h1 className="fila"></h1>
                     {
-                      [1, 2, 3, 4, 5, 6, 7, 8, 9].map(n => (
+                      [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(n => (
                         <Button
                           label={`${n}`}
-                          className={`${occupiedSeats.includes(`B${n}`) ? 'p-button-rounded-c-o' : "p-button-rounded-c"} ${occupiedSeats.includes(`B${n}`) ? '' : "p-button-pink"}`}
+                          className={`${occupiedSeats.includes(`${n}`) ? 'p-button-rounded-c-o' : "p-button-rounded-c"} ${occupiedSeats.includes(`${n}`) ? '' : "p-button-pink"}`}
                           style={{ fontWeight: 'bold' }}
-                          badge={selected && selected.name === `B${n}` && occupiedSeats.length === 0 ? "✓" : selectedPasses && selectedPasses.name === `B${n}`  && occupiedSeats.length === 0 ? "✓" : selectedGroup && selectedGroup.name === `B${n}`  && occupiedSeats.length === 0 ? "✓" : ""}
-                          disabled={isOccupied(`B${n}`)}
+                          badge={selected && selected.name === `${n}` && occupiedSeats.length === 0 ? "✓" : selectedPasses && selectedPasses.name === `${n}`  && occupiedSeats.length === 0 ? "✓" : selectedGroup && selectedGroup.name === `${n}`  && occupiedSeats.length === 0 ? "✓" : ""}
+                          disabled={isOccupied(`${n}`)}
                           onClick={() => {
-                            selectSeat(`B${n}`)
+                            selectSeat(`${n}`)
                           }}
                         >
                         </Button>
@@ -978,6 +978,9 @@ const IndexPage = inject("RootStore")(
                     }
                     <h1 className="fila"></h1>
                     {/* Number of divs is same userCircle number + 1 */}
+                    <div></div>
+                    <div></div>
+                    <div></div>
                     <div></div>
                     <div></div>
                     <div></div>
