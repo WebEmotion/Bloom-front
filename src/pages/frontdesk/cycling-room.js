@@ -227,10 +227,10 @@ const IndexPage = inject("RootStore")(
       const classes = window.history.state?.myClasses
       const reserv = window.history.state?.booking
 
-     /* console.log(id, client, classes, reserv)
+      console.log(id, client, classes, reserv)
       if(!id && !client && !classes && !reserv) {
         navigate("/frontdesk/mis-clases")
-      }*/
+      }
 
       loadSeats(id, classes)
       setSelectedClient(client)
