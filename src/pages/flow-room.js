@@ -964,7 +964,7 @@ const IndexPage = inject("RootStore")(
                                   color: 'black'
                                 }}
                               >
-                                Coach
+                                Flow's Coach
                               </p>
                             </div>
                           </div>

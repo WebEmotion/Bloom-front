@@ -556,7 +556,7 @@ const IndexPage = inject("RootStore")(
         return (
             <Layout page="reservas">
                 <div style={{ overflow: "scroll" }}>
-                    <SEO title="Cycling Room" />
+                    <SEO title="Floow Room" />
                     <Toast ref={el => (toast.current = el)} />
                     <Dialog header="Cancelar reserva" className="spDialog" visible={cancelation.display} footer={renderFooterComplete} onHide={() => {
                         setCancelation({
@@ -657,7 +657,7 @@ const IndexPage = inject("RootStore")(
                     <div className="p-grid p-align-center" style={{ marginTop: "2rem" }}>
                         <div className="p-col-12 p-md-9">
                             <h1 className="title-page" style={{ paddingLeft: 0 }}>
-                                CYCLING ROOM
+                                FLOW ROOM
                             </h1>
                         </div>
                         <div className="p-col-12 p-md-3">
@@ -867,7 +867,7 @@ const IndexPage = inject("RootStore")(
                                                                     color: 'black'
                                                                 }}
                                                             >
-                                                                Coach
+                                                                Flow's Coach
                                                             </p>
                                                         </div>
                                                     </div>
@@ -902,7 +902,7 @@ const IndexPage = inject("RootStore")(
                                                 </Button>
                                             ))
                                         }
-                                        <h1 className="fila">A</h1>
+                                        <h1 className="fila"></h1>
                                         {/* Number of divs is same userCircle number + 1 */}
                                         <div></div>
                                         <div></div>
