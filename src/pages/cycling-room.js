@@ -906,61 +906,9 @@ const IndexPage = inject("RootStore")(
                       borderRadius: "100%",
                     })}
                   >
-                    <h1 className="fila">C</h1>
+                    <h1 className="fila"></h1>
 
                     {/* divs for a tree that occupies 2 places */}
-                    <div></div>
-                    <div>
-                      <div
-                        style={{
-                        width: 70,
-                        height: 70,
-                        borderRadius: '100%',
-                        backgroundColor: "#7aa578",
-                        position: "absolute",
-                        transform: "translateX(-80px)",
-                        display: "flex",
-                        alignItems: "center",
-                        color: "#fff",
-                        textAlign: "center",
-                        justifyContent: "center",
-                        marginTop: "-40px",
-                        marginLeft: 65
-                        }}
-                      >
-                        <div className="p-grid p-align-center p-justify-center">
-                          <div className="p-col-12">
-                            <img
-                              style={{
-                                maxWidth: "100%",
-                                display: "none"
-                                /* marginBottom: "0.5rem",
-                                marginTop: -30,
-                                marginRight: 30 */
-                              }}
-                              src={Tree}
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        style={{
-                          width: 80,
-                          height: 80,
-                          borderRadius: '100%',
-                          position: "absolute",
-                          transform: "translateX(-80px)",
-                          display: "flex",
-                          alignItems: "center",
-                          color: "#fff",
-                          textAlign: "center",
-                          justifyContent: "center",
-                          marginLeft: 60
-                        }}
-                      >
-                        
-                      </div>
-                    </div>
 
                     {
                       [1, 2, 3, 4, 5, 6, 7, 8, 9].map(n => (
@@ -977,7 +925,7 @@ const IndexPage = inject("RootStore")(
                         </Button>
                       ))
                     }
-                    <h1 className="fila">C</h1>
+                    <h1 className="fila"></h1>
                     {/* Number of divs is same userCircle number + 1 */}
                     <div></div>
                     <div></div>
