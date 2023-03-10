@@ -896,7 +896,9 @@ const IndexPage = inject("RootStore")(
                     <div></div>
                   </div>
                   <div
-                  open
+                   style={{
+                    textAlign: 'center'
+                   }}
                     orbitStyle={() => ({
                       border: "none",
                       zIndex: 0,
@@ -939,15 +941,15 @@ const IndexPage = inject("RootStore")(
                             height: 130,
                             borderRadius: '100%',
                             backgroundColor: "#3eb978",
-                            position: "absolute",
-                            transform: "translateX(-80px)",
+                            position: "static",
                             display: "flex",
                             alignItems: "center",
                             color: "#fff",
                             textAlign: "center",
                             justifyContent: "center",
                             marginLeft: 'auto',
-                            marginRight: 'auto'
+                            marginRight: 'auto',
+                            marginTop: 20
                           }}
                         >
                           <div className="p-grid p-align-center p-justify-center">
