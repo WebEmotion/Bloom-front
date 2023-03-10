@@ -895,9 +895,43 @@ const IndexPage = inject("RootStore")(
                     <div></div>
                     <div></div>
                   </div>
-                  <Planet
-                    centerContent={
-                      <div>
+                  <div
+                    orbitStyle={() => ({
+                      border: "none",
+                      zIndex: 0,
+                      position: "absolute",
+                      borderRadius: "100%",
+                    })}
+                  >
+                    <h1 className="fila"></h1>
+                    {
+                      [1, 2, 3, 4, 5, 6, 7, 8].map(n => (
+                        <Button
+                          label={`${n}`}
+                          className={`${occupiedSeats.includes(`${n}`) ? 'p-button-rounded-c-o' : "p-button-rounded-c"} ${occupiedSeats.includes(`${n}`) ? '' : "p-button-pink"}`}
+                          style={{ fontWeight: 'bold' }}
+                          badge={selected && selected.name === `${n}` && occupiedSeats.length === 0 ? "✓" :  selectedPasses && selectedPasses.name === `${n}`  && occupiedSeats.length === 0 ? "✓" : selectedGroup && selectedGroup.name === `${n}`  && occupiedSeats.length === 0 ? "✓" : ""}
+                          disabled={isOccupied(`${n}`)}
+                          onClick={() => {
+                            selectSeat(`${n}`)
+                          }}
+                        >
+                        </Button>
+                      ))
+                    }
+                    <h1 className="fila"></h1>
+                    {/* Number of divs is same userCircle number + 1 */}
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
+                  <div>
                         <div
                           style={{
                             width: 130,
@@ -968,47 +1002,6 @@ const IndexPage = inject("RootStore")(
                           </div>
                         </div>
                       </div>
-                    }
-                    open
-                    autoClose={false}
-                    orbitRadius={180}
-                    //86 normal (stage down), 266 for 180° (stage up)
-                    rotation={265}
-                    orbitStyle={() => ({
-                      border: "none",
-                      zIndex: 0,
-                      position: "absolute",
-                      borderRadius: "100%",
-                    })}
-                  >
-                    <h1 className="fila"></h1>
-                    {
-                      [1, 2, 3, 4, 5, 6, 7, 8].map(n => (
-                        <Button
-                          label={`${n}`}
-                          className={`${occupiedSeats.includes(`${n}`) ? 'p-button-rounded-c-o' : "p-button-rounded-c"} ${occupiedSeats.includes(`${n}`) ? '' : "p-button-pink"}`}
-                          style={{ fontWeight: 'bold' }}
-                          badge={selected && selected.name === `${n}` && occupiedSeats.length === 0 ? "✓" :  selectedPasses && selectedPasses.name === `${n}`  && occupiedSeats.length === 0 ? "✓" : selectedGroup && selectedGroup.name === `${n}`  && occupiedSeats.length === 0 ? "✓" : ""}
-                          disabled={isOccupied(`${n}`)}
-                          onClick={() => {
-                            selectSeat(`${n}`)
-                          }}
-                        >
-                        </Button>
-                      ))
-                    }
-                    <h1 className="fila"></h1>
-                    {/* Number of divs is same userCircle number + 1 */}
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                  </Planet>
                 </div>
               </div>
             </div>}
