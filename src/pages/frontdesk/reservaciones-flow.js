@@ -32,7 +32,7 @@ const UserCircle = ({ image, name, lastname, seat }) => {
     return (
         <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
             <p style={{margin: 0}}>{seat}</p>
-            <img src={{bici}} style={{ backgroundColor: '#3eb978', width: 50, height: 50, borderRadius: '100%', padding: 5 }} />
+            <img src={bici} style={{ backgroundColor: '#3eb978', width: 50, height: 50, borderRadius: '100%', padding: 5 }} />
             <p style={{ margin: 0 }}> </p>
         </div>
     )
@@ -122,73 +122,7 @@ const Reservaciones = inject("RootStore")(
                             borderRadius: "100%",
                         })}
                     >
-                        <h1 className="fila">C</h1>
-
-                        {/* divs for a tree that occupies 2 places */}
-                        <div></div>
-                        <div>
-                            <div
-                                style={{
-                                width: 130,
-                                height: 130,
-                                borderRadius: '100%',
-                                backgroundColor: "#7aa578",
-                                position: "absolute",
-                                transform: "translateX(-80px)",
-                                display: "flex",
-                                alignItems: "center",
-                                color: "#fff",
-                                textAlign: "center",
-                                justifyContent: "center",
-                                marginTop: "-80px",
-                                marginLeft: 20
-                                }}
-                            >
-                                <div className="p-grid p-align-center p-justify-center">
-                                    <div className="p-col-12">
-                                        <img
-                                            style={{
-                                                maxWidth: "100%",
-                                                marginBottom: "0.5rem",
-                                                marginTop: -30,
-                                                marginRight: 30,
-                                                display: 'none'
-                                            }}
-                                            src={Tree}
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                            <div
-                                style={{
-                                width: 130,
-                                height: 130,
-                                borderRadius: '100%',
-                                position: "absolute",
-                                transform: "translateX(-80px)",
-                                display: "flex",
-                                alignItems: "center",
-                                color: "#fff",
-                                textAlign: "center",
-                                justifyContent: "center",
-                                marginLeft: 20
-                                }}
-                            >
-                                <div className="p-grid p-align-center p-justify-center">
-                                    <div className="p-col-12">
-                                        <p
-                                        style={{
-                                            marginBottom: 0,
-                                            color: 'black'
-                                        }}
-                                        >
-                                        The Soul
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
+                        <h1 className="fila">C</h1>                        
                         {
                             [1, 2, 3, 4, 5, 6, 7, 8, 9].map(n => {
                                 const user = getUser(n, n, "C")
