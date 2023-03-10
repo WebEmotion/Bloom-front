@@ -949,10 +949,10 @@ const IndexPage = inject("RootStore")(
                             justifyContent: "center",
                             marginLeft: 'auto',
                             marginRight: 'auto',
-                            marginTop: 20
+                            marginTop: 60
                           }}
                         >
-                          <div className="p-grid p-align-center p-justify-center">
+                          <div className="p-grid p-align-center p-justify-center" >
                             <div className="p-col-12">
                               <p
                                 style={{
@@ -982,13 +982,13 @@ const IndexPage = inject("RootStore")(
                             height: 130,
                             borderRadius: '100%',
                             position: "absolute",
-                            transform: "translateX(-80px)",
                             display: "flex",
                             alignItems: "center",
                             color: "#fff",
                             textAlign: "center",
                             justifyContent: "center",
-                            marginLeft: 20
+                            marginLeft: 'auto',
+                            marginRight: 'auto',
                           }}
                         >
                           <div className="p-grid p-align-center p-justify-center">
