@@ -100,7 +100,7 @@ const Reservaciones = inject("RootStore")(
                 {/* marginTop normal (stage down), marginBottom for 180° (stage up) */}
                 <div style={{ marginBottom: 500 }} className="p-grid p-align-center p-justify-center mapa-cycling">
                     
-                    <div
+                    <Planet
                         centerContent={
                             <div
                                 style={{
@@ -112,10 +112,6 @@ const Reservaciones = inject("RootStore")(
                             />
                         }
                         open
-                        autoClose={false}
-                        orbitRadius={0}
-                        //86 normal (stage down), 265 for 180° (stage up)
-                        rotation={265}
                         orbitStyle={() => ({
                             border: "none",
                             zIndex: 0,
@@ -142,7 +138,7 @@ const Reservaciones = inject("RootStore")(
                         <div></div>
                         <div></div>
                         <div></div>
-                    </div>
+                    </Planet>
                     <Planet
                         centerContent={
                             <div>
