@@ -8,7 +8,7 @@ import { Button } from "primereact/button"
 
 import Logo from "../../assets/images/cicle_white.png"
 import Tree from "../../assets/images/tree.png"
-import Bici from "../../assets/images/icons8-camino-de-bicis-100.png"
+import bici from "../../assets/images/icons8-camino-de-bicis-100.png"
 import * as SchedulesAPI from '../../api/v0/schedules'
 
 const UserCircle = ({ image, name, lastname, seat }) => {
