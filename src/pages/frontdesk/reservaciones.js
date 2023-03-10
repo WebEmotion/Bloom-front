@@ -9,6 +9,7 @@ import { Button } from "primereact/button"
 import Logo from "../../assets/images/cicle_white.png"
 import Tree from "../../assets/images/tree.png"
 import * as SchedulesAPI from '../../api/v0/schedules'
+import bici from "../../assets/images/icons8-camino-de-bicis-100.png"
 
 const UserCircle = ({ image, name, lastname, seat }) => {
     if (name && image) {
@@ -31,7 +32,7 @@ const UserCircle = ({ image, name, lastname, seat }) => {
     return (
         <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
             <p style={{margin: 0}}>{seat}</p>
-            <img src='https://www.wheelybikerental.com/newsite/wp-content/uploads/2017/01/bici-icon-white-400x400.png' style={{ backgroundColor: '#3eb978', width: 50, height: 50, borderRadius: '100%', padding: 5 }} />
+            <img src={bici} style={{ backgroundColor: '#3eb978', width: 50, height: 50, borderRadius: '100%', padding: 5 }} />
             <p style={{ margin: 0 }}> </p>
         </div>
     )

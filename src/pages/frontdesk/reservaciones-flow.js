@@ -24,7 +24,7 @@ const UserCircle = ({ image, name, lastname, seat }) => {
         return (
             <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
                 <p style={{margin: 0}}>{seat}</p>
-                <img src='https://img.icons8.com/material-rounded/200/ffffff/user-male-circle.png' style={{ backgroundColor: '#3eb978', width: 50, height: 50, borderRadius: '100%' }} />
+                <img src='https://img.icons8.com/material-rounded/200/ffffff/user-male-circle.png' style={{ backgroundColor: '#3eb978', width: 50, height: 50, borderRadius: '40%' }} />
                 <p style={{ margin: 0, height: 20, whiteSpace: 'nowrap', maxWidth: 100, textOverflow: 'ellipsis', overflow: 'hidden' }}>{name}</p>
             </div>
         )
