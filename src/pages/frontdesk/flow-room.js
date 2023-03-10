@@ -227,11 +227,11 @@ const IndexPage = inject("RootStore")(
             const classes = window.history.state?.myClasses
             const reserv = window.history.state?.booking
 
-           /* console.log(id, client, classes, reserv)
+           /*console.log(id, client, classes, reserv)
             if (!id && !client && !classes && !reserv) {
-                navigate("/frontdesk/mis-clases")
-            }
-            */
+                navigate("/frontdesk/mis-clases-flow")
+            }*/
+            
 
             loadSeats(id, classes)
             setSelectedClient(client)
@@ -259,7 +259,7 @@ const IndexPage = inject("RootStore")(
               setIsClass(isClass)
               setIsGrupal(isGrupal)
             } else {
-              navigate("/mis-clases")
+              navigate("/mis-clases-flow")
             } */
             // TODO: CHECK ISADMIN OR NOT
         }, [selected])
@@ -534,7 +534,7 @@ const IndexPage = inject("RootStore")(
                     free: false,
                     selectedBooking: null
                 })
-                navigate("/frontdesk/mis-clases")
+                navigate("/frontdesk/mis-clases-flow")
                 //await update()
             }
         }
@@ -626,7 +626,7 @@ const IndexPage = inject("RootStore")(
                             setSelectedClient(null)
                             setSelected(null)
                             setOpenSuccess(false)
-                            navigate("/frontdesk/mis-clases")
+                            navigate("/frontdesk/mis-clases-flow")
                         }}
                         maximizable
                         modal
@@ -749,7 +749,7 @@ const IndexPage = inject("RootStore")(
                             <div className="p-grid p-align-center p-justify-center mapa-cycling">
                                 <div>
                                     
-                                    <Planet
+                                    <div
                                         centerContent={
                                             <div
                                                 style={{
@@ -761,10 +761,6 @@ const IndexPage = inject("RootStore")(
                                             />
                                         }
                                         open
-                                        autoClose={false}
-                                        orbitRadius={240}
-                                        //86 normal (stage down), 265 for 180° (stage up)
-                                        rotation={265}
                                         orbitStyle={() => ({
                                             border: "none",
                                             zIndex: 0,
@@ -799,86 +795,12 @@ const IndexPage = inject("RootStore")(
                                         <div></div>
                                         <div></div>
                                         <div></div>
-                                    </Planet>
-                                    <Planet
-                                        centerContent={
-                                            <div>
-                                                <div
-                                                    style={{
-                                                        width: 130,
-                                                        height: 130,
-                                                        borderRadius: '100%',
-                                                        backgroundColor: "#3eb978",
-                                                        position: "absolute",
-                                                        transform: "translateX(-80px)",
-                                                        display: "flex",
-                                                        alignItems: "center",
-                                                        color: "#fff",
-                                                        textAlign: "center",
-                                                        justifyContent: "center",
-                                                        marginTop: "-80px",
-                                                        marginLeft: 20
-                                                    }}
-                                                >
-                                                    <div className="p-grid p-align-center p-justify-center">
-                                                        <div className="p-col-12">
-                                                            <p
-                                                                style={{
-                                                                    marginBottom: 0,
-                                                                    color: 'transparent'
-                                                                }}
-                                                            >
-                                                                Instructor
-                                                            </p>
-                                                        </div>
-                                                        <div className="p-col-8">
-                                                            <img
-                                                                style={{
-                                                                    maxWidth: "100%",
-                                                                    marginBottom: "0.5rem",
-                                                                    marginTop: -30,
-                                                                    marginRight: 30
-                                                                }}
-                                                                src={Logo}
-                                                            />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    style={{
-                                                        width: 130,
-                                                        height: 130,
-                                                        borderRadius: '100%',
-                                                        position: "absolute",
-                                                        transform: "translateX(-80px)",
-                                                        display: "flex",
-                                                        alignItems: "center",
-                                                        color: "#fff",
-                                                        textAlign: "center",
-                                                        justifyContent: "center",
-                                                        marginLeft: 20
-                                                    }}
-                                                >
-                                                    <div className="p-grid p-align-center p-justify-center">
-                                                        <div className="p-col-12">
-                                                            <p
-                                                                style={{
-                                                                    marginBottom: 0,
-                                                                    color: 'black'
-                                                                }}
-                                                            >
-                                                                Flow's Coach
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        }
+                                    </div>
+                                    <div
+                                    style={{
+                                        textAlign: 'center'
+                                       }}
                                         open
-                                        autoClose={false}
-                                        orbitRadius={180}
-                                        //86 normal (stage down), 266 for 180° (stage up)
-                                        rotation={265}
                                         orbitStyle={() => ({
                                             border: "none",
                                             zIndex: 0,
@@ -913,7 +835,79 @@ const IndexPage = inject("RootStore")(
                                         <div></div>
                                         <div></div>
                                         <div></div>
-                                    </Planet>
+                                    </div>
+                                    <div>
+                        <div
+                          style={{
+                            width: 130,
+                            height: 130,
+                            borderRadius: '100%',
+                            backgroundColor: "#3eb978",
+                            position: "static",
+                            display: "flex",
+                            alignItems: "center",
+                            color: "#fff",
+                            textAlign: "center",
+                            justifyContent: "center",
+                            marginLeft: 'auto',
+                            marginRight: 'auto',
+                            marginTop: 60
+                          }}
+                        >
+                          <div className="p-grid p-align-center p-justify-center" >
+                            <div className="p-col-12">
+                              <p
+                                style={{
+                                  marginBottom: 0,
+                                  color: 'transparent'
+                                }}
+                              >
+                                Instructor
+                              </p>
+                            </div>
+                            <div className="p-col-8">
+                              <img
+                                style={{
+                                  maxWidth: "100%",
+                                  marginBottom: "0.5rem",
+                                  marginTop: -30,
+                                  marginRight: 30
+                                }}
+                                src={Logo}
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          style={{
+                            width: 130,
+                            height: 130,
+                            borderRadius: '100%',
+                            position: "static",
+                            display: "flex",
+                            alignItems: "center",
+                            color: "#fff",
+                            textAlign: "center",
+                            justifyContent: "center",
+                            marginLeft: 'auto',
+                            marginRight: 'auto',
+                            marginTop: -20,
+                          }}
+                        >
+                          <div className="p-grid p-align-center p-justify-center">
+                            <div className="p-col-12">
+                              <p
+                                style={{
+                                  marginBottom: 0,
+                                  color: 'black'
+                                }}
+                              >
+                                Flow's Coach
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                                 </div>
                             </div>
                         </div>}
