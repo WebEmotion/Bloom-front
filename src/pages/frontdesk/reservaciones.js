@@ -72,7 +72,7 @@ const Reservaciones = inject("RootStore")(
                 }, 60000);
                 return () => clearInterval(interval)
             } else {
-                navigate("/frontdesk/lugares")
+               // navigate("/frontdesk/lugares")
             }
         }, [])
 
