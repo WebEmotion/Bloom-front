@@ -934,10 +934,7 @@ const IndexPage = inject("RootStore")(
                   </div>
                 </div>
               </div>
-            </div>}
-          </div>
-        </div>
-        <div>
+              <div>
                         <div
                           style={{
                             width: 130,
@@ -1008,6 +1005,9 @@ const IndexPage = inject("RootStore")(
                           </div>
                         </div>
                       </div>
+            </div>}
+          </div>
+        </div>
         {loading.loading && <div className={loading.animateIn ? 'opacity-in' : 'opacity-out'} style={{ position: 'fixed', width: '100vw', height: '100vh', top: 0, left: 0, backgroundColor: '#FFFFFF99', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
           <ProgressSpinner className={loading.animateIn ? 'scale-in' : 'scale-out'} animationDuration="5000" strokeWidth="3" />
         </div>}
