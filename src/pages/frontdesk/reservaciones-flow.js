@@ -139,6 +139,10 @@ const Reservaciones = inject("RootStore")(
                     </div>
                     <div
                         open
+                        autoClose={false}
+                        orbitRadius={250}
+                        //86 normal (stage down), 266 for 180° (stage up)
+                        rotation={265}
                         orbitStyle={() => ({
                             border: "none",
                             zIndex: 0,
@@ -146,14 +150,14 @@ const Reservaciones = inject("RootStore")(
                             borderRadius: "100%",
                         })}
                     >
-                        <h1 className="fila"></h1>
+                        <h1 className="fila">A</h1>
                         {
-                            [1, 2, 3, 4, 5, 6, 7, 8].map(n => {
-                                const user = getUser(n + 18, n)
-                                return <UserCircle seat={`${n}`} image={user ? user.pictureUrl : ''} name={user ? user.name : ''} />
+                            [1, 2, 3, 4, 5, 6, 7].map(n => {
+                                const user = getUser(n + 18, n, "A")
+                                return <UserCircle seat={`A${n}`} image={user ? user.pictureUrl : ''} name={user ? user.name : ''} />
                             })
                         }
-                        <h1 className="fila"></h1>
+                        <h1 className="fila">A</h1>
                         {/* Number of divs is same userCircle number + 1 */}
                         <div></div>
                         <div></div>
@@ -163,80 +167,7 @@ const Reservaciones = inject("RootStore")(
                         <div></div>
                         <div></div>
                         <div></div>
-                        <div></div>
                     </div>
-                    <div>
-                        <div
-                          style={{
-                            width: 130,
-                            height: 130,
-                            borderRadius: '100%',
-                            backgroundColor: "#3eb978",
-                            position: "static",
-                            display: "flex",
-                            alignItems: "center",
-                            color: "#fff",
-                            textAlign: "center",
-                            justifyContent: "center",
-                            marginLeft: 'auto',
-                            marginRight: 'auto',
-                            marginTop: 60
-                          }}
-                        >
-                          <div className="p-grid p-align-center p-justify-center" >
-                            <div className="p-col-12">
-                              <p
-                                style={{
-                                  marginBottom: 0,
-                                  color: 'transparent'
-                                }}
-                              >
-                                Instructor
-                              </p>
-                            </div>
-                            <div className="p-col-8">
-                              <img
-                                style={{
-                                  maxWidth: "100%",
-                                  marginBottom: "0.5rem",
-                                  marginTop: -30,
-                                  marginRight: 30
-                                }}
-                                src={Logo}
-                              />
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          style={{
-                            width: 130,
-                            height: 130,
-                            borderRadius: '100%',
-                            position: "static",
-                            display: "flex",
-                            alignItems: "center",
-                            color: "#fff",
-                            textAlign: "center",
-                            justifyContent: "center",
-                            marginLeft: 'auto',
-                            marginRight: 'auto',
-                            marginTop: -20,
-                          }}
-                        >
-                          <div className="p-grid p-align-center p-justify-center">
-                            <div className="p-col-12">
-                              <p
-                                style={{
-                                  marginBottom: 0,
-                                  color: 'black'
-                                }}
-                              >
-                                Flow's Coach
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
                 </div>
             </div>
         )
