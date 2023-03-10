@@ -99,53 +99,7 @@ const Reservaciones = inject("RootStore")(
                 </div>
                 {/* marginTop normal (stage down), marginBottom for 180° (stage up) */}
                 <div style={{ marginBottom: 500 }}>
-                    <Planet
-                        centerContent={
-                            <div
-                                style={{
-                                    height: 50,
-                                    width: 100,
-                                    backgroundColor: "#3eb978",
-                                    display: "none",
-                                }}
-                            />
-                        }
-                        open
-                        autoClose={false}
-                        orbitRadius={480}
-                        //86 normal(stage down), 266 for 180° (stage up)
-                        rotation={266}
-                        orbitStyle={() => ({
-                            border: "none",
-                            zIndex: 0,
-                            position: "absolute",
-                            borderRadius: "100%",
-                        })}
-                    >
-                        <h1 className="fila">C</h1>                        
-                        {
-                            [1, 2, 3, 4, 5, 6, 7, 8, 9].map(n => {
-                                const user = getUser(n, n, "C")
-                                return <UserCircle seat={`C${n}`} image={user ? user.pictureUrl : ''} name={user ? user.name : ''} />
-                            })
-                        }
-                        <h1 className="fila">C</h1>
-                        {/* Number of divs is same userCircle number + 1 */}
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-
-                        {/* divs for a tree that occupies 2 places */}
-                        <div></div>
-                        <div></div>
-                    </Planet>
+                    
                     <Planet
                         centerContent={
                             <div
