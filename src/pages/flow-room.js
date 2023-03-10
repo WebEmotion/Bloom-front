@@ -946,8 +946,8 @@ const IndexPage = inject("RootStore")(
                             color: "#fff",
                             textAlign: "center",
                             justifyContent: "center",
-                            marginTop: "-80px",
-                            marginLeft: 20
+                            marginLeft: auro,
+                            marginRight: auto
                           }}
                         >
                           <div className="p-grid p-align-center p-justify-center">
