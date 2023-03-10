@@ -981,7 +981,7 @@ const IndexPage = inject("RootStore")(
                             width: 130,
                             height: 130,
                             borderRadius: '100%',
-                            position: "absolute",
+                            position: "static",
                             display: "flex",
                             alignItems: "center",
                             color: "#fff",
@@ -989,6 +989,7 @@ const IndexPage = inject("RootStore")(
                             justifyContent: "center",
                             marginLeft: 'auto',
                             marginRight: 'auto',
+                            marginTop: -20,
                           }}
                         >
                           <div className="p-grid p-align-center p-justify-center">
