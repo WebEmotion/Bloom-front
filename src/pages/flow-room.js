@@ -932,8 +932,7 @@ const IndexPage = inject("RootStore")(
                     <div></div>
                     <div></div>
                   </div>
-                </div>
-                <div>
+                  <div>
                         <div
                           style={{
                             width: 130,
@@ -1004,6 +1003,7 @@ const IndexPage = inject("RootStore")(
                           </div>
                         </div>
                       </div>
+                </div>
               </div>
             </div>}
           </div>
