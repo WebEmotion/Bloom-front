@@ -946,7 +946,7 @@ const IndexPage = inject("RootStore")(
                             color: "#fff",
                             textAlign: "center",
                             justifyContent: "center",
-                            marginLeft: auro,
+                            marginLeft: auto,
                             marginRight: auto
                           }}
                         >
