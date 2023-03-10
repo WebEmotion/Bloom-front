@@ -846,7 +846,7 @@ const IndexPage = inject("RootStore")(
             {occupiedSeats && <div className="p-col-10">
               <div className="p-grid p-align-center p-justify-center mapa-cycling">
                 <div>
-                  <Planet
+                  <div
                     centerContent={
                       <div
                         style={{
@@ -894,7 +894,7 @@ const IndexPage = inject("RootStore")(
                     <div></div>
                     <div></div>
                     <div></div>
-                  </Planet>
+                  </div>
                   <Planet
                     centerContent={
                       <div>
