@@ -858,10 +858,8 @@ const IndexPage = inject("RootStore")(
                       />
                     }
                     open
-                    autoClose={false}
-                    orbitRadius={240}
                     //86 normal (stage down), 265 for 180° (stage up)
-                    rotation={0}
+                    rotation={265}
                     orbitStyle={() => ({
                       border: "none",
                       zIndex: 0,
