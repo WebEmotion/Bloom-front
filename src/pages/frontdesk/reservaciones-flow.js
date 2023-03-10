@@ -98,9 +98,9 @@ const Reservaciones = inject("RootStore")(
                     }} />
                 </div>
                 {/* marginTop normal (stage down), marginBottom for 180° (stage up) */}
-                <div style={{ marginBottom: 500 }}>
+                <div style={{ marginBottom: 500 }} className="p-grid p-align-center p-justify-center mapa-cycling">
                     
-                    <Planet
+                    <div
                         centerContent={
                             <div
                                 style={{
@@ -142,7 +142,7 @@ const Reservaciones = inject("RootStore")(
                         <div></div>
                         <div></div>
                         <div></div>
-                    </Planet>
+                    </div>
                     <Planet
                         centerContent={
                             <div>
