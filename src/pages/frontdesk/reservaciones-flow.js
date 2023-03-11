@@ -110,9 +110,9 @@ const Reservaciones = inject("RootStore")(
                         }
                         <h1 className="fila">B</h1>
                         {/* Number of divs is same userCircle number + 1 */}
-                        <div style={{ display: 'flex' }}></div>
-                        <div style={{ display: 'flex' }}></div>
-                        <div style={{ display: 'flex' }}></div>
+                        <div style={{ display: 'flex', width: 60}}></div>
+                        <div style={{ display: 'flex', width: 60}}></div>
+                        <div style={{ display: 'flex', width: 60}}></div>
                         <div style={{ display: 'flex' }}></div>
                         <div style={{ display: 'flex' }}></div>
                         <div style={{ display: 'flex' }}></div>
