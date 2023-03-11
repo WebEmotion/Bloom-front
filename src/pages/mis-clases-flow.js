@@ -380,7 +380,7 @@ const IndexPage = inject("RootStore")(
           opened = true
         }
         if (!opened) {
-          navigate("/cycling-room", {
+          navigate("/flow-room", {
             state: {
               id: id,
               myClasses: myClasses,
@@ -389,7 +389,7 @@ const IndexPage = inject("RootStore")(
           })
         }
       } else {
-        navigate("/cycling-room", {
+        navigate("/flow-room", {
           state: {
             id: id,
             isClass: isClass,
@@ -400,7 +400,7 @@ const IndexPage = inject("RootStore")(
     }
 
     const openMapOk = () => {
-      navigate("/cycling-room", {
+      navigate("/flow-room", {
         state: {
           id: classId,
           myClasses: myClasses,
@@ -998,7 +998,7 @@ const IndexPage = inject("RootStore")(
                     backgroundSize: "cover",
                   }}
                   label=""
-                  onClick={() => navigate("/mis-clases")}
+                  onClick={() => navigate("/mis-clases-flow")}
                 ></Button>
               </div>
               <div
