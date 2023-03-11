@@ -111,7 +111,10 @@ const Reservaciones = inject("RootStore")(
                                 }}
                             />
                         }
-                        open
+                        openautoClose={false}
+                        orbitRadius={0}
+                        //86 normal (stage down), 265 for 180° (stage up)
+                        rotation={265}
                         orbitStyle={() => ({
                             border: "none",
                             zIndex: 0,
@@ -121,14 +124,13 @@ const Reservaciones = inject("RootStore")(
                     >
                         <h1 className="fila">B</h1>
                         {
-                            [1, 2, 3, 4, 5, 6, 7, 8, 9].map(n => {
+                            [9, 10, 11, 12, 13, 14, 15, 16].map(n => {
                                 const user = getUser(n + 9, n, "B")
                                 return <UserCircle seat={`B${n}`} image={user ? user.pictureUrl : ''} name={user ? user.name : ''} />
                             })
                         }
                         <h1 className="fila">B</h1>
                         {/* Number of divs is same userCircle number + 1 */}
-                        <div></div>
                         <div></div>
                         <div></div>
                         <div></div>
@@ -227,13 +229,14 @@ const Reservaciones = inject("RootStore")(
                     >
                         <h1 className="fila">A</h1>
                         {
-                            [1, 2, 3, 4, 5, 6, 7].map(n => {
+                            [1, 2, 3, 4, 5, 6, 7, 8].map(n => {
                                 const user = getUser(n + 18, n, "A")
                                 return <UserCircle seat={`A${n}`} image={user ? user.pictureUrl : ''} name={user ? user.name : ''} />
                             })
                         }
                         <h1 className="fila">A</h1>
                         {/* Number of divs is same userCircle number + 1 */}
+                        <div></div>
                         <div></div>
                         <div></div>
                         <div></div>
