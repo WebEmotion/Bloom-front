@@ -100,28 +100,7 @@ const Reservaciones = inject("RootStore")(
                 {/* marginTop normal (stage down), marginBottom for 180° (stage up) */}
                 <div style={{ marginBottom: 500 }}>
                     
-                    <div
-                        centerContent={
-                            <div
-                                style={{
-                                    height: 50,
-                                    width: 100,
-                                    backgroundColor: "#3eb978",
-                                    display: "none",
-                                }}
-                            />
-                        }
-                        openautoClose={false}
-                        orbitRadius={370}
-                        //86 normal (stage down), 265 for 180° (stage up)
-                        rotation={265}
-                        orbitStyle={() => ({
-                            border: "none",
-                            zIndex: 0,
-                            position: "absolute",
-                            borderRadius: "100%",
-                        })}
-                    >
+                    <div>
                         <h1 className="fila">B</h1>
                         {
                             [9, 10, 11, 12, 13, 14, 15, 16].map(n => {
