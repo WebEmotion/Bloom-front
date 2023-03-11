@@ -415,7 +415,7 @@ const Layout = inject("RootStore")(
                     </div>
                   )} */}
 
-                  {!store.token && (
+                  {(!store.token || (store.token && !store.isAdmin)) && (
                     <div className="p-col-12">
                       <Button
                         className={
@@ -428,7 +428,7 @@ const Layout = inject("RootStore")(
                       />
                     </div>
                   )}
-                  {!store.token && (
+                  {(!store.token || (store.token && !store.isAdmin)) && (
                     <div className="p-col-12">
                       <Button
                         className={
@@ -796,7 +796,7 @@ const Layout = inject("RootStore")(
                     </div>
                   )} */}
 
-                  {!store.token && (
+                  {(!store.token || (store.token && !store.isAdmin))&& (
                     <div className="p-col-12">
                       <Button
                         className={
@@ -809,7 +809,7 @@ const Layout = inject("RootStore")(
                       />
                     </div>
                   )}
-                  {!store.token && (
+                  {(!store.token || (store.token && !store.isAdmin)) &&  (
                     <div className="p-col-12">
                       <Button
                         className={
