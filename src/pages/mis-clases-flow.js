@@ -93,7 +93,7 @@ const EventItemWithCancel = ({ item, hour, seat, instructor, isPass, isOnlyPass,
           }
         }}></i>}
         <p style={{ color: disabled ? '#00000050' : '#ffffff', margin: 0, marginTop: "5px" }}>{hour}</p>
-        <p style={{ color: disabled ? '#00000030' : '#495057', margin: 0 }}>{instructor}</p>
+        <p style={{ color: disabled ? '#00000030' : '#ffffff', margin: 0 }}>{instructor}</p>
         <p style={{ color: disabled ? '#00000030' : '#ffffff', margin: 0 }}>{item.location.name}</p>
         <div style={{ color: disabled ? '#00000030' : '#495057', margin: 0, marginTop: !isPass.length > 0 || !isOnlyPass ? "0.5rem" : 0, marginBottom: !isPass.length > 0 || !isOnlyPass ? "0.4rem" : 0 }}>Lugar <div style={{ borderRadius: "15px", background: "#6A6E4E", color: "#fff", paddingLeft: "4px", paddingRight: "4px", display: "inline" }}>{seat.number}</div></div>
         {isPass.length > 0 && !isOnlyPass && (<p style={{ color: disabled ? '#00000030' : 'gray', margin: 0 }}>+ {isPass.length} pase(s)</p>)}
