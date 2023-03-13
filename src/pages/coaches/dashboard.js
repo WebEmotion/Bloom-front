@@ -138,11 +138,11 @@ const CoachDashboard = inject("RootStore")(observer(({ RootStore }) => {
     const EventItem = ({ item, hour, instructor, onPress, disabled, isReserved, onAlreadyBooked, onSeeMap }) => {
         return (
             <div style={{ marginBottom: 0 }}>
-                <div className={`eventItem2 ${isReserved ? 'reserved' : ''}`} style={{ backgroundColor: disabled ? '#00000020' : isReserved ? '#b2493410' : '#eecbc4', cursor: disabled ? 'not-allowed' : 'pointer' }} onClick={() => {
+                <div className={`eventItem2 ${isReserved ? 'reserved' : ''}`} style={{ backgroundColor: disabled ? '#00000020' : isReserved ? '#00000010' : '#3eb978', cursor: disabled ? 'not-allowed' : 'pointer' }} onClick={() => {
                     onPress()
                 }}>
-                    <p style={{ color: disabled ? '#00000050' : '#b24934', margin: 2 }}>{hour}</p>
-                    <p style={{ color: disabled ? '#00000030' : '#b24934', margin: 2 }}>{item.Rooms.name}</p>
+                    <p style={{ color: disabled ? '#00000050' : '#000000', margin: 2 }}>{hour}</p>
+                    <p style={{ color: disabled ? '#00000030' : '#000000', margin: 2 }}>{item.Rooms.name}</p>
                 </div>
             </div>
         )

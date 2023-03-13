@@ -47,7 +47,7 @@ const EventItem = ({ item, hour, instructor, onPress, disabled, isReserved, onAl
         <div 
           className={`eventItem ${isReserved ? 'reserved' : ''}`} 
           style={{ 
-            backgroundColor: forbidden && isReserved ? '#ffffff' : forbidden ? '#3eb978' : disabled ? '#00000020' : isReserved ? '#ffffff' : now >= end ? '#00000020' : !havePackage && !canReservate ? '#3eb978' :'#eecbc4', 
+            backgroundColor: forbidden && isReserved ? '#ffffff' : forbidden ? '#3eb978' : disabled ? '#00000020' : isReserved ? '#ffffff' : now >= end ? '#00000020' : !havePackage && !canReservate ? '#3eb978' :'#3eb978', 
             border: isReserved ? "1px solid" : '',
             cursor: forbidden && isReserved ? 'pointer' : isReserved && !(now >= end) ? 'pointer' : forbidden ? 'not-allowed' : disabled ? 'not-allowed' : now >= end ? 'not-allowed' : readonly ? 'default' : !havePackage && !canReservate ? 'not-allowed' : 'pointer' }} 
             disabled={now >= end} 
@@ -84,10 +84,10 @@ const EventItem = ({ item, hour, instructor, onPress, disabled, isReserved, onAl
             <img style={{ width: 50, height: 90, objectFit: 'contain' }} src="https://www.bloomcycling.com/assets/img/SoldOut_01.png" />
           </div>}
           <p className="classes-taken" style={{ color: forbidden && isReserved ? '#495057' : isReserved && !disabled ? '#495057' : forbidden ? '#FFFFFF' : (disabled || now >= end) ? '#00000030' : '#495057', fontWeight: 'bold', opacity: forbidden && isReserved ? 1.0 : isReserved && !disabled ? 1.0 : forbidden ? 0.5 : !havePackage && !canReservate ? 0.5 : 1.0 }}>{item.occupied}/25</p>
-          <p style={{ color: forbidden && isReserved ? '#b24934' : isReserved && !disabled ? '#b24934' : forbidden ? '#FFFFFF' : (disabled || now >= end) ? '#00000050' : !havePackage && !canReservate ? '#FFFFFF' : '#b24934', margin: 0, opacity: forbidden && isReserved ? 1.0 : isReserved && !disabled ? 1.0 : forbidden ? 0.5 : !havePackage && !canReservate ? 0.5 : 1.0, fontSize: 12 }}>{hour}</p>
+          <p style={{ color: forbidden && isReserved ? '#000000' : isReserved && !disabled ? '#000000' : forbidden ? '#FFFFFF' : (disabled || now >= end) ? '#00000050' : !havePackage && !canReservate ? '#FFFFFF' : '#000000', margin: 0, opacity: forbidden && isReserved ? 1.0 : isReserved && !disabled ? 1.0 : forbidden ? 0.5 : !havePackage && !canReservate ? 0.5 : 1.0, fontSize: 12 }}>{hour}</p>
           <p style={{ color: forbidden && isReserved ? '#495057' : isReserved && !disabled ? '#495057' : forbidden ? '#FFFFFF' : (disabled || now >= end) ? '#00000030' : !havePackage && !canReservate ? '#FFFFFF' : '#495057', margin: 0, fontWeight: 'bold', opacity: forbidden && isReserved ? 1.0 : isReserved && !disabled ? 1.0 : forbidden ? 0.5 : !havePackage && !canReservate ? 0.5 : 1.0, fontSize: 12 }}>{instructor}</p>
           <p style={{ color: forbidden && isReserved ? '#495057' : isReserved && !disabled ? '#495057' : forbidden ? '#FFFFFF' : (disabled || now >= end) ? '#00000030' : !havePackage && !canReservate ? '#FFFFFF' : '#495057', margin: 0, fontWeight: 'bold', textAlign: 'center', minHeight: 30, opacity: forbidden && isReserved ? 1.0 : isReserved && !disabled ? 1.0 : forbidden ? 0.5 : !havePackage && !canReservate ? 0.5 : 1.0, fontSize: 12 }}>{item.theme ? item.theme : ""}</p>
-          <p style={{ color: forbidden && isReserved ? '#b24934' : isReserved && !disabled ? '#b24934' : forbidden ? '#FFFFFF' : (disabled || now >= end) ? '#00000030' : !havePackage && !canReservate ? '#FFFFFF' : '#b24934', margin: 0, opacity: forbidden && isReserved ? 1.0 : isReserved && !disabled ? 1.0 : forbidden ? 0.5 : !havePackage && !canReservate ? 0.5 : 1.0, fontSize: 12 }}>{item.Rooms.name}</p>
+          <p style={{ color: forbidden && isReserved ? '#000000' : isReserved && !disabled ? '#000000' : forbidden ? '#FFFFFF' : (disabled || now >= end) ? '#00000030' : !havePackage && !canReservate ? '#FFFFFF' : '#000000', margin: 0, opacity: forbidden && isReserved ? 1.0 : isReserved && !disabled ? 1.0 : forbidden ? 0.5 : !havePackage && !canReservate ? 0.5 : 1.0, fontSize: 12 }}>{item.Rooms.name}</p>
         </div>
       </div>
     )

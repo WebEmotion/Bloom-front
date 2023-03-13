@@ -45,7 +45,7 @@ const EventItem = ({ item, hour, instructor, onPress, disabled, isReserved, onAl
       <div 
         className={`eventItem ${isReserved ? 'reserved' : ''}`} 
         style={{ 
-          backgroundColor: forbidden && isReserved ? '#ffffff' : forbidden ? '#3eb978' : disabled ? '#00000020' : isReserved ? '#ffffff' : now >= end ? '#00000020' : !havePackage && !canReservate ? '#3eb978' : '#eecbc4', 
+          backgroundColor: forbidden && isReserved ? '#ffffff' : forbidden ? '#3eb978' : disabled ? '#00000020' : isReserved ? '#ffffff' : now >= end ? '#00000020' : !havePackage && !canReservate ? '#3eb978' : '#3eb978', 
           border: isReserved ? "1px solid" : '',
           cursor: forbidden && isReserved ? 'pointer' : isReserved && !(now >= end) ? 'pointer' : forbidden ? 'not-allowed' : disabled ? 'not-allowed' : now >= end ? 'not-allowed' : readonly ? 'default' : !havePackage && !canReservate ? 'not-allowed' : 'pointer' }} 
           disabled={now >= end} 
@@ -75,10 +75,10 @@ const EventItem = ({ item, hour, instructor, onPress, disabled, isReserved, onAl
         {isFull && <div style={{ position: 'absolute', top: 0, left: 0, height: '100%', width: '100%' }}>
           <img style={{ width: 50, height: 90, objectFit: 'contain' }} src="https://www.bloomcycling.com/assets/img/SoldOut_01.png" />
         </div>}
-        <p style={{ color: forbidden && isReserved ? '#b24934' : isReserved && !disabled ? '#b24934' : forbidden ? '#FFFFFF' : (disabled || now >= end) ? '#00000050' : !havePackage && !canReservate ? '#FFFFFF' : '#b24934', margin: 0, opacity: forbidden && isReserved ? 1.0 : isReserved && !disabled ? 1.0 : forbidden ? 0.5 : !havePackage && !canReservate ? 0.5 : 1.0, fontSize: 12 }}>{hour}</p>
+        <p style={{ color: forbidden && isReserved ? '#000000' : isReserved && !disabled ? '#000000' : forbidden ? '#FFFFFF' : (disabled || now >= end) ? '#00000050' : !havePackage && !canReservate ? '#FFFFFF' : '#000000', margin: 0, opacity: forbidden && isReserved ? 1.0 : isReserved && !disabled ? 1.0 : forbidden ? 0.5 : !havePackage && !canReservate ? 0.5 : 1.0, fontSize: 12 }}>{hour}</p>
         <p style={{ color: forbidden && isReserved ? '#495057' : isReserved && !disabled ? '#495057' : forbidden ? '#FFFFFF' : (disabled || now >= end) ? '#00000030' : !havePackage && !canReservate ? '#FFFFFF' : '#495057', margin: 0, fontWeight: 'bold', opacity: forbidden && isReserved ? 1.0 : isReserved && !disabled ? 1.0 : forbidden ? 0.5 : !havePackage && !canReservate ? 0.5 : 1.0, fontSize: 12 }}>{instructor}</p>
         <p style={{ color: forbidden && isReserved ? '#495057' : isReserved && !disabled ? '#495057' : forbidden ? '#FFFFFF' : (disabled || now >= end) ? '#00000030' : !havePackage && !canReservate ? '#FFFFFF' : '#495057', margin: 0, fontWeight: 'bold', textAlign: 'center', minHeight: 30, opacity: forbidden && isReserved ? 1.0 :isReserved && !disabled ? 1.0 : forbidden ? 0.5 : !havePackage && !canReservate ? 0.5 : 1.0, fontSize: 12 }}>{item.theme ? item.theme : ""}</p>
-        <p style={{ color: forbidden && isReserved ? '#b24934' : isReserved && !disabled ? '#b24934' : forbidden ? '#FFFFFF' : (disabled || now >= end) ? '#00000030' : !havePackage && !canReservate ? '#FFFFFF' : '#b24934', margin: 0, opacity: forbidden && isReserved ? 1.0 : isReserved && !disabled ? 1.0 : forbidden ? 0.5 : !havePackage && !canReservate ? 0.5 : 1.0, fontSize: 12 }}>{item.Rooms.name}</p>
+        <p style={{ color: forbidden && isReserved ? '#000000' : isReserved && !disabled ? '#000000' : forbidden ? '#FFFFFF' : (disabled || now >= end) ? '#00000030' : !havePackage && !canReservate ? '#FFFFFF' : '#000000', margin: 0, opacity: forbidden && isReserved ? 1.0 : isReserved && !disabled ? 1.0 : forbidden ? 0.5 : !havePackage && !canReservate ? 0.5 : 1.0, fontSize: 12 }}>{item.Rooms.name}</p>
       </div>
     </div>
   )
@@ -86,15 +86,15 @@ const EventItem = ({ item, hour, instructor, onPress, disabled, isReserved, onAl
 const EventItemWithCancel = ({ item, hour, seat, instructor, isPass, isOnlyPass, onPress, disabled, isReserved, onAlreadyBooked, onSeeDetails, hasPassed }) => {
   return (
     <div>
-      <div className={`eventItem ${isReserved ? 'reserved' : ''}`} style={{ position: "relative !important", backgroundColor: disabled ? '#00000020' : isReserved ? '#b2493410' : '#eec0bc4', cursor: hasPassed ? 'default' : disabled ? 'not-allowed' : 'pointer', fontSize: isPass.length > 0 ? "x-small" : "small", paddingTop: isPass.length > 0 ? "6px" : "8px", paddingBottom: isPass.length > 0 ? "6px" : "8px" }}>
+      <div className={`eventItem ${isReserved ? 'reserved' : ''}`} style={{ position: "relative !important", backgroundColor: disabled ? '#00000020' : isReserved ? '#00000010' : '#eec0bc4', cursor: hasPassed ? 'default' : disabled ? 'not-allowed' : 'pointer', fontSize: isPass.length > 0 ? "x-small" : "small", paddingTop: isPass.length > 0 ? "6px" : "8px", paddingBottom: isPass.length > 0 ? "6px" : "8px" }}>
         {!hasPassed && <i className="pi pi-times icon-deleted" onClick={() => {
           if (!disabled && !hasPassed) {
             onPress()
           }
         }}></i>}
-        <p style={{ color: disabled ? '#00000050' : '#b24934', margin: 0, marginTop: "5px" }}>{hour}</p>
+        <p style={{ color: disabled ? '#00000050' : '#000000', margin: 0, marginTop: "5px" }}>{hour}</p>
         <p style={{ color: disabled ? '#00000030' : '#495057', margin: 0 }}>{instructor}</p>
-        <p style={{ color: disabled ? '#00000030' : '#b24934', margin: 0 }}>{item.location.name}</p>
+        <p style={{ color: disabled ? '#00000030' : '#000000', margin: 0 }}>{item.location.name}</p>
         <div style={{ color: disabled ? '#00000030' : '#495057', margin: 0, marginTop: !isPass.length > 0 || !isOnlyPass ? "0.5rem" : 0, marginBottom: !isPass.length > 0 || !isOnlyPass ? "0.4rem" : 0 }}>Lugar <div style={{ borderRadius: "15px", background: "#3eb978", color: "#fff", paddingLeft: "4px", paddingRight: "4px", display: "inline" }}>{seat.number}</div></div>
         {isPass.length > 0 && !isOnlyPass && (<p style={{ color: disabled ? '#00000030' : 'gray', margin: 0 }}>+ {isPass.length} pase(s)</p>)}
         {isOnlyPass && <p style={{ margin: 0, marginTop: 10 }}>{isPass.length} pase(s)</p>}
