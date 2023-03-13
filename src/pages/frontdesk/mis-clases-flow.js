@@ -47,7 +47,7 @@ const EventItem = ({ item, hour, instructor, onPress, disabled, isReserved, onAl
         <div 
           className={`eventItem ${isReserved ? 'reserved' : ''}`} 
           style={{ 
-            backgroundColor: forbidden && isReserved ? '#ffffff' : forbidden ? '#3eb978' : disabled ? '#00000020' : isReserved ? '#ffffff' : now >= end ? '#00000020' : !havePackage && !canReservate ? '#3eb978' :'#3eb978', 
+            backgroundColor: forbidden && isReserved ? '#ffffff' : forbidden ? '#6A6E4E' : disabled ? '#00000020' : isReserved ? '#ffffff' : now >= end ? '#00000020' : !havePackage && !canReservate ? '#6A6E4E' :'#6A6E4E', 
             border: isReserved ? "1px solid" : '',
             cursor: forbidden && isReserved ? 'pointer' : isReserved && !(now >= end) ? 'pointer' : forbidden ? 'not-allowed' : disabled ? 'not-allowed' : now >= end ? 'not-allowed' : readonly ? 'default' : !havePackage && !canReservate ? 'not-allowed' : 'pointer' }} 
             disabled={now >= end} 
@@ -640,32 +640,32 @@ const IndexPage = inject("RootStore")(
             </div>
 
         {selectedClient && selectedClient.name && <div className="p-col-12 header-mis-clases">
-            <p style={{ margin: 0, marginLeft: "2px", marginRight: "2px", color: "#3eb978" }}>
+            <p style={{ margin: 0, marginLeft: "2px", marginRight: "2px", color: "#6A6E4E" }}>
                 Nombre: <strong>{selectedClient.name + " " + selectedClient.lastname}</strong>
             </p>
-            <p style={{ margin: 0, marginLeft: "2px", marginRight: "2px", color: "#3eb978" }}>
+            <p style={{ margin: 0, marginLeft: "2px", marginRight: "2px", color: "#6A6E4E" }}>
                 Email: <strong>{selectedClient.email}</strong>
             </p>
-            <p style={{ margin: 0, marginLeft: "2px", marginRight: "2px", color: "#3eb978" }}>
+            <p style={{ margin: 0, marginLeft: "2px", marginRight: "2px", color: "#6A6E4E" }}>
             </p>
-            <p style={{ margin: 0, marginLeft: "2px", marginRight: "2px", color: "#3eb978" }}>
+            <p style={{ margin: 0, marginLeft: "2px", marginRight: "2px", color: "#6A6E4E" }}>
             </p>
         </div>}
 
         {selectedClient && selectedClient.name && <hr/>}
 
         {store.token && selectedClient && typeof selectedClient.pending !== 'undefined' && <div className="p-col-12 header-mis-clases">
-            <p style={{ margin: 0, marginLeft: "2px", marginRight: "2px", color: "#3eb978" }}>
+            <p style={{ margin: 0, marginLeft: "2px", marginRight: "2px", color: "#6A6E4E" }}>
                 Clases disponibles: <strong>{myClasses && myClasses.isUnlimited ? 'Ilimitadas' : `${myClasses ? myClasses.pending : ''}`}</strong>
             </p>
         </div>}
         {store.token && selectedClient && typeof selectedClient.pendingPasses !== 'undefined' && <div className="p-col-12 header-mis-clases">
-            <p style={{ margin: 0, marginLeft: "2px", marginRight: "2px", color: "#3eb978" }}>
+            <p style={{ margin: 0, marginLeft: "2px", marginRight: "2px", color: "#6A6E4E" }}>
                 Pases disponibles: <strong>{myClasses.pendingPasses}</strong>
             </p>
         </div>}
         {selectedClient && typeof selectedClient.pendingGroup !== 'undefined' && store.token && <div className="p-col-12 header-mis-clases">
-            <p style={{ margin: 0, marginLeft: "2px", marginRight: "2px", color: "#3eb978" }}>
+            <p style={{ margin: 0, marginLeft: "2px", marginRight: "2px", color: "#6A6E4E" }}>
                 Clases grupales disponibles: <strong>{myClasses && myClasses.isUnlimitedGroup ? 'Ilimitadas' : `${myClasses ? myClasses.pendingGroup : ''}`}</strong>
             </p>
         </div>}
@@ -676,10 +676,10 @@ const IndexPage = inject("RootStore")(
         {showCalendar && <div className="indicators" style={{
             display: 'flex', justifyContent: 'space-evenly', paddingLeft: 10, paddingRight: 10, margin: 0
         }}>
-            <Indicator style={{ marginLeft: 10 }} color="#3eb978" label="Clases disponibles" />
+            <Indicator style={{ marginLeft: 10 }} color="#6A6E4E" label="Clases disponibles" />
             <Indicator style={{ marginLeft: 10 }} color="#00000020" label="Clases pasadas" />
             <Indicator style={{ marginLeft: 10 }} color="white" label="Clases reservadas" borderStyle="1px solid black" />
-            <Indicator style={{ marginLeft: 10 }} color="#3eb978" label="Clases fuera de vigencia/Sin clases" />
+            <Indicator style={{ marginLeft: 10 }} color="#6A6E4E" label="Clases fuera de vigencia/Sin clases" />
         </div>}
 
         {showCalendar && (state.days.length == 7 || state.days.length == 8) &&
@@ -687,7 +687,7 @@ const IndexPage = inject("RootStore")(
                 <table style={{ borderCollapse: 'collapse', width: '100%', marginBottom: 100, marginTop: 20, tableLayout: 'fixed', minWidth: 800 }}>
                     <thead>
                         <tr>
-                        <th style={{ color: '#3eb978' }}>
+                        <th style={{ color: '#6A6E4E' }}>
                             {state.days[0].name}
                             <p style={{ margin: 0 }}>{state.days[0].number}</p>
                         </th>
