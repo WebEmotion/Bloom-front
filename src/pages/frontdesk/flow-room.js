@@ -19,7 +19,7 @@ import Item from "../../components/item-profile"
 
 import * as moment from "moment"
 
-import Logo from "../../assets/images/rode-1.png"
+import Logo from "../../assets/images/flow-image.png"
 import Tree from "../../assets/images/tree.png"
 import * as SchedulesAPI from "../../api/v0/schedules"
 import * as ClientsAPI from "../../api/v0/clients"
@@ -547,7 +547,7 @@ const IndexPage = inject("RootStore")(
                         free: false
                     })
                 }} />
-                <Button label="Aceptar" style={{ color: 'white', backgroundColor: '#513302', fontWeight: 'bold' }} className="p-button-text p-button-pink" autoFocus onClick={async () => {
+                <Button label="Aceptar" style={{ color: 'white', backgroundColor: '#513302', fontWeight: 'bold' }} className="p-button-text p-button-pink-flow" autoFocus onClick={async () => {
                     await cancelBookingRequest()
                 }} />
             </div>
@@ -608,7 +608,7 @@ const IndexPage = inject("RootStore")(
                                     <Button
                                         style={{ marginTop: 20, maxWidth: 200 }}
                                         label="Confirmar reserva"
-                                        className="p-button-rounded p-button-pink"
+                                        className="p-button-rounded p-button-pink-flow"
                                         disabled={(!selectedClient && store.isAdmin) || loading.loading}
                                         onClick={() =>
                                             store.isAdmin ? createBooking() : isGrupal ? createGrupalBooking() : createBookingClient()
@@ -773,7 +773,7 @@ const IndexPage = inject("RootStore")(
                                             [9, 10, 11, 12, 13, 14, 15, 16].map(n => (
                                                 <Button
                                                     label={`${n}`}
-                                                    className={`${occupiedSeats.includes(`${n}`) ? 'p-button-rounded-c-o' : "p-button-rounded-c"} ${occupiedSeats.includes(`${n}`) ? '' : "p-button-pink"}`}
+                                                    className={`${occupiedSeats.includes(`${n}`) ? 'p-button-rounded-c-o' : "p-button-rounded-c"} ${occupiedSeats.includes(`${n}`) ? '' : "p-button-pink-flow"}`}
                                                     style={{ fontWeight: 'bold' }}
                                                     badge={selected && selected.name === `${n}` ? "✓" : selectedPasses && selectedPasses.name === `${n}` ? "✓" : selectedGroup && selectedGroup.name === `${n}` ? "✓" : ""}
                                                     disabled={isOccupied(`${n}`)}
@@ -813,7 +813,7 @@ const IndexPage = inject("RootStore")(
                                             [1, 2, 3, 4, 5, 6, 7, 8].map(n => (
                                                 <Button
                                                     label={`${n}`}
-                                                    className={`${occupiedSeats.includes(`${n}`) ? 'p-button-rounded-c-o' : "p-button-rounded-c"} ${occupiedSeats.includes(`${n}`) ? '' : "p-button-pink"}`}
+                                                    className={`${occupiedSeats.includes(`${n}`) ? 'p-button-rounded-c-o' : "p-button-rounded-c"} ${occupiedSeats.includes(`${n}`) ? '' : "p-button-pink-flow"}`}
                                                     style={{ fontWeight: 'bold' }}
                                                     badge={selected && selected.name === `${n}` ? "✓" : selectedPasses && selectedPasses.name === `${n}` ? "✓" : selectedGroup && selectedGroup.name === `${n}` ? "✓" : ""}
                                                     disabled={isOccupied(`${n}`)}
