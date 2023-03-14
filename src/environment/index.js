@@ -20,8 +20,8 @@ export const URLS = {
 }
 
 export const API = {
-   // BASE_URL: 'https://bloom-api.com',            //Produccion
-    BASE_URL: 'http://bloomhouse.mx:5200/',          //localhost
+    BASE_URL: 'https://bloom-api.com',            //Produccion
+   // BASE_URL: 'http://bloomhouse.mx:5200/',          //localhost
     AUTH: '/auth/'
 }
 
