@@ -304,6 +304,29 @@ const IndexPage = inject("RootStore")(
         numScroll: 1,
       },
     ]
+    function buyBundle() {
+      if (!state.selectedBundle) {
+        return;
+      }
+    
+      const price = state.selectedBundle.offer ? state.selectedBundle.offer : state.selectedBundle.price;
+      
+      // Apply discount if code is "Bloom10!"
+      let discountedPrice = price;
+      if (state.discountCode === "Bloom10!") {
+        discountedPrice = price * 0.9;
+      }
+    
+      // Process payment with discounted price
+      const paymentUrl = `https://example.com/payment?price=${discountedPrice}`;
+    
+      // Open payment window
+      window.open(paymentUrl, "_blank");
+    
+      // Reset state after purchase
+      setState({ ...state, displayBuy: false, selectedBundle: null, discountCode: "" });
+    }
+    
     function productTemplate(paquete) {
       return (
         <div className="product-item">
@@ -378,6 +401,7 @@ const IndexPage = inject("RootStore")(
       )
     }
     return (
+      
       <Layout page="paquetes">
         <SEO title="PAQUETES" />
         {state.processing && <div style={{ width: '100vw', height: '100vh', position: 'fixed', left: 0, top: 0, zIndex: 10000, backgroundColor: 'white', opacity: 0.95, display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
@@ -422,11 +446,12 @@ const IndexPage = inject("RootStore")(
           </div>}
           <br />
           <p>Para continuar con tu compra, se abrirá una ventana de nuestro proveedor de pagos <span><img style={{ height: 20, objectFit: 'contain', marginBottom: -5 }} src="https://evopayments.com/wp-content/uploads/evo-logo-no-bkground-webres.png" alt="Evo Payments" /></span> donde podrás ingresar los datos de tu transacción de forma segura.</p>
-          <div>
+           <div>
         <label htmlFor="discountCode">Código de descuento:</label>
         <input id="discountCode" type="text" value={state.discountCode} onChange={(e) => { setState({ ...state, discountCode: e.target.value }) }} />
       </div>
         </Dialog>
+        
         <Dialog header="Compra exitosa" className="spDialog" visible={state.displaySuccess} onHide={() => { setState({ ...state, displaySuccess: false, selectedBundle: null, voucher: '' }) }}>
           <p>Paquete: <span style={{ fontWeight: 'bold' }}>{state.selectedBundle && state.selectedBundle.name}</span></p>
           <p>Monto pagado: <span style={{ fontWeight: 'bold' }}>$ {state.selectedBundle && (state.selectedBundle.offer ? state.selectedBundle.offer : state.selectedBundle.price)}</span></p>
