@@ -13,8 +13,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Item from "../components/item-profile"
 import MisClases from "../assets/images/cicle_white.png"
-//import MisClases from "../assets/images/flow-image.png"
-//
+
 import * as LocationsApi from '../api/v0/locations'
 import * as MeApi from '../api/v0/me'
 import * as Schedules from '../api/v0/schedules'
@@ -46,7 +45,7 @@ const EventItem = ({ item, hour, instructor, onPress, disabled, isReserved, onAl
       <div 
         className={`eventItem ${isReserved ? 'reserved' : ''}`} 
         style={{ 
-          backgroundColor: forbidden && isReserved ? '#ffffff' : forbidden ? '#513302' : disabled ? '#00000020' : isReserved ? '#ffffff' : now >= end ? '#00000020' : !havePackage && !canReservate ? '#513302' : '#513302', 
+          backgroundColor: forbidden && isReserved ? '#ffffff' : forbidden ? '#6A6E4E' : disabled ? '#00000020' : isReserved ? '#ffffff' : now >= end ? '#00000020' : !havePackage && !canReservate ? '#6A6E4E' : '#6A6E4E', 
           border: isReserved ? "1px solid" : '',
           cursor: forbidden && isReserved ? 'pointer' : isReserved && !(now >= end) ? 'pointer' : forbidden ? 'not-allowed' : disabled ? 'not-allowed' : now >= end ? 'not-allowed' : readonly ? 'default' : !havePackage && !canReservate ? 'not-allowed' : 'pointer' }} 
           disabled={now >= end} 
@@ -96,7 +95,7 @@ const EventItemWithCancel = ({ item, hour, seat, instructor, isPass, isOnlyPass,
         <p style={{ color: disabled ? '#00000050' : '#ffffff', margin: 0, marginTop: "5px" }}>{hour}</p>
         <p style={{ color: disabled ? '#00000030' : '#ffffff', margin: 0 }}>{instructor}</p>
         <p style={{ color: disabled ? '#00000030' : '#ffffff', margin: 0 }}>{item.location.name}</p>
-        <div style={{ color: disabled ? '#00000030' : '#ffffff', margin: 0, marginTop: !isPass.length > 0 || !isOnlyPass ? "0.5rem" : 0, marginBottom: !isPass.length > 0 || !isOnlyPass ? "0.4rem" : 0 }}>Lugar <div style={{ borderRadius: "15px", background: "#513302", color: "#fff", paddingLeft: "4px", paddingRight: "4px", display: "inline" }}>{seat.number}</div></div>
+        <div style={{ color: disabled ? '#00000030' : '#ffffff', margin: 0, marginTop: !isPass.length > 0 || !isOnlyPass ? "0.5rem" : 0, marginBottom: !isPass.length > 0 || !isOnlyPass ? "0.4rem" : 0 }}>Lugar <div style={{ borderRadius: "15px", background: "#6A6E4E", color: "#fff", paddingLeft: "4px", paddingRight: "4px", display: "inline" }}>{seat.number}</div></div>
         {isPass.length > 0 && !isOnlyPass && (<p style={{ color: disabled ? '#00000030' : 'gray', margin: 0 }}>+ {isPass.length} pase(s)</p>)}
         {isOnlyPass && <p style={{ margin: 0, marginTop: 10 }}>{isPass.length} pase(s)</p>}
         {isPass.length > 1 && <a style={{ margin: 0, fontWeight: 'bold' }} onClick={() => {
@@ -1004,7 +1003,7 @@ const IndexPage = inject("RootStore")(
               </div>
               <div
                 className="p-as-center item-text-profile"
-                style={{ color: "#513302" }}
+                style={{ color: "#6A6E4E" }}
               >
                 {store.token ? 'Mis clases' : 'Horarios'}
               </div>
@@ -1012,7 +1011,7 @@ const IndexPage = inject("RootStore")(
           </div>
           {store.token && (
             <div className="p-col-fixed" style={{ width: "100px" }}>
-              <Item color="#513302" icon="pi pi-user" store={store} />
+              <Item color="#6A6E4E" icon="pi pi-user" store={store} />
             </div>
           )}
         </div>
@@ -1026,33 +1025,33 @@ const IndexPage = inject("RootStore")(
           </Dialog>
         }
         {!store.isAdmin && showCalendar && store.token && <div className="p-col-12 header-mis-clases">
-          <p style={{ margin: 0, marginLeft: "2px", marginRight: "2px", color: "#513302" }}>
+          <p style={{ margin: 0, marginLeft: "2px", marginRight: "2px", color: "#6A6E4E" }}>
             Clases tomadas: <strong>{myClasses && myClasses.taken}</strong>
           </p>
         </div>}
         {!store.isAdmin && showCalendar && store.token && <div className="p-col-12 header-mis-clases">
-          <p style={{ margin: 0, marginLeft: "2px", marginRight: "2px", color: "#513302" }}>
+          <p style={{ margin: 0, marginLeft: "2px", marginRight: "2px", color: "#6A6E4E" }}>
             Clases disponibles: <strong>{myClasses && myClasses.isUnlimited ? 'Ilimitadas' : `${myClasses ? myClasses.pending : ''}`}</strong>
           </p>
         </div>}
         {!store.isAdmin && showCalendar && store.token && <div className="p-col-12 header-mis-clases">
-          <p style={{ margin: 0, marginLeft: "2px", marginRight: "2px", color: "#513302" }}>
+          <p style={{ margin: 0, marginLeft: "2px", marginRight: "2px", color: "#6A6E4E" }}>
             Pases tomados: <strong>{myClasses && myClasses.takenPasses}</strong>
           </p>
         </div>}
         {!store.isAdmin && showCalendar && store.token && <div className="p-col-12 header-mis-clases">
-          <p style={{ margin: 0, marginLeft: "2px", marginRight: "2px", color: "#513302" }}>
+          <p style={{ margin: 0, marginLeft: "2px", marginRight: "2px", color: "#6A6E4E" }}>
             Pases disponibles: <strong>{myClasses && myClasses.pendingPasses}</strong>
           </p>
         </div>}
 
         {!store.isAdmin && inGrup && showCalendar && store.token && <div className="p-col-12 header-mis-clases">
-          <p style={{ margin: 0, marginLeft: "2px", marginRight: "22px", color: "#513302" }}>
+          <p style={{ margin: 0, marginLeft: "2px", marginRight: "22px", color: "#6A6E4E" }}>
             Clases grupales tomadas: <strong>{myClasses && myClasses.takenGroup}</strong>
           </p>
         </div>}
         {!store.isAdmin && inGrup && showCalendar && store.token && <div className="p-col-12 header-mis-clases">
-          <p style={{ margin: 0, marginLeft: "2px", marginRight: "2px", color: "#513302" }}>
+          <p style={{ margin: 0, marginLeft: "2px", marginRight: "2px", color: "#6A6E4E" }}>
             Clases grupales disponibles: <strong>{myClasses && myClasses.isUnlimitedGroup ? 'Ilimitadas' : `${myClasses ? myClasses.pendingGroup : ''}`}</strong>
           </p>
         </div>}
@@ -1070,7 +1069,7 @@ const IndexPage = inject("RootStore")(
                 setShowCalendar(true)
               }
             }} />
-            <Button style={{ marginTop: 20, marginLeft: 20, backgroundColor: '#513302', borderColor: '#513302' }} label={showCalendar ? "Cancelar" : "Reservar pase"} className="p-button-rounded" disabled={myClasses && myClasses.pendingPasses <= 0} onClick={() => {
+            <Button style={{ marginTop: 20, marginLeft: 20, backgroundColor: '#6A6E4E', borderColor: '#6A6E4E' }} label={showCalendar ? "Cancelar" : "Reservar pase"} className="p-button-rounded" disabled={myClasses && myClasses.pendingPasses <= 0} onClick={() => {
               if (showCalendar) {
                 setShowCalendar(false)
               } else {
@@ -1079,7 +1078,7 @@ const IndexPage = inject("RootStore")(
                 setShowCalendar(true)
               }
             }} />
-            {inGrup && <Button style={{ marginTop: 20, marginLeft: 20, backgroundColor: '#513302', borderColor: '#513302' }} label={showCalendar ? "Cancelar" : "Reservar grupal"} className="p-button-rounded" disabled={myClasses && myClasses.pendingGroup <= 0} onClick={() => {
+            {inGrup && <Button style={{ marginTop: 20, marginLeft: 20, backgroundColor: '#6A6E4E', borderColor: '#6A6E4E' }} label={showCalendar ? "Cancelar" : "Reservar grupal"} className="p-button-rounded" disabled={myClasses && myClasses.pendingGroup <= 0} onClick={() => {
               if (showCalendar) {
                 setShowCalendar(false)
               } else {
@@ -1093,13 +1092,13 @@ const IndexPage = inject("RootStore")(
           <small style={{ fontSize: "x-small" }}>*Para cancelar una reserva da click en (<i className="pi pi-times" style={{ color: "red", fontSize: "x-small" }}></i>)</small>
         </div>}
         {!store.isAdmin && !showCalendar && <div className="p-col-12 p-mt-2">
-          {isClass && store.token && !isGrupal && <p style={{ margin: 0, color: "#513302" }}>
+          {isClass && store.token && !isGrupal && <p style={{ margin: 0, color: "#6A6E4E" }}>
             Clases disponibles: <strong>{myClasses && myClasses.isUnlimited ? 'Ilimitadas' : `${myClasses ? myClasses.pending : ''}`}</strong>
           </p>}
-          {!isClass && !isGrupal && <p style={{ margin: 0, color: "#513302" }}>
+          {!isClass && !isGrupal && <p style={{ margin: 0, color: "#6A6E4E" }}>
             Pases disponibles: <strong>{myClasses && myClasses.pendingPasses}</strong>
           </p>}
-          {!isClass && isGrupal && <p style={{ margin: 0, color: "#513302" }}>
+          {!isClass && isGrupal && <p style={{ margin: 0, color: "#6A6E4E" }}>
             Clases grupales disponibles: <strong>{myClasses && myClasses.isUnlimitedGroup ? 'Ilimitadas' : `${myClasses ? myClasses.pendingGroup : ''}`}</strong>
           </p>}
           {store.token && <Button style={{ marginTop: 20 }} label={showCalendar ? "Cancelar" : "Reservar"} className="p-button-rounded p-button-pink" disabled={myClasses && myClasses.pending <= 0 && myClasses.pendingGroup <= 0} onClick={() => {
@@ -1117,10 +1116,10 @@ const IndexPage = inject("RootStore")(
         {!store.isAdmin && showCalendar && <div className="indicators" style={{
           display: 'flex', justifyContent: 'space-evenly', paddingLeft: 10, paddingRight: 10, margin: 0
         }}>
-          <Indicator style={{ marginLeft: 10 }} color="#513302" label="Clases disponibles" />
+          <Indicator style={{ marginLeft: 10 }} color="#6A6E4E" label="Clases disponibles" />
           <Indicator style={{ marginLeft: 10 }} color="#00000020" label="Clases pasadas" />
           {store.token && <Indicator style={{ marginLeft: 10 }} color="white" label="Clases reservadas" borderStyle="1px solid black" />}
-          {store.token && <Indicator style={{ marginLeft: 10 }} color="#513302" label="Clases fuera de vigencia/Sin clases" />}
+          {store.token && <Indicator style={{ marginLeft: 10 }} color="#6A6E4E" label="Clases fuera de vigencia/Sin clases" />}
         </div>}
         {/* <Button icon="pi pi-angle-left" className='p-button-rounded' style={{ height: 30, width: 30, backgroundColor: 'white', border: 'none', color: 'black', marginLeft: 10 }} onClick={() => {
             setWeek(week - 1)
@@ -1134,7 +1133,7 @@ const IndexPage = inject("RootStore")(
             <table style={{ borderCollapse: 'collapse', width: '100%', marginBottom: 100, marginTop: 20, tableLayout: 'fixed', minWidth: 800 }}>
               <thead>
                 <tr>
-                  <th style={{ color: '#513302' }}>
+                  <th style={{ color: '#6A6E4E' }}>
                     {state.days[0].name}
                     <p style={{ margin: 0 }}>{state.days[0].number}</p>
                   </th>
@@ -1180,7 +1179,7 @@ const IndexPage = inject("RootStore")(
             <table style={{ borderCollapse: 'collapse', width: '100%', marginBottom: 100, marginTop: 20, tableLayout: 'fixed', minWidth: 800 }}>
               <thead>
                 <tr>
-                  <th style={{ color: '#513302' }}>
+                  <th style={{ color: '#6A6E4E' }}>
                     {state.days[0].name}
                     <p style={{ margin: 0 }}>{state.days[0].number}</p>
                   </th>
