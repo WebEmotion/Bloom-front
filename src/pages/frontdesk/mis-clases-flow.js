@@ -237,7 +237,7 @@ const IndexPage = inject("RootStore")(
         }
       }
 
-      navigate("/frontdesk/cycling-room", {
+      navigate("/frontdesk/flow-room", {
         state: {
           id: id,
           selectedClient: selectedClient,
