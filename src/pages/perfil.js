@@ -8,7 +8,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Item from "../components/item-profile"
 
-import Historial from "../assets/images/web4.jpg"
+import Historial from "../assets/images/rode-1.png"
 import MisClases from "../assets/images/historial.png"
 import Configuracion from "../assets/images/config.jpg"
 
