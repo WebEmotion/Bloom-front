@@ -303,30 +303,7 @@ const IndexPage = inject("RootStore")(
         numVisible: 1,
         numScroll: 1,
       },
-    ]
-    function buyBundle() {
-      if (!state.selectedBundle) {
-        return;
-      }
-    
-      const price = state.selectedBundle.offer ? state.selectedBundle.offer : state.selectedBundle.price;
-      
-      // Apply discount if code is "Bloom10!"
-      let discountedPrice = price;
-      if (state.discountCode === "Bloom10!") {
-        discountedPrice = price * 0.9;
-      }
-    
-      // Process payment with discounted price
-      const paymentUrl = `https://example.com/payment?price=${discountedPrice}`;
-    
-      // Open payment window
-      window.open(paymentUrl, "_blank");
-    
-      // Reset state after purchase
-      setState({ ...state, displayBuy: false, selectedBundle: null, discountCode: "" });
-    }
-    
+    ]    
     function productTemplate(paquete) {
       return (
         <div className="product-item">

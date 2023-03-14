@@ -635,8 +635,21 @@ const Layout = inject("RootStore")(
                             ? "p-button menu-button active"
                             : "p-button menu-button"
                         }
-                        label={store.isAdmin ? "RESERVAR" : "MIS CLASES"}
+                        label={store.isAdmin ? "RESERVAR CYCLING" : "MIS CLASES"}
                         onClick={() => navigate("/frontdesk/mis-clases")}
+                      />
+                    </div>
+                  )}
+                  {store.token && store.isAdmin && (
+                    <div className="p-col-12" style={backgroundColor="#513302"}>
+                      <Button
+                        className={
+                          page === "mis-clases-flow" || page === "flow-room" || page === "reservas-flow"
+                            ? "p-button menu-button active"
+                            : "p-button menu-button"
+                        }
+                        label={store.isAdmin ? "RESERVAR FLOW" : "MIS CLASES"}
+                        onClick={() => navigate("/frontdesk/mis-clases-flow")}
                       />
                     </div>
                   )}
