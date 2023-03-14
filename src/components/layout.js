@@ -293,12 +293,24 @@ const Layout = inject("RootStore")(
                             ? "p-button menu-button active"
                             : "p-button menu-button"
                         }
-                        label={"CLASES"}
+                        label={"CLASES CYCLING"}
                         onClick={() => navigate("/frontdesk/lugares")}
                       />
                     </div>
                   )}
-
+{store.token && store.isAdmin && (
+                    <div className="p-col-12">
+                      <Button
+                        className={
+                          page === "lugares-flow"
+                            ? "p-button menu-button active"
+                            : "p-button menu-button"
+                        }
+                        label={"CLASES FLOW"}
+                        onClick={() => navigate("/frontdesk/lugares-flow")}
+                      />
+                    </div>
+                  )}
                   {store.token && store.isAdmin && (
                     <div className="p-col-12">
                       <Button
@@ -662,8 +674,21 @@ const Layout = inject("RootStore")(
                             ? "p-button menu-button active"
                             : "p-button menu-button"
                         }
-                        label={"CLASES"}
+                        label={"CLASES CYCLING"}
                         onClick={() => navigate("/frontdesk/lugares")}
+                      />
+                    </div>
+                  )}
+                  {store.token && store.isAdmin && (
+                    <div className="p-col-12">
+                      <Button
+                        className={
+                          page === "lugares-flow"
+                            ? "p-button menu-button active"
+                            : "p-button menu-button"
+                        }
+                        label={"CLASES FLOW"}
+                        onClick={() => navigate("/frontdesk/lugares-flow")}
                       />
                     </div>
                   )}
