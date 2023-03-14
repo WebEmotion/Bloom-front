@@ -578,7 +578,7 @@ const IndexPage = inject("RootStore")(
             free: false
           })
         }} />
-        <Button label="Aceptar" style={{ color: 'white', backgroundColor: '#6A6E4E', fontWeight: 'bold' }} className="p-button-text p-button-pink" autoFocus onClick={async () => {
+        <Button label="Aceptar" style={{ color: 'white', backgroundColor: '#513302', fontWeight: 'bold' }} className="p-button-text p-button-pink" autoFocus onClick={async () => {
           await cancelBookingRequest()
         }} />
       </div>
@@ -764,7 +764,7 @@ const IndexPage = inject("RootStore")(
             </div>
             <div className="p-col-12 p-md-3">
               <div className="p-grid p-justify-center">
-                <Item color="#6A6E4E" icon="pi pi-user" store={store} />
+                <Item color="#513302" icon="pi pi-user" store={store} />
               </div>
             </div>
           </div>
@@ -774,7 +774,7 @@ const IndexPage = inject("RootStore")(
           >
             {seats.length > 0 &&  <div className={getUpdatedMembersList()[1].length > 0 ? 'p-col-5' : 'p-col-10'} style={{ zIndex: 10 }}>
               <div className="p-row">
-                {!store.isAdmin && <p style={{ color: '#6A6E4E', fontWeight: 'bold' }}>{isClass ? 'Estás usando una clase' : isGrupal ? 'Estás usando una clase grupal' : 'Estás usando un pase'}</p>}
+                {!store.isAdmin && <p style={{ color: '#513302', fontWeight: 'bold' }}>{isClass ? 'Estás usando una clase' : isGrupal ? 'Estás usando una clase grupal' : 'Estás usando un pase'}</p>}
                 <p>Fecha: {seats[0] && `${seats[0].date.substring(0, 10)}`}</p>
                 <p>
                   Horario: {seats[0] && seats[0].start.substring(0, 5)} -{" "}
@@ -795,7 +795,7 @@ const IndexPage = inject("RootStore")(
                   onClick={() => openConfirmBookingModal()}
                 />
                 <Button
-                  style={{ margin: "3px 20px 3px 0px", backgroundColor: '#6A6E4E', borderColor: '#6A6E4E', border: selectedPasses ? '6px solid #495057' : ''  }}
+                  style={{ margin: "3px 20px 3px 0px", backgroundColor: '#513302', borderColor: '#513302', border: selectedPasses ? '6px solid #495057' : ''  }}
                   label="Reservar con pase"
                   className="p-button-rounded"
                   disabled={!selectedPasses}
@@ -805,7 +805,7 @@ const IndexPage = inject("RootStore")(
                 }}
                 />
                 <Button
-                  style={{ margin: "3px 20px 3px 0px", backgroundColor: '#6A6E4E', borderColor: '#6A6E4E', border: selectedGroup ? '6px solid #495057' : '' }}
+                  style={{ margin: "3px 20px 3px 0px", backgroundColor: '#513302', borderColor: '#513302', border: selectedGroup ? '6px solid #495057' : '' }}
                   label="Reserva grupal"
                   className="p-button-rounded"
                   disabled={!selectedGroup}
@@ -818,7 +818,7 @@ const IndexPage = inject("RootStore")(
             </div>}
             {seats.length > 0 && getUpdatedMembersList()[1].length > 0 && <div className="p-col-5">
               <div className="p-row">
-                <p style={{ color: '#6A6E4E', fontWeight: 'bold' }}>Miembros de tu grupo en esta clase:</p>
+                <p style={{ color: '#513302', fontWeight: 'bold' }}>Miembros de tu grupo en esta clase:</p>
                 {getUpdatedMembersList()[1].map((elem, index) => (
                   <p>{elem.name} {elem.lastname ? elem.lastname : ''} - Lugar: {elem.number}</p>
                 ))}
@@ -852,7 +852,7 @@ const IndexPage = inject("RootStore")(
                         style={{
                           height: 50,
                           width: 100,
-                          backgroundColor: "#6A6E4E",
+                          backgroundColor: "#513302",
                           display: "none",
                         }}
                       />
@@ -940,7 +940,7 @@ const IndexPage = inject("RootStore")(
                             width: 130,
                             height: 130,
                             borderRadius: '100%',
-                            backgroundColor: "#6A6E4E",
+                            backgroundColor: "#513302",
                             position: "static",
                             display: "flex",
                             alignItems: "center",
