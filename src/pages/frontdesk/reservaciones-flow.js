@@ -5,11 +5,11 @@ import { inject, observer } from "mobx-react"
 import { Planet } from "react-planet"
 import { navigate } from "gatsby"
 import { Button } from "primereact/button"
-import bici from "../../assets/images/icons8-camino-de-bicis-100.png"
 
 import Logo from "../../assets/images/rode-1.png"
 import Tree from "../../assets/images/tree.png"
 import * as SchedulesAPI from '../../api/v0/schedules'
+import bici from "../../assets/images/icons8-camino-de-bicis-100.png"
 
 const UserCircle = ({ image, name, lastname, seat }) => {
     if (name && image) {
@@ -24,7 +24,7 @@ const UserCircle = ({ image, name, lastname, seat }) => {
         return (
             <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
                 <p style={{margin: 0}}>{seat}</p>
-                <img src='https://img.icons8.com/material-rounded/200/ffffff/user-male-circle.png' style={{ backgroundColor: '#3eb978', width: 50, height: 50, borderRadius: '40%' }} />
+                <img src='https://img.icons8.com/material-rounded/200/ffffff/user-male-circle.png' style={{ backgroundColor: '#513302', width: 50, height: 50, borderRadius: '100%' }} />
                 <p style={{ margin: 0, height: 20, whiteSpace: 'nowrap', maxWidth: 100, textOverflow: 'ellipsis', overflow: 'hidden' }}>{name}</p>
             </div>
         )
@@ -32,7 +32,7 @@ const UserCircle = ({ image, name, lastname, seat }) => {
     return (
         <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
             <p style={{margin: 0}}>{seat}</p>
-            <img src={bici} style={{ backgroundColor: '#3eb978', width: 50, height: 50, borderRadius: '100%', padding: 5 }} />
+            <img src={bici} style={{ backgroundColor: '#513302', width: 50, height: 50, borderRadius: '100%', padding: 5 }} />
             <p style={{ margin: 0 }}> </p>
         </div>
     )
@@ -73,7 +73,7 @@ const Reservaciones = inject("RootStore")(
                 }, 60000);
                 return () => clearInterval(interval)
             } else {
-               // navigate("/frontdesk/lugares")
+            navigate("/frontdesk/lugares-flow")
             }
         }, [])
 
@@ -94,32 +94,57 @@ const Reservaciones = inject("RootStore")(
             <div className="mapa-cycling-list">
                 <div style={{position: 'fixed', top: 20, left: 20}}>
                     <Button icon="pi pi-times" className="p-button-rounded p-button-pink" onClick={() => {
-                        navigate('/frontdesk/lugares')
+                        navigate('/frontdesk/lugares-flow')
                     }} />
                 </div>
                 {/* marginTop normal (stage down), marginBottom for 180° (stage up) */}
                 <div style={{ marginBottom: 500 }}>
-                    
-                    <div>
-                        <h1 className="fila">B</h1>
+                    <Planet
+                        centerContent={
+                            <div
+                                style={{
+                                    height: 50,
+                                    width: 100,
+                                    backgroundColor: "#513302",
+                                    display: "none",
+                                }}
+                            />
+                        }
+                        open
+                        autoClose={false}
+                        orbitRadius={260}
+                        //86 normal (stage down), 265 for 180° (stage up)
+                        rotation={265}
+                        orbitStyle={() => ({
+                            border: "none",
+                            zIndex: 0,
+                            position: "absolute",
+                            borderRadius: "100%",
+                        })}
+                    >
+                        <h1 className="fila"></h1>
                         {
-                            [9, 10, 11, 12, 13, 14, 15, 16].map(n => {
-                                const user = getUser(n + 9, n, "B")
-                                return <UserCircle seat={`B${n}`} image={user ? user.pictureUrl : ''} name={user ? user.name : ''} />
+                            [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17].map(n => {
+                                const user = getUser(n + 12, n)
+                                return <UserCircle seat={`${n}`} image={user ? user.pictureUrl : ''} name={user ? user.name : ''} />
                             })
                         }
-                        <h1 className="fila">B</h1>
+                        <h1 className="fila"></h1>
                         {/* Number of divs is same userCircle number + 1 */}
-                        <div style={{ display: 'flex', width: 60}}></div>
-                        <div style={{ display: 'flex', width: 60}}></div>
-                        <div style={{ display: 'flex', width: 60}}></div>
-                        <div style={{ display: 'flex' }}></div>
-                        <div style={{ display: 'flex' }}></div>
-                        <div style={{ display: 'flex' }}></div>
-                        <div style={{ display: 'flex' }}></div>
-                        <div style={{ display: 'flex' }}></div>
-                        <div style={{ display: 'flex' }}></div>
-                    </div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </Planet>
                     <Planet
                         centerContent={
                             <div>
@@ -128,7 +153,7 @@ const Reservaciones = inject("RootStore")(
                                     width: 130,
                                     height: 130,
                                     borderRadius: '100%',
-                                    backgroundColor: "#3eb978",
+                                    backgroundColor: "#513302",
                                     position: "absolute",
                                     transform: "translateX(-80px)",
                                     display: "flex",
@@ -187,7 +212,7 @@ const Reservaciones = inject("RootStore")(
                                                 color: 'black'
                                             }}
                                             >
-                                            Coach
+                                             Flow's Coach
                                             </p>
                                         </div>
                                     </div>
@@ -196,7 +221,7 @@ const Reservaciones = inject("RootStore")(
                         }
                         open
                         autoClose={false}
-                        orbitRadius={250}
+                        orbitRadius={180}
                         //86 normal (stage down), 266 for 180° (stage up)
                         rotation={265}
                         orbitStyle={() => ({
@@ -206,18 +231,15 @@ const Reservaciones = inject("RootStore")(
                             borderRadius: "100%",
                         })}
                     >
-                        <h1 className="fila">A</h1>
+                        <h1 className="fila"></h1>
                         {
-                            [1, 2, 3, 4, 5, 6, 7, 8].map(n => {
-                                const user = getUser(n + 18, n, "A")
-                                return <UserCircle seat={`A${n}`} image={user ? user.pictureUrl : ''} name={user ? user.name : ''} />
+                            [1, 2, 3, 4, 5].map(n => {
+                                const user = getUser(n + 5, n)
+                                return <UserCircle seat={`${n}`} image={user ? user.pictureUrl : ''} name={user ? user.name : ''} />
                             })
                         }
-                        <h1 className="fila">A</h1>
+                        <h1 className="fila"></h1>
                         {/* Number of divs is same userCircle number + 1 */}
-                        <div></div>
-                        <div></div>
-                        <div></div>
                         <div></div>
                         <div></div>
                         <div></div>
