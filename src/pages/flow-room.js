@@ -578,7 +578,7 @@ const IndexPage = inject("RootStore")(
             free: false
           })
         }} />
-        <Button label="Aceptar" style={{ color: 'white', backgroundColor: '#513302', fontWeight: 'bold' }} className="p-button-text p-button-pink" autoFocus onClick={async () => {
+        <Button label="Aceptar" style={{ color: 'white', backgroundColor: '#513302', fontWeight: 'bold' }} className="p-button-text p-button-pink-flow" autoFocus onClick={async () => {
           await cancelBookingRequest()
         }} />
       </div>
@@ -621,7 +621,7 @@ const IndexPage = inject("RootStore")(
             <Button
               style={{ marginTop: 20, maxWidth: 200 }}
               label="Cancelar"
-              className="p-button-rounded p-button-pink"
+              className="p-button-rounded p-button-pink-flow"
               onClick={() => {
                 setSelected(null)
                 setGrupalBookings({
@@ -710,7 +710,7 @@ const IndexPage = inject("RootStore")(
                   <Button
                     style={{ marginTop: 20, maxWidth: 200 }}
                     label="Confirmar reserva"
-                    className="p-button-rounded p-button-pink"
+                    className="p-button-rounded p-button-pink-flow"
                     disabled={(!selectedClient && store.isAdmin) || loading.loading}
                     onClick={() =>
                       store.isAdmin ? createBooking() : isGrupal ? createGrupalBooking() : createBookingClient()
@@ -781,7 +781,7 @@ const IndexPage = inject("RootStore")(
                   {seats[0] && seats[0].end.substring(0, 5)}
                 </p>
                 <p>
-                  Lugar:{" "}
+                  Tapete reservado:{" "}
                   {selected
                     ? selected.name
                     : "No has seleccionado ningún lugar"}
@@ -820,7 +820,7 @@ const IndexPage = inject("RootStore")(
               <div className="p-row">
                 <p style={{ color: '#513302', fontWeight: 'bold' }}>Miembros de tu grupo en esta clase:</p>
                 {getUpdatedMembersList()[1].map((elem, index) => (
-                  <p>{elem.name} {elem.lastname ? elem.lastname : ''} - Lugar: {elem.number}</p>
+                  <p>{elem.name} {elem.lastname ? elem.lastname : ''} - Tapete reservado: {elem.number}</p>
                 ))}
               </div>
             </div>}
@@ -834,7 +834,7 @@ const IndexPage = inject("RootStore")(
                         {
                             reservations.map((element, index) => (
                                 <div>
-                                    <p>Lugar <strong>{element.Seat.number}</strong> reservado <i className="pi pi-times icon-deleted" style={{ position: 'initial', display: "initial" }} onClick={() => {
+                                    <p>Tapete reservado <strong>{element.Seat.number}</strong> reservado <i className="pi pi-times icon-deleted" style={{ position: 'initial', display: "initial" }} onClick={() => {
                                         cancelBooking(reservations[index].id)
                                     }} /></p>
                                 </div>
@@ -872,7 +872,7 @@ const IndexPage = inject("RootStore")(
                       [9, 10, 11, 12, 13, 14, 15, 16].map(n => (
                         <Button
                           label={`${n}`}
-                          className={`${occupiedSeats.includes(`${n}`) ? 'p-button-rounded-c-o' : "p-button-rounded-c"} ${occupiedSeats.includes(`${n}`) ? '' : "p-button-pink"}`}
+                          className={`${occupiedSeats.includes(`${n}`) ? 'p-button-rounded-c-o' : "p-button-rounded-c"} ${occupiedSeats.includes(`${n}`) ? '' : "p-button-pink-flow"}`}
                           style={{ fontWeight: 'bold' }}
                           badge={selected && selected.name === `${n}` && occupiedSeats.length === 0 ? "✓" : selectedPasses && selectedPasses.name === `${n}`  && occupiedSeats.length === 0 ? "✓" : selectedGroup && selectedGroup.name === `${n}`  && occupiedSeats.length === 0 ? "✓" : ""}
                           disabled={isOccupied(`${n}`)}
@@ -911,7 +911,7 @@ const IndexPage = inject("RootStore")(
                       [1, 2, 3, 4, 5, 6, 7, 8].map(n => (
                         <Button
                           label={`${n}`}
-                          className={`${occupiedSeats.includes(`${n}`) ? 'p-button-rounded-c-o' : "p-button-rounded-c"} ${occupiedSeats.includes(`${n}`) ? '' : "p-button-pink"}`}
+                          className={`${occupiedSeats.includes(`${n}`) ? 'p-button-rounded-c-o' : "p-button-rounded-c"} ${occupiedSeats.includes(`${n}`) ? '' : "p-button-pink-flow"}`}
                           style={{ fontWeight: 'bold' }}
                           badge={selected && selected.name === `${n}` && occupiedSeats.length === 0 ? "✓" :  selectedPasses && selectedPasses.name === `${n}`  && occupiedSeats.length === 0 ? "✓" : selectedGroup && selectedGroup.name === `${n}`  && occupiedSeats.length === 0 ? "✓" : ""}
                           disabled={isOccupied(`${n}`)}

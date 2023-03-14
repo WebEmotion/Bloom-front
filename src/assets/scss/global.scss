@@ -527,6 +527,16 @@ html {
   }
 }
 
+.p-button-pink-flow {
+  color: $white;
+  background: #513302 !important;
+  border: 1px solid #513302 !important;
+  margin: 2px;
+  @media screen and (max-width: $break-medium) {
+    transform: scale(0.8);
+  }
+}
+
 .p-button-pink-buy {
   color: $white;
   background: #000000 !important;
