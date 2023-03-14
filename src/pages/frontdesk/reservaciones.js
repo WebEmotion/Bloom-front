@@ -143,11 +143,7 @@ const Reservaciones = inject("RootStore")(
                         <div></div>
                         <div></div>
                         <div></div>
-                        <div></div>
 
-                        {/* divs for a tree that occupies 2 places */}
-                        <div></div>
-                        <div></div>
                     </Planet>
                     <Planet
                         centerContent={
@@ -181,6 +177,9 @@ const Reservaciones = inject("RootStore")(
                         }
                         <h1 className="fila"></h1>
                         {/* Number of divs is same userCircle number + 1 */}
+                        <div></div>
+                        <div></div>
+                        <div></div>
                         <div></div>
                         <div></div>
                         <div></div>
@@ -287,8 +286,6 @@ const Reservaciones = inject("RootStore")(
                         }
                         <h1 className="fila"></h1>
                         {/* Number of divs is same userCircle number + 1 */}
-                        <div></div>
-                        <div></div>
                         <div></div>
                         <div></div>
                         <div></div>
