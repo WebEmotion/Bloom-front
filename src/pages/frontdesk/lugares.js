@@ -109,37 +109,6 @@ const getWeekDays = (date, schedules) => {
     return data
 }
 
-const getWeekDates = (date, events) => {
-  const nDate = moment(date, "YYYY-MM-DD").set('hours', 0).set('minutes', 0).set('milliseconds', 0)
-  const day = `${nDate.date()}`.padStart(2, '0')
-  //let current = moment(`${nDate.year()}-${nDate.month() + 1}-${day} 00:00:00`, "YYYY-MM-DD")
-  var current
-  const data = []
-  let counter
-
-  if (events.length == 8) {
-    counter = 8
-    if (moment(date).weekday() == 0) {
-        current = moment(date).set({hour:0,minute:0,second:0,millisecond:0})
-    } else {
-        current = moment(date).add(1, 'days').set({hour:0,minute:0,second:0,millisecond:0})
-    }
-  } else {
-    counter = 7
-    //current = moment().isoWeek(moment(date).week() - 1).startOf("isoWeek").set({hour:0,minute:0,second:0,millisecond:0})
-    current = moment().day("Monday").set({hour:0,minute:0,second:0,millisecond:0})
-    //let daysLess = (moment(date).weekday - 1) * -1
-    //current = moment(date).add(daysLess, "days")
-  }
-
-  for (var i = 0; i < counter; i++) {
-      const loquesea = current
-    data.push(loquesea)
-    current = moment(current).add(1, 'days')
-  }
-  return data
-}
-
 const getCurrentMonth = (date) => {
   const months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
   return months[date.getMonth()]
@@ -148,10 +117,20 @@ const getCurrentMonth = (date) => {
 const IndexPage = inject("RootStore")(
   observer(({ RootStore }) => {
     const store = RootStore.UserStore
+
+    //let toast = useRef(null)
+
     const [state, setState] = useState({
       events: [],
       days: []
     })
+
+    const [warning, setWarning] = useState({
+      visible: false,
+      classId: undefined
+    })
+
+    const [classId, setClassId] = useState(null)
 
     var timer = null
 
@@ -165,6 +144,9 @@ const IndexPage = inject("RootStore")(
       pending: 0,
       taken: 0
     })
+
+     const [details, setDetails] = useState(null)
+
     const [loading, setLoading] = useState({
       loading: true,
       animateIn: true
@@ -659,6 +641,7 @@ const IndexPage = inject("RootStore")(
     const placesTemplate = rowData => {
       return (
         <React.Fragment>
+          <p>Prueba</p>
           {rowData.available}
         </React.Fragment>
       )
