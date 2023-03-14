@@ -862,7 +862,7 @@ const IndexPage = inject("RootStore")(
                   >
                     <h1 className="fila"></h1>
                     {
-                      [17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6].map(n => (
+                      [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17].map(n => (
                         <Button
                           label={`${n}`}
                           className={`${occupiedSeats.includes(`${n}`) ? 'p-button-rounded-c-o' : "p-button-rounded-c"} ${occupiedSeats.includes(`${n}`) ? '' : "p-button-pink"}`}
