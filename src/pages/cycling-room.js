@@ -19,7 +19,7 @@ import Item from "../components/item-profile"
 
 import * as moment from "moment"
 
-import Logo from "../assets/images/rode-1.png"
+import Logo from "../assets/images/web4.jpg"
 import Tree from "../assets/images/tree.png"
 import * as SchedulesAPI from "../api/v0/schedules"
 import * as ClientsAPI from "../api/v0/clients"
