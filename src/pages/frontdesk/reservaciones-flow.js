@@ -124,8 +124,8 @@ const Reservaciones = inject("RootStore")(
                     >
                         <h1 className="fila"></h1>
                         {
-                            [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17].map(n => {
-                                const user = getUser(n + 12, n)
+                            [9, 10, 11, 12, 13, 14, 15, 16].map(n => {
+                                const user = getUser(n + 8, n)
                                 return <UserCircle seat={`${n}`} image={user ? user.pictureUrl : ''} name={user ? user.name : ''} />
                             })
                         }
@@ -140,10 +140,7 @@ const Reservaciones = inject("RootStore")(
                         <div></div>
                         <div></div>
                         <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                        
                     </Planet>
                     <Planet
                         centerContent={
@@ -233,7 +230,7 @@ const Reservaciones = inject("RootStore")(
                     >
                         <h1 className="fila"></h1>
                         {
-                            [1, 2, 3, 4, 5].map(n => {
+                            [1, 2, 3, 4, 5, 6, 7, 8].map(n => {
                                 const user = getUser(n + 5, n)
                                 return <UserCircle seat={`${n}`} image={user ? user.pictureUrl : ''} name={user ? user.name : ''} />
                             })
@@ -241,11 +238,14 @@ const Reservaciones = inject("RootStore")(
                         <h1 className="fila"></h1>
                         {/* Number of divs is same userCircle number + 1 */}
                         <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
                     </Planet>
                 </div>
             </div>
