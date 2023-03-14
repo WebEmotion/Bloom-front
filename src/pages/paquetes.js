@@ -422,6 +422,10 @@ const IndexPage = inject("RootStore")(
           </div>}
           <br />
           <p>Para continuar con tu compra, se abrirá una ventana de nuestro proveedor de pagos <span><img style={{ height: 20, objectFit: 'contain', marginBottom: -5 }} src="https://evopayments.com/wp-content/uploads/evo-logo-no-bkground-webres.png" alt="Evo Payments" /></span> donde podrás ingresar los datos de tu transacción de forma segura.</p>
+          <div>
+        <label htmlFor="discountCode">Código de descuento:</label>
+        <input id="discountCode" type="text" value={state.discountCode} onChange={(e) => { setState({ ...state, discountCode: e.target.value }) }} />
+      </div>
         </Dialog>
         <Dialog header="Compra exitosa" className="spDialog" visible={state.displaySuccess} onHide={() => { setState({ ...state, displaySuccess: false, selectedBundle: null, voucher: '' }) }}>
           <p>Paquete: <span style={{ fontWeight: 'bold' }}>{state.selectedBundle && state.selectedBundle.name}</span></p>
