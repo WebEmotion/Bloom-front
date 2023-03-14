@@ -35,8 +35,8 @@ const EventItem = ({ item, hour, instructor, onPress, disabled, isReserved, onAl
         }
       }}>
         <p style={{ color: disabled ? '#00000050' : '#ffffff', margin: 0, fontSize: 13 }}>{hour}</p>
-        <p style={{ color: disabled ? '#00000030' : '#495057', margin: 0, fontSize: 13 }}>{instructor}</p>
-        <p style={{ color: disabled ? '#00000030' : '#495057', margin: 0, fontSize: 13, textAlign: 'center', paddingLeft: 5, paddingRight: 5, minHeight: 20 }}>{item.theme ? item.theme : ""}</p>
+        <p style={{ color: disabled ? '#00000030' : '#ffffff', margin: 0, fontSize: 13 }}>{instructor}</p>
+        <p style={{ color: disabled ? '#00000030' : '#ffffff', margin: 0, fontSize: 13, textAlign: 'center', paddingLeft: 5, paddingRight: 5, minHeight: 20 }}>{item.theme ? item.theme : ""}</p>
         <p style={{ color: disabled ? '#00000030' : '#ffffff', margin: 0, fontSize: 13, marginBottom: 20 }}>{item.Rooms.name}</p>
       </div>
       <div onClick={() => {onSeeMap()}} style={{backgroundColor: '#000000', borderRadius: 10, color: 'white', paddingLeft: 10, paddingRight: 10, fontSize: 12, cursor: 'pointer', marginTop: -30, textAlign: 'center', zIndex: '200 !important', width: '90%', marginLeft: '5%'}}>Pantalla</div>

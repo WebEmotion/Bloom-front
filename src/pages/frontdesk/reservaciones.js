@@ -122,7 +122,7 @@ const Reservaciones = inject("RootStore")(
                             borderRadius: "100%",
                         })}
                     >
-                        <h1 className="fila">C</h1>
+                        <h1 className="fila"></h1>
 
                         {/* divs for a tree that occupies 2 places */}
                         <div></div>
@@ -190,12 +190,12 @@ const Reservaciones = inject("RootStore")(
                         </div>
                         
                         {
-                            [1, 2, 3, 4, 5, 6, 7, 8, 9].map(n => {
-                                const user = getUser(n, n, "C")
-                                return <UserCircle seat={`C${n}`} image={user ? user.pictureUrl : ''} name={user ? user.name : ''} />
+                            [18, 19, 20, 21, 22, 23, 24, 25].map(n => {
+                                const user = getUser(n, n)
+                                return <UserCircle seat={`${n}`} image={user ? user.pictureUrl : ''} name={user ? user.name : ''} />
                             })
                         }
-                        <h1 className="fila">C</h1>
+                        <h1 className="fila"></h1>
                         {/* Number of divs is same userCircle number + 1 */}
                         <div></div>
                         <div></div>
@@ -235,14 +235,14 @@ const Reservaciones = inject("RootStore")(
                             borderRadius: "100%",
                         })}
                     >
-                        <h1 className="fila">B</h1>
+                        <h1 className="fila"></h1>
                         {
-                            [1, 2, 3, 4, 5, 6, 7, 8, 9].map(n => {
-                                const user = getUser(n + 9, n, "B")
-                                return <UserCircle seat={`B${n}`} image={user ? user.pictureUrl : ''} name={user ? user.name : ''} />
+                            [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17].map(n => {
+                                const user = getUser(n + 12, n)
+                                return <UserCircle seat={`${n}`} image={user ? user.pictureUrl : ''} name={user ? user.name : ''} />
                             })
                         }
-                        <h1 className="fila">B</h1>
+                        <h1 className="fila"></h1>
                         {/* Number of divs is same userCircle number + 1 */}
                         <div></div>
                         <div></div>
@@ -341,14 +341,14 @@ const Reservaciones = inject("RootStore")(
                             borderRadius: "100%",
                         })}
                     >
-                        <h1 className="fila">A</h1>
+                        <h1 className="fila"></h1>
                         {
-                            [1, 2, 3, 4, 5, 6, 7].map(n => {
-                                const user = getUser(n + 18, n, "A")
-                                return <UserCircle seat={`A${n}`} image={user ? user.pictureUrl : ''} name={user ? user.name : ''} />
+                            [1, 2, 3, 4, 5].map(n => {
+                                const user = getUser(n + 5, n)
+                                return <UserCircle seat={`${n}`} image={user ? user.pictureUrl : ''} name={user ? user.name : ''} />
                             })
                         }
-                        <h1 className="fila">A</h1>
+                        <h1 className="fila"></h1>
                         {/* Number of divs is same userCircle number + 1 */}
                         <div></div>
                         <div></div>
