@@ -14,7 +14,7 @@ import SEO from "../components/seo"
 import Item from "../components/item-profile"
 import MisClases from "../assets/images/cicle_white.png"
 //import MisClases from "../assets/images/flow-image.png"
-
+//
 import * as LocationsApi from '../api/v0/locations'
 import * as MeApi from '../api/v0/me'
 import * as Schedules from '../api/v0/schedules'
