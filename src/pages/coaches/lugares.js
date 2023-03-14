@@ -11,7 +11,7 @@ import { Planet } from "react-planet"
 import Img from "gatsby-image"
 import { Toast } from "primereact/toast"
 import "../../assets/scss/global.scss"
-import Logo from "../../assets/images/cicle_white.png"
+import Logo from "../../assets/images/logo-rode.png"
 import * as SchedulesAPI from '../../api/v0/schedules'
 
 const moment = require('moment')
