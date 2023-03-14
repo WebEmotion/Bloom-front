@@ -112,7 +112,7 @@ const Reservaciones = inject("RootStore")(
                         }
                         open
                         autoClose={false}
-                        orbitRadius={480}
+                        orbitRadius={340}
                         //86 normal(stage down), 266 for 180° (stage up)
                         rotation={266}
                         orbitStyle={() => ({
@@ -125,69 +125,6 @@ const Reservaciones = inject("RootStore")(
                         <h1 className="fila"></h1>
 
                         {/* divs for a tree that occupies 2 places */}
-                        <div></div>
-                        <div>
-                            <div
-                                style={{
-                                width: 130,
-                                height: 130,
-                                borderRadius: '100%',
-                                backgroundColor: "#7aa578",
-                                position: "absolute",
-                                transform: "translateX(-80px)",
-                                display: "flex",
-                                alignItems: "center",
-                                color: "#fff",
-                                textAlign: "center",
-                                justifyContent: "center",
-                                marginTop: "-80px",
-                                marginLeft: 20
-                                }}
-                            >
-                                <div className="p-grid p-align-center p-justify-center">
-                                    <div className="p-col-12">
-                                        <img
-                                            style={{
-                                                maxWidth: "100%",
-                                                marginBottom: "0.5rem",
-                                                marginTop: -30,
-                                                marginRight: 30,
-                                                display: 'none'
-                                            }}
-                                            src={Tree}
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                            <div
-                                style={{
-                                width: 130,
-                                height: 130,
-                                borderRadius: '100%',
-                                position: "absolute",
-                                transform: "translateX(-80px)",
-                                display: "flex",
-                                alignItems: "center",
-                                color: "#fff",
-                                textAlign: "center",
-                                justifyContent: "center",
-                                marginLeft: 20
-                                }}
-                            >
-                                <div className="p-grid p-align-center p-justify-center">
-                                    <div className="p-col-12">
-                                        <p
-                                        style={{
-                                            marginBottom: 0,
-                                            color: 'black'
-                                        }}
-                                        >
-                                        The Soul
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         
                         {
                             [18, 19, 20, 21, 22, 23, 24, 25].map(n => {
@@ -225,7 +162,7 @@ const Reservaciones = inject("RootStore")(
                         }
                         open
                         autoClose={false}
-                        orbitRadius={370}
+                        orbitRadius={260}
                         //86 normal (stage down), 265 for 180° (stage up)
                         rotation={265}
                         orbitStyle={() => ({
@@ -331,7 +268,7 @@ const Reservaciones = inject("RootStore")(
                         }
                         open
                         autoClose={false}
-                        orbitRadius={250}
+                        orbitRadius={180}
                         //86 normal (stage down), 266 for 180° (stage up)
                         rotation={265}
                         orbitStyle={() => ({
