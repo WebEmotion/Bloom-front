@@ -34,10 +34,10 @@ const EventItem = ({ item, hour, instructor, onPress, disabled, isReserved, onAl
           onPress()
         }
       }}>
-        <p style={{ color: disabled ? '#00000050' : '#000000', margin: 0, fontSize: 13 }}>{hour}</p>
+        <p style={{ color: disabled ? '#00000050' : '#ffffff', margin: 0, fontSize: 13 }}>{hour}</p>
         <p style={{ color: disabled ? '#00000030' : '#495057', margin: 0, fontSize: 13 }}>{instructor}</p>
         <p style={{ color: disabled ? '#00000030' : '#495057', margin: 0, fontSize: 13, textAlign: 'center', paddingLeft: 5, paddingRight: 5, minHeight: 20 }}>{item.theme ? item.theme : ""}</p>
-        <p style={{ color: disabled ? '#00000030' : '#000000', margin: 0, fontSize: 13, marginBottom: 20 }}>{item.Rooms.name}</p>
+        <p style={{ color: disabled ? '#00000030' : '#ffffff', margin: 0, fontSize: 13, marginBottom: 20 }}>{item.Rooms.name}</p>
       </div>
       <div onClick={() => {onSeeMap()}} style={{backgroundColor: '#000000', borderRadius: 10, color: 'white', paddingLeft: 10, paddingRight: 10, fontSize: 12, cursor: 'pointer', marginTop: -30, textAlign: 'center', zIndex: '200 !important', width: '90%', marginLeft: '5%'}}>Pantalla</div>
     </div>
@@ -54,9 +54,9 @@ const EventItemWithCancel = ({ hour, seat, instructor, isPass, onPress, disabled
         }
       }}>
         <i className="pi pi-times icon-deleted"></i>
-        <p style={{ color: disabled ? '#00000050' : '#000000', margin: 0, marginTop: "5px" }}>{hour}</p>
+        <p style={{ color: disabled ? '#00000050' : '#ffffff', margin: 0, marginTop: "5px" }}>{hour}</p>
         <p style={{ color: disabled ? '#00000030' : '#495057', margin: 0 }}>{instructor}</p>
-        <p style={{ color: disabled ? '#00000030' : '#000000', margin: 0 }}>Outdoors</p>
+        <p style={{ color: disabled ? '#00000030' : '#ffffff', margin: 0 }}>Outdoors</p>
         <p style={{ color: disabled ? '#00000030' : '#495057', margin: 0, marginTop: !isPass.length > 0 ? "0.5rem" : 0, marginBottom: !isPass.length > 0 ? "0.4rem" : 0 }}>Lugar <div style={{ borderRadius: "15px", background: "#3eb978", color: "#fff", paddingLeft: "4px", paddingRight: "4px", display: "inline" }}>{seat.number}</div></p>
         {isPass.length > 0 && (<p style={{ color: disabled ? '#00000030' : 'gray', margin: 0 }}>+ {isPass.length} pase</p>)}
         {isPass.length > 0 && (<p style={{ color: disabled ? '#00000030' : 'gray', margin: 0 }}>Lugar {isPass[0].Seat.number}</p>)}
