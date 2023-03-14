@@ -12,7 +12,7 @@ import Loader from "react-loader-spinner"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Item from "../components/item-profile"
-import MisClases from "../assets/images/rode-1.png"
+import MisClases from "../assets/images/flow-image.png"
 
 import * as LocationsApi from '../api/v0/locations'
 import * as MeApi from '../api/v0/me'
