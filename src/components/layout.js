@@ -641,7 +641,7 @@ const Layout = inject("RootStore")(
                     </div>
                   )}
                   {store.token && store.isAdmin && (
-                    <div className="p-col-12" style={backgroundColor="#513302"}>
+                    <div className="p-col-12">
                       <Button
                         className={
                           page === "mis-clases-flow" || page === "flow-room" || page === "reservas-flow"
