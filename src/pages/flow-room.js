@@ -21,7 +21,7 @@ import * as moment from "moment"
 
 import Logo from "../assets/images/flow-image.png"
 import Tree from "../assets/images/tree.png"
-import * as SchedulesAPI from "../api/v0/schedules"
+import * as SchedulesAPI from "../api/v0/schedules-flow"
 import * as ClientsAPI from "../api/v0/clients"
 import * as MeAPI from "../api/v0/me"
 
