@@ -241,9 +241,9 @@ const IndexPage = inject("RootStore")(
       const reserv = window.history.state?.booking
 
       //console.log(id, classes, reserv)
-      if(!id && !classes && !reserv) {
+      /*if(!id && !classes && !reserv) {
         navigate("/mis-clases-flow")
-      }
+      }*/
 
       loadSeats(id, classes)
       setMyClasses(classes)
