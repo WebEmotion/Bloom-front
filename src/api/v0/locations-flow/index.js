@@ -13,7 +13,7 @@ export const schedules = async (roomId, start, token = null) => {
             'Content-Type': 'application/json',
         }
         if (token) headers['Authorization'] = token
-        const response = await fetch(`${Constants.API.BASE_URL}/locations/room/${roomId}/schedules`, {
+        const response = await fetch(`${Constants.API.BASE_URL}/locations-flow/room/${roomId}/schedules`, {
             method: 'POST',
             headers,
             body: JSON.stringify(data)
@@ -40,7 +40,7 @@ export const schedulesClient = async (roomId, start, token = null) => {
             'Content-Type': 'application/json',
         }
         if (token) headers['Authorization'] = token
-        const response = await fetch(`${Constants.API.BASE_URL}/locations/client/room/${roomId}/schedules`, {
+        const response = await fetch(`${Constants.API.BASE_URL}/locations-flow/client/room/${roomId}/schedules`, {
             method: 'POST',
             headers,
             body: JSON.stringify(data)
@@ -68,7 +68,7 @@ export const schedulesAdmin = async (roomId, start, token, clientId) => {
             'Content-Type': 'application/json',
             'Authorization': token
         }
-        const response = await fetch(`${Constants.API.BASE_URL}/locations/admin/room/${roomId}/schedules`, {
+        const response = await fetch(`${Constants.API.BASE_URL}/locations-flow/admin/room/${roomId}/schedules`, {
             method: 'POST',
             headers,
             body: JSON.stringify(data)
