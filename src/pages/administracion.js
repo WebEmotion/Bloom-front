@@ -48,7 +48,7 @@ const IndexPage = () => {
       </BackgroundSlider>
 
       <footer className="p-mt-auto footer-2">
-        Bloom Cycling Studio - Derechos Reservados {new Date().getFullYear()}
+        Casa Bloom - Derechos Reservados {new Date().getFullYear()}
         <br />
         <small>Terminos y Condiciones del Servicio</small>
       </footer>

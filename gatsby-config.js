@@ -5,7 +5,7 @@ module.exports = {
   },
   siteMetadata: {
     title: `Bloom`,
-    description: `Bloom Cycling Studio.`,
+    description: `Casa Bloom.`,
     author: `Digital Ignition`,
   },
   plugins: [
@@ -22,7 +22,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `BLOOM CYCLING STUDIO`,
+        name: `Casa Bloom`,
         short_name: `Bloom`,
         start_url: `/`,
         background_color: `#ffffff`,

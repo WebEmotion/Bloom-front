@@ -50,7 +50,7 @@ const IndexPage = () => {
               </div>
               <div className="p-md-8 p-col-11">
               <p className="form-text">
-                  Te invitamos a conocer un poco más de Bloom Cycling Studio
+                  Te invitamos a conocer un poco más de Casa Bloom
                   creando tu perfil
                 </p>
                 <div className="p-grid p-align-center p-justify-center">

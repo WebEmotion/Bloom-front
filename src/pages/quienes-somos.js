@@ -54,7 +54,7 @@ const IndexPage = inject("RootStore")(
             />
           </div>
           <div className="p-col-12 p-md-9">
-            <h2 className="subtitle">BLOOM CYCLING STUDIO</h2>
+            <h2 className="subtitle">Casa Bloom</h2>
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text

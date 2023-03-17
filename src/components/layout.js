@@ -938,7 +938,7 @@ const Layout = inject("RootStore")(
                   textShadow: page === "home" ? '2px 1px 7px rgba(0,0,0,0.46)' : 'none'
                 }}
               >
-                Bloom Cycling Studio - Derechos Reservados{" "}
+                Casa Bloom - Derechos Reservados{" "}
                 {new Date().getFullYear()}
                 <br />
                 <Link to="/terminosycondiciones" style={{ textDecoration: "none" }}>

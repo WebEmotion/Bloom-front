@@ -129,7 +129,7 @@ const IndexPage = inject("RootStore")(
                       <p>
                         Estos Términos y Condiciones de Uso constituyen un
                         Contrato de Adhesión entre usted y BML Cycling Studio
-                        (Bloom Cycling Studio), la cual es representada por
+                        (Casa Bloom), la cual es representada por
                         Carla G Camarillo Santillán que es una persona física
                         conforme a las leyes aplicables en México. Con domicilio
                         para todo lo relativo a este contrato en Camino Rancho

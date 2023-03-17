@@ -30,14 +30,14 @@ const IndexPage = inject("RootStore")(
         </div>
         <div className="p-grid p-align-center p-justify-center">
           <div className="p-col-12 p-md-10" style={{textAlign: "justify"}}>
-            <h2 className="subtitle">BLOOM CYCLING STUDIO</h2>
+            <h2 className="subtitle">Casa Bloom</h2>
             <h3>
               LE ROGAMOS LEA LAS PRESENTES CONDICIONES DEL USUARIO ATENTAMENTE
               ANTES DE USAR NUESTROS SERVICIOS BLM CYCLING STUDIO.
             </h3>
             <p>
               Estos Términos y Condiciones de Uso constituyen un Contrato de
-              Adhesión entre usted y BML Cycling Studio (Bloom Cycling Studio),
+              Adhesión entre usted y BML Cycling Studio (Casa Bloom),
               la cual es representada por Carla G Camarillo Santillán que es una
               persona física conforme a las leyes aplicables en México. Con
               domicilio para todo lo relativo a este contrato en Camino Rancho
