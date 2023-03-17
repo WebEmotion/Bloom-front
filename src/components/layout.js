@@ -29,7 +29,7 @@ const Layout = inject("RootStore")(
     const store = RootStore.UserStore
     const images = useStaticQuery(graphql`
       query {
-        bloom: file(relativePath: { eq: "icons/BLOOM.png" }) {
+        bloom: file(relativePath: { eq: "icons/logo-bloom.png" }) {
           childImageSharp {
             fluid(maxWidth: 800) {
               ...GatsbyImageSharpFluid
