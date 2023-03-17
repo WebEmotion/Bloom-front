@@ -177,7 +177,7 @@ const CoachesLugares = inject("RootStore")(observer(({ RootStore }) => {
                 <div className="p-col-12" style={{ width: '100%' }}>
                     <div className="p-grid p-justify-center">
                         <div className="p-col-12 p-md-6 p-lg-6">
-                            <img style={{ width: 150, height: 100, objectFit: 'contain', alignSelf: 'center', marginLeft: "calc(50% - 75px)" }} src="https://digital-ignition.com.mx/BLOOM.png" alt="" />
+                            <img style={{ width: 150, height: 100, objectFit: 'contain', alignSelf: 'center', marginLeft: "calc(50% - 75px)" }} src="https://digital-ignition.com.mx/logo-bloom.png" alt="" />
                         </div>
                         <div className="p-col-12 p-md-6 p-lg-6">
                             <ProfilePicture img={store.pictureUrl} name={store.name} />
