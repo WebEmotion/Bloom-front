@@ -847,7 +847,7 @@ const Layout = inject("RootStore")(
                       />
                     </div>
                   )}
-                  {(!store.token || (store.token && !store.isAdmin)) &&  (
+                 {/*(!store.token || (store.token && !store.isAdmin)) &&  (
                     <div className="p-col-12">
                       <Button
                         className={
@@ -859,7 +859,7 @@ const Layout = inject("RootStore")(
                         onClick={() => navigate("/mis-clases-flow")}
                       />
                     </div>
-                  )}
+                      )*/}
                   {(!store.token || (store.token && !store.isAdmin)) && (
                     <div className="p-col-12">
                       <Button
