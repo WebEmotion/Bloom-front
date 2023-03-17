@@ -263,7 +263,7 @@ const IndexPage = inject("RootStore")(
                       line1: '200 Sample St',
                       line2: '1234 Example Town'
                     },
-                    logo: 'https://www.bloomcycling.com/static/54c801227cce968c028732241d089cd6/c95b5/logo-bloom.png'
+                    logo: 'https://www.bloomcycling.com/static/54c801227cce968c028732241d089cd6/c95b5/BLOOM.png'
                   },
                   locale: 'es_ES',
                   country: 'MEX',
