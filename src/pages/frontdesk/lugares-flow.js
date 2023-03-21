@@ -27,17 +27,17 @@ import { FaHourglassEnd, FaLessThanEqual } from "react-icons/fa"
 const EventItem = ({ item, hour, instructor, onPress, disabled, isReserved, onAlreadyBooked, onSeeMap }) => {
   return (
     <div style={{marginBottom: 10}}>
-      <div className={`eventItem2 ${isReserved ? 'reserved' : ''}`} style={{ backgroundColor: disabled ? '#00000020' : isReserved ? '#00000010' : '#3eb978', cursor: disabled ? 'not-allowed' : 'pointer' }} onClick={() => {
+      <div className={`eventItem2 ${isReserved ? 'reserved' : ''}`} style={{ backgroundColor: disabled ? '#00000020' : isReserved ? '#00000010' : '#e6cdb5', cursor: disabled ? 'not-allowed' : 'pointer' }} onClick={() => {
         if (isReserved) {
           onAlreadyBooked && onAlreadyBooked()
         } else if (!disabled) {
           onPress()
         }
       }}>
-        <p style={{ color: disabled ? '#00000050' : '#ffffff', margin: 0, fontSize: 13 }}>{hour}</p>
-        <p style={{ color: disabled ? '#00000030' : '#ffffff', margin: 0, fontSize: 13 }}>{instructor}</p>
-        <p style={{ color: disabled ? '#00000030' : '#ffffff', margin: 0, fontSize: 13, textAlign: 'center', paddingLeft: 5, paddingRight: 5, minHeight: 20 }}>{item.theme ? item.theme : ""}</p>
-        <p style={{ color: disabled ? '#00000030' : '#ffffff', margin: 0, fontSize: 13, marginBottom: 20 }}>{item.Rooms.name}</p>
+        <p style={{ color: disabled ? '#00000050' : '#000000', margin: 0, fontSize: 13 }}>{hour}</p>
+        <p style={{ color: disabled ? '#00000030' : '#000000', margin: 0, fontSize: 13 }}>{instructor}</p>
+        <p style={{ color: disabled ? '#00000030' : '#000000', margin: 0, fontSize: 13, textAlign: 'center', paddingLeft: 5, paddingRight: 5, minHeight: 20 }}>{item.theme ? item.theme : ""}</p>
+        <p style={{ color: disabled ? '#00000030' : '#000000', margin: 0, fontSize: 13, marginBottom: 20 }}>{item.Rooms.name}</p>
       </div>
       <div onClick={() => {onSeeMap()}} style={{backgroundColor: '#000000', borderRadius: 10, color: 'white', paddingLeft: 10, paddingRight: 10, fontSize: 12, cursor: 'pointer', marginTop: -30, textAlign: 'center', zIndex: '200 !important', width: '90%', marginLeft: '5%'}}>Pantalla</div>
     </div>
@@ -57,7 +57,7 @@ const EventItemWithCancel = ({ hour, seat, instructor, isPass, onPress, disabled
         <p style={{ color: disabled ? '#00000050' : '#ffffff', margin: 0, marginTop: "5px" }}>{hour}</p>
         <p style={{ color: disabled ? '#00000030' : '#495057', margin: 0 }}>{instructor}</p>
         <p style={{ color: disabled ? '#00000030' : '#ffffff', margin: 0 }}>Outdoors</p>
-        <p style={{ color: disabled ? '#00000030' : '#495057', margin: 0, marginTop: !isPass.length > 0 ? "0.5rem" : 0, marginBottom: !isPass.length > 0 ? "0.4rem" : 0 }}>Lugar <div style={{ borderRadius: "15px", background: "#3eb978", color: "#fff", paddingLeft: "4px", paddingRight: "4px", display: "inline" }}>{seat.number}</div></p>
+        <p style={{ color: disabled ? '#00000030' : '#495057', margin: 0, marginTop: !isPass.length > 0 ? "0.5rem" : 0, marginBottom: !isPass.length > 0 ? "0.4rem" : 0 }}>Lugar <div style={{ borderRadius: "15px", background: "#e6cdb5", color: "#fff", paddingLeft: "4px", paddingRight: "4px", display: "inline" }}>{seat.number}</div></p>
         {isPass.length > 0 && (<p style={{ color: disabled ? '#00000030' : 'gray', margin: 0 }}>+ {isPass.length} pase</p>)}
         {isPass.length > 0 && (<p style={{ color: disabled ? '#00000030' : 'gray', margin: 0 }}>Lugar {isPass[0].Seat.number}</p>)}
       </div>
@@ -702,7 +702,7 @@ const IndexPage = inject("RootStore")(
             type="Grid"
             height={100}
             width={100}
-            color="#3eb978"
+            color="#e6cdb5"
           />
           <p>Cargando...</p>
         </div>
@@ -726,7 +726,7 @@ const IndexPage = inject("RootStore")(
             </div>
             <div className="p-col-12 p-md-3">
               <div className="p-grid p-justify-center">
-                <ItemProfile color="#3eb978" icon="pi pi-user" store={store} />
+                <ItemProfile color="#e6cdb5" icon="pi pi-user" store={store} />
               </div>
             </div>
           </div>
@@ -738,7 +738,7 @@ const IndexPage = inject("RootStore")(
           </div>
           <div className="p-d-flex p-jc-end" style={{ marginTop: -35 }}>
             <div className="p-mr-2">
-              <Button label="Nueva clase" icon="pi pi-plus" style={{ backgroundColor: '#3eb978', borderRadius: 50, border: 'none' }} onClick={()=>{navigate('/frontdesk/nueva-clase-flow')}} />
+              <Button label="Nueva clase" icon="pi pi-plus" style={{ backgroundColor: '#e6cdb5', borderRadius: 50, border: 'none' }} onClick={()=>{navigate('/frontdesk/nueva-clase-flow')}} />
             </div>
           </div>
           {showList &&
@@ -796,7 +796,7 @@ const IndexPage = inject("RootStore")(
               <table style={{ borderCollapse: 'collapse', width: '100%', marginBottom: 100, marginTop: 20, tableLayout: 'fixed', minWidth: 800 }}>
               <thead>
                   <tr>
-                    <th style={{ color: '#3eb978' }}>
+                    <th style={{ color: '#e6cdb5' }}>
                       {state.days[0].name}
                       <p style={{ margin: 0 }}>{state.days[0].number}</p>
                     </th>
