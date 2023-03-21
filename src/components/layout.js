@@ -293,7 +293,7 @@ const Layout = inject("RootStore")(
                             ? "p-button menu-button active"
                             : "p-button menu-button"
                         }
-                        label={"CLASES CYCLING"}
+                        label={"CLASES RODE"}
                         onClick={() => navigate("/frontdesk/lugares")}
                       />
                     </div>
@@ -635,7 +635,7 @@ const Layout = inject("RootStore")(
                             ? "p-button menu-button active"
                             : "p-button menu-button"
                         }
-                        label={store.isAdmin ? "RESERVAR CYCLING" : "MIS CLASES"}
+                        label={store.isAdmin ? "RESERVAR RODE" : "MIS CLASES"}
                         onClick={() => navigate("/frontdesk/mis-clases")}
                       />
                     </div>
@@ -687,7 +687,7 @@ const Layout = inject("RootStore")(
                             ? "p-button menu-button active"
                             : "p-button menu-button"
                         }
-                        label={"CLASES CYCLING"}
+                        label={"CLASES RODE"}
                         onClick={() => navigate("/frontdesk/lugares")}
                       />
                     </div>
