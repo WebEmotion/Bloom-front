@@ -648,7 +648,7 @@ const Layout = inject("RootStore")(
                             ? "p-button menu-button active"
                             : "p-button menu-button"
                         }
-                        label={store.isAdmin ? "RESERVAR FLOW" : "MIS CLASES"}
+                        label={store.isAdmin ? "RESERVAR FLOW" : "MIS CLASES FLOW"}
                         onClick={() => navigate("/frontdesk/mis-clases-flow")}
                       />
                     </div>
