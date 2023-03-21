@@ -470,7 +470,7 @@ const IndexPage = inject("RootStore")(
             const dStart = "" + date.hour()
             if (`${dStart.padStart(2, '0')}:00:00` === hour) {
               // Agregar condición para mostrar solo los eventos de la sala "Flow"
-    if (item.Rooms.name === "Indoors") {
+    if (item.Rooms.name === "Flow") {
       items[j].push(item)
     }
               break
