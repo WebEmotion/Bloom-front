@@ -435,7 +435,7 @@ const Layout = inject("RootStore")(
                             ? "p-button menu-button active"
                             : "p-button menu-button"
                         }
-                        label="HORARIOS CYCLING"
+                        label="HORARIOS RODE"
                         onClick={() => navigate("/mis-clases")}
                       />
                     </div>
@@ -842,7 +842,7 @@ const Layout = inject("RootStore")(
                             ? "p-button menu-button active"
                             : "p-button menu-button"
                         }
-                        label="HORARIOS CYCLING"
+                        label="HORARIOS RODE"
                         onClick={() => navigate("/mis-clases")}
                       />
                     </div>
