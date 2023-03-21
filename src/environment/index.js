@@ -11,7 +11,6 @@ export const FONTS = {
     regular: 'Poppins-Regular',
     bold: 'Poppins-Bold'
 }
-
 export const URLS = {
     facebook_share_url: 'https://www.facebook.com/sharer/sharer.php?u=',
     twitter_share_url: 'https://twitter.com/intent/tweet?text=',
@@ -20,6 +19,7 @@ export const URLS = {
 }
 
 export const API = {
+    //prueba
      BASE_URL: 'https://bloom-api.com',            //Produccion
     // BASE_URL: 'http://localhost:5200/',  //localhost
     // BASE_URL: 'https://bloomhouse.mx',    
