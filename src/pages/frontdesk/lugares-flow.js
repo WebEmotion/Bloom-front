@@ -721,7 +721,7 @@ const IndexPage = inject("RootStore")(
           <div className="p-grid p-align-end" style={{ marginTop: "2rem" }}>
             <div className="p-col-12 p-md-9">
               <h1 className="title-page" style={{ paddingLeft: 0 }}>
-                CLASES
+                CLASES FLOW
               </h1>
             </div>
             <div className="p-col-12 p-md-3">
