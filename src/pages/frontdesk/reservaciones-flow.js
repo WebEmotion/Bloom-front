@@ -6,7 +6,7 @@ import { Planet } from "react-planet"
 import { navigate } from "gatsby"
 import { Button } from "primereact/button"
 
-import Logo from "../../assets/images/rode-1.png"
+import Logo from "../../assets/images/flow-image-2.png"
 import Tree from "../../assets/images/tree.png"
 import * as SchedulesAPI from '../../api/v0/schedules'
 import bici from "../../assets/images/icons8-camino-de-bicis-100.png"
