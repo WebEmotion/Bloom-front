@@ -87,7 +87,8 @@ const getWeekDays = (date, schedules) => {
         countDays = 8
     }
     else {
-        firstDayOfWeek = moment().isoWeek(moment(date).week() - 1).startOf("isoWeek")
+        //firstDayOfWeek = moment().isoWeek(moment(date).week() - 1).startOf("isoWeek")
+        firstDayOfWeek = moment().day("Monday")
         countDays = 7
     }
     const days = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo']
