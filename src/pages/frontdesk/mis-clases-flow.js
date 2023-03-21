@@ -15,9 +15,9 @@ import SEO from "../../components/seo"
 import Item from "../../components/item-profile"
 import MisClases from "../../assets/images/web4.jpg"
 
-import * as LocationsApi from '../../api/v0/locations'
+import * as LocationsApi from '../../api/v0/locations-flow'
 import * as MeApi from '../../api/v0/me'
-import * as Schedules from '../../api/v0/schedules'
+import * as Schedules from '../../api/v0/schedules-flow'
 import * as ClientsAPI from '../../api/v0/clients'
 
 import * as moment from 'moment'
