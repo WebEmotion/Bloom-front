@@ -642,7 +642,6 @@ const IndexPage = inject("RootStore")(
     const placesTemplate = rowData => {
       return (
         <React.Fragment>
-          <p>Prueba</p>
           {rowData.available}
         </React.Fragment>
       )
