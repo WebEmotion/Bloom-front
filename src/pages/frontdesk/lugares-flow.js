@@ -194,7 +194,10 @@ const IndexPage = inject("RootStore")(
             const date = moment(item.date.substring(0, 10) + " " + item.start)
             const dStart = "" + date.hour()
             if (`${dStart.padStart(2, '0')}:00:00` === hour) {
-              items[j].push(item)
+              //Agregado
+              if (item.Rooms.name === "Flow") {
+                items[j].push(item)
+              }
               break
             }
           }
