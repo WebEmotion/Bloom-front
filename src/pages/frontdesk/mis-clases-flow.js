@@ -304,7 +304,7 @@ const IndexPage = inject("RootStore")(
               const date = moment(item.date.substring(0, 10) + " " + item.start)
               const dStart = "" + date.hour()
               if (`${dStart.padStart(2, '0')}:00:00` === hour) {
-                if (item.Rooms.name === "Indoors") {
+                if (item.Rooms.name === "Outdoors") {
                   items[j].push(item)
                 }
                 break
