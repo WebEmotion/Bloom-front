@@ -99,11 +99,10 @@ const NuevaClase = inject("RootStore")(observer(({ RootStore }) => {
                 navigate('/frontdesk/lugares')
             } else {
                 toast && toast.show({
-                    severity: "success",
-                    summary: "Listo",
-                    detail: "La clase ha sido creada con éxito",
+                    severity: "error",
+                    summary: "Error",
+                    detail: 'Ya hay una clase programada en ese horario',
                 })
-                navigate('/frontdesk/lugares')
             }
         }
     }
