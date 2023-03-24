@@ -22,7 +22,7 @@ export const API = {
     //prueba
      // BASE_URL: 'https://bloom-api.com',            //Produccion
     // BASE_URL: 'http://localhost:5200/',  //localhost
-    BASE_URL: 'http://bloomhouse.mx',    
+    BASE_URL: 'https://bloomhouse.mx',    
     AUTH: '/auth/'
 }
 
