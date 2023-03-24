@@ -453,33 +453,34 @@ const IndexPage = inject("RootStore")(
       let items
       let hours = []
       for (let i = 0; i < 24; i++) {
-        if (state.events.length == 8) {
-          numberSchedules = 8
-          items = [[], [], [], [], [], [], [], []]
-        } else {
-          numberSchedules = 7
-          items = [[], [], [], [], [], [], []]
-        }
-        const h = "" + i
-        const hour = `${h.padStart(2, '0')}:00:00`
-        for (let j = 0; j < numberSchedules; j++) {
-          const day = state.events[j]
-          let eventFound = false;
-          for (let k in day) {
-            const item = day[k]
-            const date = moment(item.date.substring(0, 10) + " " + item.start)
-            const dStart = "" + date.hour()
-            if (`${dStart.padStart(2, '0')}:00:00` === hour && item.Rooms.name === "Flow") {
-              items[j].push(item)
-              eventFound = true;
-            }
-          }
-          if(!eventFound){
-            items[j].push(null);
-          }
-        }
-        hours.push(items)
-      }      
+  if (state.events.length == 8) {
+    numberSchedules = 8
+    items = [[], [], [], [], [], [], [], []]
+  } else {
+    numberSchedules = 7
+    items = [[], [], [], [], [], [], []]
+  }
+  const h = "" + i
+  const hour = `${h.padStart(2, '0')}:00:00`
+  for (let j = 0; j < numberSchedules; j++) {
+    const day = state.events[j]
+    let eventFound = false;
+    for (let k in day) {
+      const item = day[k]
+      const date = moment(item.date.substring(0, 10) + " " + item.start)
+      const dStart = "" + date.hour()
+      if (`${dStart.padStart(2, '0')}:00:00` === hour){
+        items[j].push(item)
+        eventFound = true;
+      }
+    }
+    if(!eventFound){
+      items[j].push(null);
+    }
+  }
+  hours.push(items)
+}
+
       for (let i in hours) {
         const hour = hours[i]
         let add = false
