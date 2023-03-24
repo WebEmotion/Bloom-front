@@ -728,7 +728,7 @@ const IndexPage = inject("RootStore")(
             if (sDate.isSame(_date)) {
               //console.log(myClasses.bookings[i].id)
               if (!myClasses.bookings[i].isPass) {
-                currents.push({ ...schedule, bookingId: myClasses.bookings[i].id, isPass: [], seat: myClasses.bookings[i].Seat, isOnlyPass: false, location })
+                currents.push({ ...schedule, bookingId: myClasses.bookings[i].id, isPass: [], seat: myClasses.bookings[i].Seat, isOnlyPass: false, location, time: moment(`${schedule.date} ${schedule.start}`).format('HH:mm') })
               } else {
                 let added = false
                 currents.forEach((element, index) => {
@@ -761,16 +761,19 @@ const IndexPage = inject("RootStore")(
           //const items = [[], [], [], [], [], [], []]
           const h = "" + i
           const hour = `${h.padStart(2, '0')}:00:00`
-          for (let j = 0; j < numberSchedules; j++) {
-            for (let k in currents) {
-              const sch = currents[k]
-              const date = moment(sch.date.substring(0, 10) + " " + sch.start)
-              const start = date.startOf("minute")
-              const dStart = "" + start.hour()
-              if (`${dStart.padStart(2, '0')}:00:00` === hour) {
-                const _date = dates[j]
-                if (_date.format("YYYY-MM-DD") === date.format("YYYY-MM-DD")) {
-                  items[j].push(sch)
+          for (let k in currents) {
+            const sch = currents[k]
+            const date = moment(sch.date.substring(0, 10) + " " + sch.start)
+            const start = date.startOf("minute")
+            const dStart = "" + start.hour()
+            if (`${dStart.padStart(2, '0')}:00:00` === hour) {
+              const _date = dates[j]
+              if (_date.format("YYYY-MM-DD") === date.format("YYYY-MM-DD")) {
+                const itemIndex = items[j].findIndex((item) => item.time === sch.time)
+                if (itemIndex !== -1) {
+                  items[j][itemIndex].push(sch)
+                } else {
+                  items[j].push([sch])
                 }
               }
             }
