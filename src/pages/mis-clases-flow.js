@@ -453,28 +453,29 @@ const IndexPage = inject("RootStore")(
       let items
       let hours = []
       for (let i = 0; i < 24; i++) {
-          if (state.events.length == 8) {
-            numberSchedules = 8
-            items = [[], [], [], [], [], [], [], []]
-          } else {
-            numberSchedules = 7
-            items = [[], [], [], [], [], [], []]
-          }
-          const h = "" + i
+        if (state.events.length == 8) {
+          numberSchedules = 8
+          items = [[], [], [], [], [], [], [], []]
+        } else {
+          numberSchedules = 7
+          items = [[], [], [], [], [], [], []]
+        }
+        const h = "" + i
         const hour = `${h.padStart(2, '0')}:00:00`
         for (let j = 0; j < numberSchedules; j++) {
           const day = state.events[j]
+          let eventFound = false;
           for (let k in day) {
             const item = day[k]
             const date = moment(item.date.substring(0, 10) + " " + item.start)
             const dStart = "" + date.hour()
-            if (`${dStart.padStart(2, '0')}:00:00` === hour) {
-              // Agregar condición para mostrar solo los eventos de la sala "Flow"
-    if (item.Rooms.name === "Flow") {
-      items[j].push(item)
-    }
-              break
+            if (`${dStart.padStart(2, '0')}:00:00` === hour && item.Rooms.name === "Flow") {
+              items[j].push(item)
+              eventFound = true;
             }
+          }
+          if(!eventFound){
+            items[j].push(null);
           }
         }
         hours.push(items)
