@@ -778,37 +778,37 @@ const IndexPage = inject("RootStore")(
           hours.push(items)
         }
         for (let i in hours) {
-          const hour = hours[i]
-          let add = false
-          for (let k in hour) {
-            const items = hour[k]
-            if (items.length !== 0) {
-              add = true
-              for (let j in items) {
-                const item = items[j]
-                rows.push(
-                  <tr key={`${i}-${k}-${j}`}>
-                    <td>
-                      {item ? <EventItemWithCancel item={item} hasPassed={moment().isAfter(moment(`${item.date.substring(0, 10)} ${item.start}`).add(-3, 'hours'))} hour={item.start} seat={item.seat} instructor={item.Instructor.name} isOnlyPass={item.isOnlyPass} isPass={item.isPass} onSeeDetails={() => {
-                        setDetails(item)
-                      }} onPress={() => { handleDelete(item) }} disabled={moment().diff(moment(item.date), 'days') > 0} /> : <EventItemEmpty />}
-                    </td>
-                  </tr>
-                )
-              }
-            }
-          }
-          if (!add) {
-            rows.push(
-              <tr key={i}>
-                <td>
-                  <EventItemEmpty />
-                </td>
-              </tr>
-            )
-          }
-        }
-        
+  const hour = hours[i]
+  let add = false
+  for (let k in hour) {
+    const items = hour[k]
+    if (items.length !== 0) {
+      add = true
+      for (let j in items) {
+        const item = items[j]
+        rows.push(
+          <tr key={`${i}-${k}-${j}`}>
+            <td>
+              {item ? <EventItemWithCancel item={item} hasPassed={moment().isAfter(moment(`${item.date.substring(0, 10)} ${item.start}`).add(-3, 'hours'))} hour={item.start} seat={item.seat} instructor={item.Instructor.name} isOnlyPass={item.isOnlyPass} isPass={item.isPass} onSeeDetails={() => {
+                setDetails(item)
+              }} onPress={() => { handleDelete(item) }} disabled={moment().diff(moment(item.date), 'days') > 0} /> : <EventItemEmpty />}
+            </td>
+          </tr>
+        )
+      }
+    }
+  }
+  if (!add) {
+    rows.push(
+      <tr key={i}>
+        <td>
+          <EventItemEmpty />
+        </td>
+      </tr>
+    )
+  }
+}
+
       }
 
       return rows
