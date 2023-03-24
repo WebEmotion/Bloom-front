@@ -464,20 +464,17 @@ const IndexPage = inject("RootStore")(
   const hour = `${h.padStart(2, '0')}:00:00`
   for (let j = 0; j < numberSchedules; j++) {
     const day = state.events[j]
-    let eventFound = false;
+    const dayItems = []
     for (let k in day) {
       const item = day[k]
       const date = moment(item.date.substring(0, 10) + " " + item.start)
       const dStart = "" + date.hour()
       if (`${dStart.padStart(2, '0')}:00:00` === hour && item.Rooms.name !== "Flow") {
-        items[j].push(item)
-        eventFound = true;
+        dayItems.push(item)
       }
     }
-    if(!eventFound){
-      items[j].push(null);
-    }
-  }
+    items[j] = dayItems.length > 0 ? dayItems : [null]
+  }  
   hours.push(items)
 }
 
