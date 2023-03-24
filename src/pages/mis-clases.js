@@ -776,60 +776,35 @@ const IndexPage = inject("RootStore")(
         for (let i in hours) {
           const hour = hours[i]
           let add = false
-          for (let j in hour) {
-            if (hour[j].length !== 0) {
+          for (let k in hour) {
+            const items = hour[k]
+            if (items.length !== 0) {
               add = true
-              break
+              for (let j in items) {
+                const item = items[j]
+                rows.push(
+                  <tr key={`${i}-${k}-${j}`}>
+                    <td>
+                      {item ? <EventItemWithCancel item={item} hasPassed={moment().isAfter(moment(`${item.date.substring(0, 10)} ${item.start}`).add(-3, 'hours'))} hour={item.start} seat={item.seat} instructor={item.Instructor.name} isOnlyPass={item.isOnlyPass} isPass={item.isPass} onSeeDetails={() => {
+                        setDetails(item)
+                      }} onPress={() => { handleDelete(item) }} disabled={moment().diff(moment(item.date), 'days') > 0} /> : <EventItemEmpty />}
+                    </td>
+                  </tr>
+                )
+              }
             }
           }
-          if (add) {
+          if (!add) {
             rows.push(
               <tr key={i}>
                 <td>
-                  {hour[0][0] ? <EventItemWithCancel item={hour[0][0]} hasPassed={moment().isAfter(moment(`${hour[0][0].date.substring(0, 10)} ${hour[0][0].start}`).add(-3, 'hours'))} hour={hour[0][0].start} seat={hour[0][0].seat} instructor={hour[0][0].Instructor.name} isOnlyPass={hour[0][0].isOnlyPass} isPass={hour[0][0].isPass} onSeeDetails={() => {
-                    setDetails(hour[0][0])
-                  }} onPress={() => { handleDelete(hour[0][0]) }} disabled={moment().diff(moment(hour[0][0].date), 'days') > 0} /> : <EventItemEmpty />}
+                  <EventItemEmpty />
                 </td>
-                <td>
-                  {hour[1][0] ? <EventItemWithCancel item={hour[1][0]} hasPassed={moment().isAfter(moment(`${hour[1][0].date.substring(0, 10)} ${hour[1][0].start}`).add(-3, 'hours'))} hour={hour[1][0].start} seat={hour[1][0].seat} instructor={hour[1][0].Instructor.name} isOnlyPass={hour[1][0].isOnlyPass} isPass={hour[1][0].isPass} onSeeDetails={() => {
-                    setDetails(hour[1][0])
-                  }} onPress={() => { handleDelete(hour[1][0]) }} disabled={moment().diff(moment(hour[1][0].date), 'days') > 0} /> : <EventItemEmpty />}
-                </td>
-                <td>
-                  {hour[2][0] ? <EventItemWithCancel item={hour[2][0]} hasPassed={moment().isAfter(moment(`${hour[2][0].date.substring(0, 10)} ${hour[2][0].start}`).add(-3, 'hours'))} hour={hour[2][0].start} seat={hour[2][0].seat} instructor={hour[2][0].Instructor.name} isOnlyPass={hour[2][0].isOnlyPass} isPass={hour[2][0].isPass} onSeeDetails={() => {
-                    setDetails(hour[2][0])
-                  }} onPress={() => { handleDelete(hour[2][0]) }} disabled={moment().diff(moment(hour[2][0].date), 'days') > 0} /> : <EventItemEmpty />}
-                </td>
-                <td>
-                  {hour[3][0] ? <EventItemWithCancel item={hour[3][0]} hasPassed={moment().isAfter(moment(`${hour[3][0].date.substring(0, 10)} ${hour[3][0].start}`).add(-3, 'hours'))} hour={hour[3][0].start} seat={hour[3][0].seat} instructor={hour[3][0].Instructor.name} isOnlyPass={hour[3][0].isOnlyPass} isPass={hour[3][0].isPass} onSeeDetails={() => {
-                    setDetails(hour[3][0])
-                  }} onPress={() => { handleDelete(hour[3][0]) }} disabled={moment().diff(moment(hour[3][0].date), 'days') > 0} /> : <EventItemEmpty />}
-                </td>
-                <td>
-                  {hour[4][0] ? <EventItemWithCancel item={hour[4][0]} hasPassed={moment().isAfter(moment(`${hour[4][0].date.substring(0, 10)} ${hour[4][0].start}`).add(-3, 'hours'))} hour={hour[4][0].start} seat={hour[4][0].seat} instructor={hour[4][0].Instructor.name} isOnlyPass={hour[4][0].isOnlyPass} isPass={hour[4][0].isPass} onSeeDetails={() => {
-                    setDetails(hour[4][0])
-                  }} onPress={() => { handleDelete(hour[4][0]) }} disabled={moment().diff(moment(hour[4][0].date), 'days') > 0} /> : <EventItemEmpty />}
-                </td>
-                <td>
-                  {hour[5][0] ? <EventItemWithCancel item={hour[5][0]} hasPassed={moment().isAfter(moment(`${hour[5][0].date.substring(0, 10)} ${hour[5][0].start}`).add(-3, 'hours'))} hour={hour[5][0].start} seat={hour[5][0].seat} instructor={hour[5][0].Instructor.name} isOnlyPass={hour[5][0].isOnlyPass} isPass={hour[5][0].isPass} onSeeDetails={() => {
-                    setDetails(hour[5][0])
-                  }} onPress={() => { handleDelete(hour[5][0]) }} disabled={moment().diff(moment(hour[5][0].date), 'days') > 0} /> : <EventItemEmpty />}
-                </td>
-                <td>
-                  {hour[6][0] ? <EventItemWithCancel item={hour[6][0]} hasPassed={moment().isAfter(moment(`${hour[6][0].date.substring(0, 10)} ${hour[6][0].start}`).add(-3, 'hours'))} hour={hour[6][0].start} seat={hour[6][0].seat} instructor={hour[6][0].Instructor.name} isOnlyPass={hour[6][0].isOnlyPass} isPass={hour[6][0].isPass} onSeeDetails={() => {
-                    setDetails(hour[6][0])
-                  }} onPress={() => { handleDelete(hour[6][0]) }} disabled={moment().diff(moment(hour[6][0].date), 'days') > 0} /> : <EventItemEmpty />}
-                </td>
-                {state.events.length == 8 &&
-                <td>
-                {hour[7][0] ? <EventItemWithCancel item={hour[7][0]} hasPassed={moment().isAfter(moment(`${hour[7][0].date.substring(0, 10)} ${hour[7][0].start}`).add(-3, 'hours'))} hour={hour[7][0].start} seat={hour[7][0].seat} instructor={hour[7][0].Instructor.name} isOnlyPass={hour[7][0].isOnlyPass} isPass={hour[7][0].isPass} onSeeDetails={() => {
-                  setDetails(hour[7][0])
-                }} onPress={() => { handleDelete(hour[7][0]) }} disabled={moment().diff(moment(hour[7][0].date), 'days') > 0} /> : <EventItemEmpty />}
-                </td>}
               </tr>
             )
           }
         }
+        
       }
 
       return rows
