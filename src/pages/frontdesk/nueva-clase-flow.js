@@ -16,8 +16,8 @@ import SEO from "../../components/seo"
 import ItemProfile from "../../components/item-profile"
 
 import * as InstructorsAPI from '../../api/v0/instructors'
-import * as SchedulesAPI from '../../api/v0/schedules-flow'
-import * as LocationsAPI from '../../api/v0/locations-flow'
+import * as SchedulesAPI from '../../api/v0/schedules'
+import * as LocationsAPI from '../../api/v0/locations'
 
 const getEndTimes = (date) => {
     let startHour = getHours(date)
