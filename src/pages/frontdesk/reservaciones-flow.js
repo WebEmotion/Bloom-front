@@ -125,7 +125,7 @@ const Reservaciones = inject("RootStore")(
                         <h1 className="fila"></h1>
                         {
                             [9, 10, 11, 12, 13, 14, 15, 16].map(n => {
-                                const user = getUser(n, n)
+                                const user = getUser(n, n, "")
                                 return <UserCircle seat={`${n}`} image={user ? user.pictureUrl : ''} name={user ? user.name : ''} />
                             })
                         }
