@@ -94,7 +94,7 @@ const Reservaciones = inject("RootStore")(
             <div className="mapa-cycling-list">
                 <div style={{position: 'fixed', top: 20, left: 20}}>
                     <Button icon="pi pi-times" className="p-button-rounded p-button-pink" onClick={() => {
-                        navigate('/frontdesk/lugares-flow')
+                        navigate('/frontdesk/lugares')
                     }} />
                 </div>
                 {/* marginTop normal (stage down), marginBottom for 180° (stage up) */}
@@ -105,7 +105,7 @@ const Reservaciones = inject("RootStore")(
                                 style={{
                                     height: 50,
                                     width: 100,
-                                    backgroundColor: "#E6CDB5",
+                                    backgroundColor: "#3eb978",
                                     display: "none",
                                 }}
                             />
@@ -140,7 +140,6 @@ const Reservaciones = inject("RootStore")(
                         <div></div>
                         <div></div>
                         <div></div>
-                        
                     </Planet>
                     <Planet
                         centerContent={
@@ -150,7 +149,7 @@ const Reservaciones = inject("RootStore")(
                                     width: 130,
                                     height: 130,
                                     borderRadius: '100%',
-                                    backgroundColor: "#E6CDB5",
+                                    backgroundColor: "#3eb978",
                                     position: "absolute",
                                     transform: "translateX(-80px)",
                                     display: "flex",
@@ -209,7 +208,7 @@ const Reservaciones = inject("RootStore")(
                                                 color: 'black'
                                             }}
                                             >
-                                             Flow's Coach
+                                            Coach
                                             </p>
                                         </div>
                                     </div>
@@ -230,22 +229,22 @@ const Reservaciones = inject("RootStore")(
                     >
                         <h1 className="fila"></h1>
                         {
-                            [1, 2, 3, 4, 5, 6, 7, 8].map(n => {
-                                const user = getUser(n + 8, n)
+                            [1, 2, 3, 4, 5, 6, 7 ,8].map(n => {
+                                const user = getUser(n + 8, n, "")
                                 return <UserCircle seat={`${n}`} image={user ? user.pictureUrl : ''} name={user ? user.name : ''} />
                             })
                         }
                         <h1 className="fila"></h1>
                         {/* Number of divs is same userCircle number + 1 */}
                         <div></div>
-                                        <div></div>
-                                        <div></div>
-                                        <div></div>
-                                        <div></div>
-                                        <div></div>
-                                        <div></div>
-                                        <div></div>
-                                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
                     </Planet>
                 </div>
             </div>
