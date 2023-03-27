@@ -45,7 +45,7 @@ const EventItem = ({ item, hour, instructor, onPress, disabled, isReserved, onAl
       <div 
         className={`eventItem ${isReserved ? 'reserved' : ''}`} 
         style={{ 
-          backgroundColor: forbidden && isReserved ? '#ffffff' : forbidden ? '#3eb978' : disabled ? '#00000020' : isReserved ? '#ffffff' : now >= end ? '#00000020' : !havePackage && !canReservate ? '#3eb978' : '#3eb978', 
+          backgroundColor: forbidden && isReserved ? '#6e6666' : forbidden ? '#3eb978' : disabled ? '#00000020' : isReserved ? '#6e6666' : now >= end ? '#00000020' : !havePackage && !canReservate ? '#3eb978' : '#3eb978', 
           border: isReserved ? "1px solid" : '',
           cursor: forbidden && isReserved ? 'pointer' : isReserved && !(now >= end) ? 'pointer' : forbidden ? 'not-allowed' : disabled ? 'not-allowed' : now >= end ? 'not-allowed' : readonly ? 'default' : !havePackage && !canReservate ? 'not-allowed' : 'pointer' }} 
           disabled={now >= end} 
