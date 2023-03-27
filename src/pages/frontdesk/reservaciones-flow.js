@@ -9,7 +9,7 @@ import { Button } from "primereact/button"
 import Logo from "../../assets/images/flow-image-2.png"
 import Tree from "../../assets/images/tree.png"
 import * as SchedulesAPI from '../../api/v0/schedules'
-import bici from "../../assets/images/icons8-camino-de-bicis-100.png"
+import bici from "../../assets/images/yoga.png"
 
 const UserCircle = ({ image, name, lastname, seat }) => {
     if (name && image) {
@@ -105,7 +105,7 @@ const Reservaciones = inject("RootStore")(
                                 style={{
                                     height: 50,
                                     width: 100,
-                                    backgroundColor: "#3eb978",
+                                    backgroundColor: "#e6cdb5",
                                     display: "none",
                                 }}
                             />
@@ -149,7 +149,7 @@ const Reservaciones = inject("RootStore")(
                                     width: 130,
                                     height: 130,
                                     borderRadius: '100%',
-                                    backgroundColor: "#3eb978",
+                                    backgroundColor: "#e6cdb5",
                                     position: "absolute",
                                     transform: "translateX(-80px)",
                                     display: "flex",
