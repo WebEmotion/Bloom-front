@@ -94,7 +94,7 @@ const Reservaciones = inject("RootStore")(
             <div className="mapa-cycling-list">
                 <div style={{position: 'fixed', top: 20, left: 20}}>
                     <Button icon="pi pi-times" className="p-button-rounded p-button-pink" onClick={() => {
-                        navigate('/frontdesk/lugares')
+                        navigate('/frontdesk/lugares-flow')
                     }} />
                 </div>
                 {/* marginTop normal (stage down), marginBottom for 180° (stage up) */}
