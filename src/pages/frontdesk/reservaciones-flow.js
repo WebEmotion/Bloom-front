@@ -125,7 +125,7 @@ const Reservaciones = inject("RootStore")(
                         <h1 className="fila"></h1>
                         {
                             [9, 10, 11, 12, 13, 14, 15, 16].map(n => {
-                                const user = getUser(n + 8, n)
+                                const user = getUser(n, n)
                                 return <UserCircle seat={`${n}`} image={user ? user.pictureUrl : ''} name={user ? user.name : ''} />
                             })
                         }
@@ -231,7 +231,7 @@ const Reservaciones = inject("RootStore")(
                         <h1 className="fila"></h1>
                         {
                             [1, 2, 3, 4, 5, 6, 7, 8].map(n => {
-                                const user = getUser(n + 5, n)
+                                const user = getUser(n + 8, n)
                                 return <UserCircle seat={`${n}`} image={user ? user.pictureUrl : ''} name={user ? user.name : ''} />
                             })
                         }
