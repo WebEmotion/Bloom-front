@@ -340,18 +340,20 @@ const IndexPage = inject("RootStore")(
           const items = [[], [], [], [], [], [], []]
           const h = "" + i
           const hour = `${h.padStart(2, '0')}:00:00`
-          for (let j = 0; j < 7; j++) {
-            for (let k in currents) {
-              const sch = currents[k]
-              const date = moment(sch.date.substring(0, 10) + " " + sch.start)
-              const start = date.startOf("minute")
-              const dStart = "" + start.hour()
-              if (`${dStart.padStart(2, '0')}:00:00` === hour) {
-                let day = moment(sch.date).weekday() + 1
-                //console.log(day, sch.date)
-                if (day === 7) day = 0
-                items[day].push(sch)
+          for (let j = 0; j < numberSchedules; j++) {
+            const day = state.events[j]
+            let eventFound = false;
+            for (let k in day) {
+              const item = day[k]
+              const date = moment(item.date.substring(0, 10) + " " + item.start)
+              const dStart = "" + date.hour()
+              if (`${dStart.padStart(2, '0')}:00:00` === hour && item.Rooms.name === "Flow") {
+                items[j].push(item)
+                eventFound = true;
               }
+            }
+            if(!eventFound){
+              items[j].push(null);
             }
           }
           hours.push(items)
