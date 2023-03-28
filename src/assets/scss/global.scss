@@ -527,6 +527,16 @@ html {
   }
 }
 
+.p-button-green{
+  color: $white;
+  background: #3eb978 !important;
+  border: 1px solid #3eb978 !important;
+  margin: 2px;
+  @media screen and (max-width: $break-medium) {
+    transform: scale(0.8);
+  }
+}
+
 .p-button-pink-flow {
   color: $white;
   background: #E6CDB5 !important;
