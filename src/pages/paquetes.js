@@ -472,17 +472,17 @@ const IndexPage = inject("RootStore")(
           </div>
         </div>
         <div className="p-d-flex p-jc-center p-ai-center">
-          <Button label="Clásicos" style={{ backgroundColor: '#3eb978', color: '#fff', borderRadius: 50, border: 'none', marginRight: 10, width: 150 }} onClick={() => {
+          <Button label="Clásicos" style={{ backgroundColor: '#000000', color: '#fff', borderRadius: 50, border: 'none', marginRight: 10, width: 150 }} onClick={() => {
             setShowSpecial(false)
             setShowGrupal(false)
             setShowFlow(false)
           }} />
-          {state.specialBundles.length > 2 && <Button label="Especiales" style={{ backgroundColor: '#3eb978', color: '#fff', borderRadius: 50, border: 'none', width: 150, marginRight: 10 }} onClick={() => {
+          {state.specialBundles.length > 2 && <Button label="Especiales" style={{ backgroundColor: '#000000', color: '#fff', borderRadius: 50, border: 'none', width: 150, marginRight: 10 }} onClick={() => {
             setShowSpecial(true)
             setShowFlow(false)
             setShowGrupal(false)
           }} />}
-          {state.groupBundles.length > 2 && allowGrupal && <Button label="Grupales" style={{ backgroundColor: '#3eb978', color: '#fff', borderRadius: 50, border: 'none', width: 150 }} onClick={() => {
+          {state.groupBundles.length > 2 && allowGrupal && <Button label="Grupales" style={{ backgroundColor: '#000000', color: '#fff', borderRadius: 50, border: 'none', width: 150 }} onClick={() => {
             setShowSpecial(false)
             setShowFlow(false)
             setShowGrupal(true)
