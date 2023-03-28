@@ -643,7 +643,7 @@ const IndexPage = inject("RootStore")(
                   <Button
                     style={{ marginTop: 20, maxWidth: 200 }}
                     label="Confirmar reserva"
-                    className="p-button-rounded p-button-pink"
+                    className="p-button-rounded p-button-green"
                     disabled={(!selectedClient && store.isAdmin) || loading.loading}
                     onClick={() =>
                       store.isAdmin ? createBooking() : isGrupal ? createGrupalBooking() : createBookingClient()
