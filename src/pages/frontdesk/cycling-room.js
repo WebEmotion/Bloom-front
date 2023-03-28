@@ -983,7 +983,7 @@ const IndexPage = inject("RootStore")(
                       [1, 2, 3, 4, 5].map(n => (
                         <Button
                           label={`${n}`}
-                          className={`${occupiedSeats.includes(`${n}`) ? 'p-button-rounded-c-o' : "p-button-rounded-c"} ${occupiedSeats.includes(`${n}`) ? '' : "p-button-pink"}`}
+                          className={`${occupiedSeats.includes(`${n}`) ? 'p-button-rounded-c-o' : "p-button-rounded-c"} ${occupiedSeats.includes(`${n}`) ? '' : "p-button-green"}`}
                           style={{ fontWeight: 'bold' }}
                           badge={selected && selected.name === `${n}` ? "✓" : selectedPasses && selectedPasses.name === `${n}` ? "✓" : selectedGroup && selectedGroup.name === `${n}` ? "✓" : ""}
                           disabled={isOccupied(`${n}`)}
