@@ -264,8 +264,8 @@ const Layout = inject("RootStore")(
                       <Button
                         className={
                           page === "lugares"
-                            ? "p-button menu-button active"
-                            : "p-button menu-button"
+                            ? "p-button menu-button-rode active"
+                            : "p-button menu-button-rode"
                         }
                         label={"CLASES RODE"}
                         onClick={() => navigate("/frontdesk/lugares")}
@@ -277,8 +277,8 @@ const Layout = inject("RootStore")(
                       <Button
                         className={
                           page === "lugares-flow"
-                            ? "p-button menu-button active"
-                            : "p-button menu-button"
+                            ? "p-button menu-button-flow active"
+                            : "p-button menu-button-flow"
                         }
                         label={"CLASES FLOW"}
                         onClick={() => navigate("/frontdesk/lugares-flow")}
@@ -658,8 +658,8 @@ const Layout = inject("RootStore")(
                       <Button
                         className={
                           page === "lugares"
-                            ? "p-button menu-button active"
-                            : "p-button menu-button"
+                            ? "p-button menu-button-rode active"
+                            : "p-button menu-button-rode"
                         }
                         label={"CLASES RODE"}
                         onClick={() => navigate("/frontdesk/lugares")}
@@ -671,8 +671,8 @@ const Layout = inject("RootStore")(
                       <Button
                         className={
                           page === "lugares-flow"
-                            ? "p-button menu-button active"
-                            : "p-button menu-button"
+                            ? "p-button menu-button-flow active"
+                            : "p-button menu-button-flow"
                         }
                         label={"CLASES FLOW"}
                         onClick={() => navigate("/frontdesk/lugares-flow")}
