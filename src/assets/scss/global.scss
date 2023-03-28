@@ -456,6 +456,28 @@ html {
     padding: 0.5rem;
   }
 }
+.simple-button-rode {
+  border: 1px solid #ffffff !important;
+  color: $white !important;
+  background: $green !important;
+  font-family: "Poppins-Regular" !important;
+  margin-bottom: 1rem !important;
+  min-width: 100px;
+  box-shadow: $shadow;
+  border-radius: 10px !important;
+  &:hover {
+    background: $white !important;
+    box-shadow: 0 0 0 0.1rem $pink-light !important;
+    color: #000000;
+  }
+  &:focus {
+    box-shadow: 0 0 0 0.1rem $pink-light !important;
+  }
+  @media screen and (max-width: $break-medium) {
+    font-size: small;
+    padding: 0.5rem;
+  }
+}
 .rounded-button {
   border: none !important;
   border-radius: 30px !important;
