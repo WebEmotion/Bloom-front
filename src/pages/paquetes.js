@@ -25,6 +25,34 @@ import queryString from 'query-string'
 
 import { URLS, API } from '../environment'
 
+const [discountCode, setDiscountCode] = useState('');
+
+function applyDiscountCode() {
+  const validCodes = ["DESCUENTO1", "DESCUENTO2", "DESCUENTO3"]; // lista de códigos de descuento válidos
+  const discountValues = {
+    "DESCUENTO1": 0.5, // valor de descuento correspondiente a cada código de descuento válido
+    "DESCUENTO2": 0.5,
+    "DESCUENTO3": 0.5
+  };
+  
+  if (validCodes.includes(state.discountCode)) { // si el código es válido
+    const discount = discountValues[state.discountCode]; // obtener el valor de descuento correspondiente
+    const finalPrice = (state.selectedBundle.offer ? state.selectedBundle.offer : state.selectedBundle.price) * (1 - discount); // aplicar el descuento al precio final
+    setState({
+      ...state,
+      finalPrice,
+    });
+  } else {
+    setState({
+      ...state,
+      finalPrice: state.selectedBundle.offer ? state.selectedBundle.offer : state.selectedBundle.price, // si el código no es válido, el precio final será el precio original del paquete seleccionado
+      discountCode: "" // limpiar el valor del código de descuento si es inválido
+    });
+    alert("El código de descuento ingresado no es válido.");
+  }
+}
+
+
 const IndexPage = inject("RootStore")(
   observer(({ RootStore }) => {
     const store = RootStore.UserStore
@@ -199,6 +227,32 @@ const IndexPage = inject("RootStore")(
             return false
         }
     }
+
+    function applyDiscountCode() {
+      const validCodes = ["DESCUENTO1", "DESCUENTO2", "DESCUENTO3"]; // lista de códigos de descuento válidos
+      const discountValues = {
+        "DESCUENTO1": 0.7, // valor de descuento correspondiente a cada código de descuento válido
+        "DESCUENTO2": 0.7,
+        "DESCUENTO3": 0.7
+      };
+      
+      if (validCodes.includes(state.discountCode)) { // si el código es válido
+        const discount = discountValues[state.discountCode]; // obtener el valor de descuento correspondiente
+        const finalPrice = (state.selectedBundle.offer ? state.selectedBundle.offer : state.selectedBundle.price) * (1 - discount); // aplicar el descuento al precio final
+        setState({
+          ...state,
+          finalPrice,
+        });
+      } else {
+        setState({
+          ...state,
+          finalPrice: state.selectedBundle.offer ? state.selectedBundle.offer : state.selectedBundle.price, // si el código no es válido, el precio final será el precio original del paquete seleccionado
+          discountCode: "" // limpiar el valor del código de descuento si es inválido
+        });
+        alert("El código de descuento ingresado no es válido.");
+      }
+    }
+    
 
     const validateBundle = async (id) => {
       const data = await Clients.bundles(null)
@@ -412,22 +466,28 @@ const IndexPage = inject("RootStore")(
         <Dialog header="No se puede completar la compra" className="spDialog" visible={state.showNotAvailable} onHide={() => { window.location.reload() }}>
           <p>El paquete ya no está activo. Por favor, contacta al front-desk para más información</p>
         </Dialog>
-        <Dialog footer={buyFooter} header="Iniciar compra" className="spDialog" visible={state.displayBuy} onHide={() => { setState({ ...state, displayBuy: false, selectedBundle: null }) }}>
-          <p>Paquete: <span style={{ fontWeight: 'bold' }}>{state.selectedBundle && state.selectedBundle.name}</span></p>
-          <p>Monto a pagar: <span style={{ fontWeight: 'bold' }}>$ {state.selectedBundle && (state.selectedBundle.offer ? state.selectedBundle.offer : state.selectedBundle.price)}</span></p>
-          <p>Fecha de compra: <span style={{ fontWeight: 'bold' }}>{new Date().toLocaleDateString('en-GB')}</span></p>
-          <p>Fecha de expiración: <span style={{ fontWeight: 'bold' }}>{addDays(new Date(), state.selectedBundle ? state.selectedBundle.expirationDays : 0).toLocaleDateString('en-GB')}</span></p>
-          <br />
-          {state.selectedBundle && state.selectedBundle.isEspecial && <div>
-            <p>Detalles de la promoción: <span style={{ fontWeight: 'bold', whiteSpace: 'pre-wrap' }}>{state.selectedBundle && state.selectedBundle.especialDescription}</span></p>
-          </div>}
-          <br />
-          <p>Para continuar con tu compra, se abrirá una ventana de nuestro proveedor de pagos <span><img style={{ height: 20, objectFit: 'contain', marginBottom: -5 }} src="https://evopayments.com/wp-content/uploads/evo-logo-no-bkground-webres.png" alt="Evo Payments" /></span> donde podrás ingresar los datos de tu transacción de forma segura.</p>
-           <div>
-        <label htmlFor="discountCode">Código de descuento:</label>
-        <input id="discountCode" type="text" value={state.discountCode} onChange={(e) => { setState({ ...state, discountCode: e.target.value }) }} />
-      </div>
-        </Dialog>
+        <Dialog
+  footer={buyFooter}
+  header="Iniciar compra"
+  className="spDialog"
+  visible={state.displayBuy}
+  onHide={() => { setState({ ...state, displayBuy: false, selectedBundle: null }) }}
+>
+  <p>Paquete: <span style={{ fontWeight: 'bold' }}>{state.selectedBundle && state.selectedBundle.name}</span></p>
+  <p>Monto a pagar: <span style={{ fontWeight: 'bold' }}>$ {state.selectedBundle && (state.selectedBundle.offer ? state.selectedBundle.offer : state.selectedBundle.price)}</span></p>
+
+  <label htmlFor="discountCode">Código de descuento:</label>
+  <input type="text" id="discountCode" value={discountCode} onChange={e => setDiscountCode(e.target.value)} />
+
+  <p>Fecha de compra: <span style={{ fontWeight: 'bold' }}>{new Date().toLocaleDateString('en-GB')}</span></p>
+  <p>Fecha de expiración: <span style={{ fontWeight: 'bold' }}>{addDays(new Date(), state.selectedBundle ? state.selectedBundle.expirationDays : 0).toLocaleDateString('en-GB')}</span></p>
+  <br />
+  {state.selectedBundle && state.selectedBundle.isEspecial && <div>
+    <p>Detalles de la promoción: <span style={{ fontWeight: 'bold', whiteSpace: 'pre-wrap' }}>{state.selectedBundle && state.selectedBundle.especialDescription}</span></p>
+  </div>}
+  <br />
+  <p>Para continuar con tu compra, se abrirá una ventana de nuestro proveedor de pagos <span><img style={{ height: 20, objectFit: 'contain', marginBottom: -5 }} src="https://evopayments.com/wp-content/uploads/evo-logo-no-bkground-webres.png" alt="Evo Payments" /></span> donde podrás ingresar los datos de tu transacción de forma segura.</p>
+</Dialog>
         
         <Dialog header="Compra exitosa" className="spDialog" visible={state.displaySuccess} onHide={() => { setState({ ...state, displaySuccess: false, selectedBundle: null, voucher: '' }) }}>
           <p>Paquete: <span style={{ fontWeight: 'bold' }}>{state.selectedBundle && state.selectedBundle.name}</span></p>
