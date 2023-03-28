@@ -32,7 +32,7 @@ const IndexPage = inject("RootStore")(
       query {
         bloom: file(relativePath: { eq: "images/rodexbloom.png" }) {
           childImageSharp {
-            fluid(maxWidth: 800) {
+            fluid(maxWidth: 1000) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -551,7 +551,7 @@ const IndexPage = inject("RootStore")(
           <div className="p-col-4 p-md-2">
             <Img
               style={{
-                maxWidth: "60%",
+                maxWidth: "100%",
                 marginTop: "0.5rem",
               }}
               fluid={images.bloom.childImageSharp.fluid}
