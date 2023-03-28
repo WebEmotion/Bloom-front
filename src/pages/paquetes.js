@@ -548,7 +548,7 @@ const IndexPage = inject("RootStore")(
           </div>}
         </div>
         <div className="p-grid p-align-center p-justify-center">
-          <div className="p-col-4 p-md-2">
+          <div className="p-col-6 p-md-6">
             <Img
               style={{
                 maxWidth: "100%",
