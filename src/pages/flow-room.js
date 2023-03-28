@@ -19,7 +19,7 @@ import Item from "../components/item-profile"
 
 import * as moment from "moment"
 
-import Logo from "../assets/images/flow-image.png"
+import Logo from "../assets/images/flow-image-2.png"
 import Tree from "../assets/images/tree.png"
 import * as SchedulesAPI from "../api/v0/schedules-flow"
 import * as ClientsAPI from "../api/v0/clients"
