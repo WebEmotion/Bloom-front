@@ -27,7 +27,7 @@ import { URLS, API } from '../environment'
 
 const [discountCode, setDiscountCode] = useState('');
 
-function applyDiscountCode() {
+const applyDiscount = async () => {
   const validCodes = ["DESCUENTO1", "DESCUENTO2", "DESCUENTO3"]; // lista de códigos de descuento válidos
   const discountValues = {
     "DESCUENTO1": 0.5, // valor de descuento correspondiente a cada código de descuento válido
@@ -228,7 +228,7 @@ const IndexPage = inject("RootStore")(
         }
     }
 
-    function applyDiscountCode() {
+    const applyDiscount = async () => {
       const validCodes = ["DESCUENTO1", "DESCUENTO2", "DESCUENTO3"]; // lista de códigos de descuento válidos
       const discountValues = {
         "DESCUENTO1": 0.7, // valor de descuento correspondiente a cada código de descuento válido
