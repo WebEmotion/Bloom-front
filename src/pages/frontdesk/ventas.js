@@ -647,7 +647,7 @@ const IndexPage = inject("RootStore")(
                                   onClick={() => {
                                     addItem(paquete, index)
                                   }}
-                                  className="simple-button"
+                                  className="simple-button-rode"
                                 />}
                               </div>
                               <div className="car-buttons">
@@ -656,7 +656,7 @@ const IndexPage = inject("RootStore")(
                                   onClick={() => {
                                     removeItemS(paquete, index)
                                   }}
-                                  className="simple-button"
+                                  className="simple-button-rode"
                                 />}
                               </div>
 
