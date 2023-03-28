@@ -29,7 +29,7 @@ const UploadProfilePicture = ({token, onDone, onError}) => {
                 uploadPicture(e.files[0])
             }} customUpload invalidFileSizeMessageDetail="La imagen no puede pesar más de 5MB" invalidFileSizeMessageSummary="Upss!" chooseLabel="Elegir" uploadLabel="Subir" cancelLabel="Cancelar" multiple={false}></FileUpload>
             <div style={{marginTop: 20, height: 20}}>
-                {uploading && <ProgressBar color="#3eb978" mode="indeterminate" />}
+                {uploading && <ProgressBar color="#000000" mode="indeterminate" />}
             </div>
         </div>
     )

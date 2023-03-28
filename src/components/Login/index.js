@@ -526,7 +526,7 @@ const Login = inject("RootStore")(
                       className={
                         emailReset === "" ? "pi pi-exclamation-circle" : ""
                       }
-                      style={{ color: "#3eb978" }}
+                      style={{ color: "#000000" }}
                     />
 
                     <InputText

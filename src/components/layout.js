@@ -530,7 +530,7 @@ const Layout = inject("RootStore")(
                 store.alertDisplayed = true
                 store.showAlertAgain = false
               }} />
-              <Button style={{ backgroundColor: '#3eb978', color: '#fff', borderRadius: 20, border: 'none' }} label="Ir a mi configuración" onClick={() => {
+              <Button style={{ backgroundColor: '#000000', color: '#fff', borderRadius: 20, border: 'none' }} label="Ir a mi configuración" onClick={() => {
                 setVisibleDialog(false)
                 store.alertDisplayed = true
                 navigate('/configuracion')
