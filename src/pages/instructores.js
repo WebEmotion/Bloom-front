@@ -22,7 +22,7 @@ const IndexPage = inject("RootStore")(
             if(!element.isDeleted) {
               let temp = element
               temp.selected = false
-              temp.color= "#3eb978"
+              temp.color= "#000000"
               temp.icon= "pi pi-user"
               newList.push(temp)
             }
@@ -79,7 +79,7 @@ const IndexPage = inject("RootStore")(
           </div>
           {store.token && (
             <div className="p-col-fixed" style={{ width: "100px" }}>
-              <ItemProfile color="#3eb978" icon="pi pi-user" store={store} />
+              <ItemProfile color="#000000" icon="pi pi-user" store={store} />
             </div>
           )}
         </div>
