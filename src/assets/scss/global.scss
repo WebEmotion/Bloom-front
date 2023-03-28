@@ -162,6 +162,33 @@ html {
   }
 }
 
+.menu-button-rode {
+  border: 1px solid $green !important;
+  border-radius: 10px !important;
+  color: $pink !important;
+  background: transparent !important;
+  font-family: "Poppins-Regular" !important;
+  width: 100%;
+  &:hover {
+    box-shadow: 0 0 0 0.1rem $green !important;
+  }
+  &:focus {
+    color: $white !important;
+    background: $green !important;
+    box-shadow: 0 0 0 0.1rem $green !important;
+  }
+  &:active {
+    color: $white !important;
+    background: $green !important;
+  }
+  @media screen and (max-width: $break-medium) {
+    margin-bottom: 4px;
+    margin-top: 4px;
+    font-size: smaller !important;
+    padding: 6px 0 !important;
+  }
+}
+
 .active {
   color: $white !important;
   background: $pink !important;
