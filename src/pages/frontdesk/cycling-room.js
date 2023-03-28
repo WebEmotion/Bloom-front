@@ -582,7 +582,7 @@ const IndexPage = inject("RootStore")(
               free: false
             })
           }} />
-          <Button label="Aceptar" style={{ color: 'white', backgroundColor: '#3eb978', fontWeight: 'bold' }} className="p-button-text p-button-pink" autoFocus onClick={async () => {
+          <Button label="Aceptar" style={{ color: 'white', backgroundColor: '#3eb978', fontWeight: 'bold' }} className="p-button-text p-button-green" autoFocus onClick={async () => {
             await cancelBookingRequest()
           }} />
         </div>
@@ -814,7 +814,7 @@ const IndexPage = inject("RootStore")(
                       [18, 19, 20, 21, 22, 23, 24, 25].map(n => (
                         <Button
                           label={`${n}`}
-                          className={`${occupiedSeats.includes(`${n}`) ? 'p-button-rounded-c-o' : "p-button-rounded-c"} ${occupiedSeats.includes(`${n}`) ? '' : "p-button-pink"}`}
+                          className={`${occupiedSeats.includes(`${n}`) ? 'p-button-rounded-c-o' : "p-button-rounded-c"} ${occupiedSeats.includes(`${n}`) ? '' : "p-button-green"}`}
                           style={{ fontWeight: 'bold' }}
                           badge={selected && selected.name === `${n}` ? "✓" : selectedPasses && selectedPasses.name === `${n}` ? "✓" : selectedGroup && selectedGroup.name === `${n}` ? "✓" : ""}
                           disabled={isOccupied(`${n}`)}
@@ -865,7 +865,7 @@ const IndexPage = inject("RootStore")(
                       [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17].map(n => (
                         <Button
                           label={`${n}`}
-                          className={`${occupiedSeats.includes(`${n}`) ? 'p-button-rounded-c-o' : "p-button-rounded-c"} ${occupiedSeats.includes(`${n}`) ? '' : "p-button-pink"}`}
+                          className={`${occupiedSeats.includes(`${n}`) ? 'p-button-rounded-c-o' : "p-button-rounded-c"} ${occupiedSeats.includes(`${n}`) ? '' : "p-button-green"}`}
                           style={{ fontWeight: 'bold' }}
                           badge={selected && selected.name === `${n}` ? "✓" : selectedPasses && selectedPasses.name === `${n}` ? "✓" : selectedGroup && selectedGroup.name === `${n}` ? "✓" : ""}
                           disabled={isOccupied(`${n}`)}
