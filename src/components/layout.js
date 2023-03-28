@@ -432,8 +432,8 @@ const Layout = inject("RootStore")(
                       <Button
                         className={
                           page === "mis-clases"
-                            ? "p-button menu-button active"
-                            : "p-button menu-button"
+                            ? "p-button menu-button-rode active"
+                            : "p-button menu-button-rode"
                         }
                         label="HORARIOS RODE"
                         onClick={() => navigate("/mis-clases")}
@@ -839,8 +839,8 @@ const Layout = inject("RootStore")(
                       <Button
                         className={
                           page === "mis-clases"
-                            ? "p-button menu-button active"
-                            : "p-button menu-button"
+                            ? "p-button menu-button-rode active"
+                            : "p-button menu-button-rode"
                         }
                         label="HORARIOS RODE"
                         onClick={() => navigate("/mis-clases")}
