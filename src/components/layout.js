@@ -233,19 +233,6 @@ const Layout = inject("RootStore")(
                       />
                     </div>
                   )}
-                  {store.token && store.isAdmin && (
-                    <div className="p-col-12">
-                      <Button
-                        className={
-                          page === "mis-clases-flow" || page === "flow-room" || page === "reservas"
-                            ? "p-button menu-button active"
-                            : "p-button menu-button"
-                        }
-                        label={store.isAdmin ? "FLOW" : "MIS CLASES"}
-                        onClick={() => navigate("/frontdesk/mis-clases-flow")}
-                      />
-                    </div>
-                  )}
                    {(!store.token || (store.token && !store.isAdmin)) && (
                     <div className="p-col-12">
                       <Button
