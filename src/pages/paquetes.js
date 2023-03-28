@@ -30,7 +30,7 @@ const IndexPage = inject("RootStore")(
     const store = RootStore.UserStore
     const images = useStaticQuery(graphql`
       query {
-        bloom: file(relativePath: { eq: "icons/logo.png" }) {
+        bloom: file(relativePath: { eq: "images/rodexbloom.png" }) {
           childImageSharp {
             fluid(maxWidth: 800) {
               ...GatsbyImageSharpFluid
