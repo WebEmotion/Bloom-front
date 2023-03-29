@@ -39,17 +39,7 @@ const IndexPage = inject("RootStore")(
         }
       }
     `)
-
     const [discountCode, setDiscountCode] = useState('');
-
-const applyDiscount = (price, discountCode) => {
-  let discountedPrice = price;
-  if (discountCode === 'DESCUENTO10') { // aquí puedes cambiar el código de descuento a aplicar
-    discountedPrice = price * 0.9; // aquí puedes cambiar el porcentaje de descuento
-  }
-  return discountedPrice;
-}
-
     const location = useLocation()
     const [showSpecial, setShowSpecial] = useState(true)
     const [showGrupal, setShowGrupal] = useState(false)
@@ -189,21 +179,12 @@ const applyDiscount = (price, discountCode) => {
           })
         }} />
         <Button className="p-button-pink" label="Continuar con la compra" onClick={async () => {
-          let discount = 0;
-          if (state.discountCode && state.selectedBundle && state.selectedBundle.discountCodes && state.selectedBundle.discountCodes.includes(state.discountCode)) {
-            const discountIndex = state.selectedBundle.discountCodes.indexOf(state.discountCode);
-            if (discountIndex !== -1) {
-              discount = state.selectedBundle.discountAmounts[discountIndex];
-            }
-          }
-          const totalAmount = state.selectedBundle && (state.selectedBundle.offer ? state.selectedBundle.offer : state.selectedBundle.price);
-          const discountedAmount = totalAmount - discount;
           setState({
             ...state,
             processing: true
-          });
+          })
           setTimeout(async () => {
-            await startPayment(discountedAmount);
+            await startPayment()
           }, 3000);
         }} />
       </div>
@@ -231,37 +212,39 @@ const applyDiscount = (price, discountCode) => {
     }
 
     const startPayment = async () => {
-        const checkout = window.Checkout
-        var body = new URLSearchParams();
-        const voucher = generateVoucher()
-        const selectedBundle = state.selectedBundle
-        const discountCode = state.discountCode
-        let finalPrice = selectedBundle.offer ? selectedBundle.offer : selectedBundle.price // Precio inicial sin descuento
-        
-        if (discountCode && discountCodeIsValid(discountCode)) { // Si hay un código de descuento válido, aplica el descuento al precio final
-          const discountAmount = calculateDiscountAmount(selectedBundle.price, discountCode) // Calcula la cantidad de descuento
-          finalPrice = selectedBundle.price - discountAmount // Resta la cantidad de descuento al precio inicial
+      const checkout = window.Checkout
+      var body = new URLSearchParams();
+      const voucher = generateVoucher()
+      let discount = 0
+  if (state.discountCode === 'DISCOUNT123') { // replace with your own validation logic
+    discount = 10 // replace with your own discount amount
+  }
+
+  // apply discount to order amount
+  const orderAmount = state.selectedBundle.offer ? state.selectedBundle.offer : state.selectedBundle.price
+  const discountedAmount = orderAmount - discount
+
+  body.append('order.amount', discountedAmount)
+
+      body.append('apiOperation', 'CREATE_CHECKOUT_SESSION')
+      body.append('interaction.returnUrl', `${URLS.official_site}/paquetes`)
+      body.append('interaction.cancelUrl', `${URLS.official_site}/paquetes?cancelled=true`)
+      body.append('interaction.operation', 'PURCHASE')
+      body.append('order.id', voucher)
+      body.append('order.amount', state.selectedBundle.offer ? state.selectedBundle.offer : state.selectedBundle.price)
+      body.append('order.currency', 'MXN')
+      body.append('order.description', state.selectedBundle.description)
+      body.append('order.item.name', state.selectedBundle.name)
+      body.append('order.item.quantity', 1)
+      body.append('order.item.unitPrice', state.selectedBundle.offer ? state.selectedBundle.offer : state.selectedBundle.price)
+      body.append('order.item.unitTaxAmount', 0)
+      const response = await fetch(`${API.BASE_URL}/purchase/createSession`, {
+        method: 'POST',
+        body,
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
         }
-        
-        body.append('apiOperation', 'CREATE_CHECKOUT_SESSION')
-        body.append('interaction.returnUrl', `${URLS.official_site}/paquetes`)
-        body.append('interaction.cancelUrl', `${URLS.official_site}/paquetes?cancelled=true`)
-        body.append('interaction.operation', 'PURCHASE')
-        body.append('order.id', voucher)
-        body.append('order.amount', finalPrice) // Usa el precio final en lugar del precio inicial
-        body.append('order.currency', 'MXN')
-        body.append('order.description', selectedBundle.description)
-        body.append('order.item.name', selectedBundle.name)
-        body.append('order.item.quantity', 1)
-        body.append('order.item.unitPrice', finalPrice) // Usa el precio final en lugar del precio inicial
-        body.append('order.item.unitTaxAmount', 0)
-        const response = await fetch(`${API.BASE_URL}/purchase/createSession`, {
-          method: 'POST',
-          body,
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
-          }
-        })
+      })
       console.log(response)
       const res = await response.text()
       console.log(res)
@@ -445,17 +428,16 @@ const applyDiscount = (price, discountCode) => {
           <p>Monto a pagar: <span style={{ fontWeight: 'bold' }}>$ {state.selectedBundle && (state.selectedBundle.offer ? state.selectedBundle.offer : state.selectedBundle.price)}</span></p>
           <p>Fecha de compra: <span style={{ fontWeight: 'bold' }}>{new Date().toLocaleDateString('en-GB')}</span></p>
           <p>Fecha de expiración: <span style={{ fontWeight: 'bold' }}>{addDays(new Date(), state.selectedBundle ? state.selectedBundle.expirationDays : 0).toLocaleDateString('en-GB')}</span></p>
+          <p>Código de descuento:</p>
+<input value={state.discountCode} onChange={(e) => setState({ ...state, discountCode: e.target.value })} />
           <br />
-          <div>
-  <label htmlFor="discountCode">Código de descuento:</label>
-  <input type="text" id="discountCode" value={discountCode} onChange={e => setDiscountCode(e.target.value)} />
-</div>
           {state.selectedBundle && state.selectedBundle.isEspecial && <div>
             <p>Detalles de la promoción: <span style={{ fontWeight: 'bold', whiteSpace: 'pre-wrap' }}>{state.selectedBundle && state.selectedBundle.especialDescription}</span></p>
           </div>}
           <br />
           <p>Para continuar con tu compra, se abrirá una ventana de nuestro proveedor de pagos <span><img style={{ height: 20, objectFit: 'contain', marginBottom: -5 }} src="https://evopayments.com/wp-content/uploads/evo-logo-no-bkground-webres.png" alt="Evo Payments" /></span> donde podrás ingresar los datos de tu transacción de forma segura.</p>
-           
+           <div>
+      </div>
         </Dialog>
         
         <Dialog header="Compra exitosa" className="spDialog" visible={state.displaySuccess} onHide={() => { setState({ ...state, displaySuccess: false, selectedBundle: null, voucher: '' }) }}>
