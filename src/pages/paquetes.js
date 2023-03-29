@@ -231,7 +231,6 @@ const IndexPage = inject("RootStore")(
       body.append('interaction.cancelUrl', `${URLS.official_site}/paquetes?cancelled=true`)
       body.append('interaction.operation', 'PURCHASE')
       body.append('order.id', voucher)
-      body.append('order.amount', state.selectedBundle.offer ? state.selectedBundle.offer : state.selectedBundle.price)
       body.append('order.currency', 'MXN')
       body.append('order.description', state.selectedBundle.description)
       body.append('order.item.name', state.selectedBundle.name)
