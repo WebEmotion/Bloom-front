@@ -246,6 +246,16 @@ const applyDiscount = (price, discountCode) => {
       body.append('order.item.quantity', 1)
       body.append('order.item.unitPrice', state.selectedBundle.offer ? state.selectedBundle.offer : state.selectedBundle.price)
       body.append('order.item.unitTaxAmount', 0)
+
+      // Verificar si se ha ingresado un código de descuento
+  if (state.discountCode) {
+    const discount = calculateDiscount(state.selectedBundle.price, state.discountCode)
+    const discountedPrice = state.selectedBundle.price - discount
+    body.append('order.amount', discountedPrice)
+  } else {
+    body.append('order.amount', state.selectedBundle.offer ? state.selectedBundle.offer : state.selectedBundle.price)
+  }
+
       const response = await fetch(`${API.BASE_URL}/purchase/createSession`, {
         method: 'POST',
         body,
