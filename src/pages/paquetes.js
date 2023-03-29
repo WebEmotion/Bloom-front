@@ -231,37 +231,37 @@ const applyDiscount = (price, discountCode) => {
     }
 
     const startPayment = async () => {
-      const checkout = window.Checkout
-      var body = new URLSearchParams();
-      const voucher = generateVoucher()
-      body.append('apiOperation', 'CREATE_CHECKOUT_SESSION')
-      body.append('interaction.returnUrl', `${URLS.official_site}/paquetes`)
-      body.append('interaction.cancelUrl', `${URLS.official_site}/paquetes?cancelled=true`)
-      body.append('interaction.operation', 'PURCHASE')
-      body.append('order.id', voucher)
-      body.append('order.currency', 'MXN')
-      body.append('order.description', state.selectedBundle.description)
-      body.append('order.item.name', state.selectedBundle.name)
-      body.append('order.item.quantity', 1)
-      body.append('order.item.unitPrice', state.selectedBundle.offer ? state.selectedBundle.offer : state.selectedBundle.price)
-      body.append('order.item.unitTaxAmount', 0)
-
-      // Verificar si se ha ingresado un código de descuento
-  if (state.discountCode) {
-    const discount = calculateDiscount(state.selectedBundle.price, state.discountCode)
-    const discountedPrice = state.selectedBundle.price - discount
-    body.append('order.amount', discountedPrice)
-  } else {
-    body.append('order.amount', state.selectedBundle.offer ? state.selectedBundle.offer : state.selectedBundle.price)
-  }
-
-      const response = await fetch(`${API.BASE_URL}/purchase/createSession`, {
-        method: 'POST',
-        body,
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+        const checkout = window.Checkout
+        var body = new URLSearchParams();
+        const voucher = generateVoucher()
+        const selectedBundle = state.selectedBundle
+        const discountCode = state.discountCode
+        let finalPrice = selectedBundle.offer ? selectedBundle.offer : selectedBundle.price // Precio inicial sin descuento
+        
+        if (discountCode && discountCodeIsValid(discountCode)) { // Si hay un código de descuento válido, aplica el descuento al precio final
+          const discountAmount = calculateDiscountAmount(selectedBundle.price, discountCode) // Calcula la cantidad de descuento
+          finalPrice = selectedBundle.price - discountAmount // Resta la cantidad de descuento al precio inicial
         }
-      })
+        
+        body.append('apiOperation', 'CREATE_CHECKOUT_SESSION')
+        body.append('interaction.returnUrl', `${URLS.official_site}/paquetes`)
+        body.append('interaction.cancelUrl', `${URLS.official_site}/paquetes?cancelled=true`)
+        body.append('interaction.operation', 'PURCHASE')
+        body.append('order.id', voucher)
+        body.append('order.amount', finalPrice) // Usa el precio final en lugar del precio inicial
+        body.append('order.currency', 'MXN')
+        body.append('order.description', selectedBundle.description)
+        body.append('order.item.name', selectedBundle.name)
+        body.append('order.item.quantity', 1)
+        body.append('order.item.unitPrice', finalPrice) // Usa el precio final en lugar del precio inicial
+        body.append('order.item.unitTaxAmount', 0)
+        const response = await fetch(`${API.BASE_URL}/purchase/createSession`, {
+          method: 'POST',
+          body,
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+          }
+        })
       console.log(response)
       const res = await response.text()
       console.log(res)
