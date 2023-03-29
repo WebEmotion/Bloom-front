@@ -25,15 +25,7 @@ import queryString from 'query-string'
 
 import { URLS, API } from '../environment'
 
-const [discountCode, setDiscountCode] = useState('');
 
-const applyDiscount = (price, discountCode) => {
-  let discountedPrice = price;
-  if (discountCode === 'DESCUENTO10') { // aquí puedes cambiar el código de descuento a aplicar
-    discountedPrice = price * 0.9; // aquí puedes cambiar el porcentaje de descuento
-  }
-  return discountedPrice;
-}
 
 const IndexPage = inject("RootStore")(
   observer(({ RootStore }) => {
@@ -49,7 +41,15 @@ const IndexPage = inject("RootStore")(
         }
       }
     `)
+    const [discountCode, setDiscountCode] = useState('');
 
+    const applyDiscount = (price, discountCode) => {
+      let discountedPrice = price;
+      if (discountCode === 'DESCUENTO10') { // aquí puedes cambiar el código de descuento a aplicar
+        discountedPrice = price * 0.9; // aquí puedes cambiar el porcentaje de descuento
+      }
+      return discountedPrice;
+    }
     const location = useLocation()
     const [showSpecial, setShowSpecial] = useState(true)
     const [showGrupal, setShowGrupal] = useState(false)
