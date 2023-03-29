@@ -25,6 +25,16 @@ import queryString from 'query-string'
 
 import { URLS, API } from '../environment'
 
+const [discountCode, setDiscountCode] = useState('');
+
+const applyDiscount = (price, discountCode) => {
+  let discountedPrice = price;
+  if (discountCode === 'DESCUENTO10') { // aquí puedes cambiar el código de descuento a aplicar
+    discountedPrice = price * 0.9; // aquí puedes cambiar el porcentaje de descuento
+  }
+  return discountedPrice;
+}
+
 const IndexPage = inject("RootStore")(
   observer(({ RootStore }) => {
     const store = RootStore.UserStore
@@ -172,19 +182,21 @@ const IndexPage = inject("RootStore")(
           <img style={{ height: 50, objectFit: 'contain' }} src="https://www.gaxco.com.mx/home/visamastercard.jpg" alt="" srcset="" />
         </div>
         <Button className="p-button-text p-button-secondary" label="Cancelar" onClick={() => {
-          setState({
-            ...state,
-            displayBuy: false,
-            selectedBundle: null
-          })
-        }} />
-        <Button className="p-button-pink" label="Continuar con la compra" onClick={async () => {
+          let discount = 0;
+          if (state.discountCode && state.selectedBundle && state.selectedBundle.discountCodes && state.selectedBundle.discountCodes.includes(state.discountCode)) {
+            const discountIndex = state.selectedBundle.discountCodes.indexOf(state.discountCode);
+            if (discountIndex !== -1) {
+              discount = state.selectedBundle.discountAmounts[discountIndex];
+            }
+          }
+          const totalAmount = state.selectedBundle && (state.selectedBundle.offer ? state.selectedBundle.offer : state.selectedBundle.price);
+          const discountedAmount = totalAmount - discount;
           setState({
             ...state,
             processing: true
-          })
+          });
           setTimeout(async () => {
-            await startPayment()
+            await startPayment(discountedAmount);
           }, 3000);
         }} />
       </div>
@@ -418,15 +430,16 @@ const IndexPage = inject("RootStore")(
           <p>Fecha de compra: <span style={{ fontWeight: 'bold' }}>{new Date().toLocaleDateString('en-GB')}</span></p>
           <p>Fecha de expiración: <span style={{ fontWeight: 'bold' }}>{addDays(new Date(), state.selectedBundle ? state.selectedBundle.expirationDays : 0).toLocaleDateString('en-GB')}</span></p>
           <br />
+          <div>
+  <label htmlFor="discountCode">Código de descuento:</label>
+  <input type="text" id="discountCode" value={discountCode} onChange={e => setDiscountCode(e.target.value)} />
+</div>
           {state.selectedBundle && state.selectedBundle.isEspecial && <div>
             <p>Detalles de la promoción: <span style={{ fontWeight: 'bold', whiteSpace: 'pre-wrap' }}>{state.selectedBundle && state.selectedBundle.especialDescription}</span></p>
           </div>}
           <br />
           <p>Para continuar con tu compra, se abrirá una ventana de nuestro proveedor de pagos <span><img style={{ height: 20, objectFit: 'contain', marginBottom: -5 }} src="https://evopayments.com/wp-content/uploads/evo-logo-no-bkground-webres.png" alt="Evo Payments" /></span> donde podrás ingresar los datos de tu transacción de forma segura.</p>
-           <div>
-        <label htmlFor="discountCode">Código de descuento:</label>
-        <input id="discountCode" type="text" value={state.discountCode} onChange={(e) => { setState({ ...state, discountCode: e.target.value }) }} />
-      </div>
+           
         </Dialog>
         
         <Dialog header="Compra exitosa" className="spDialog" visible={state.displaySuccess} onHide={() => { setState({ ...state, displaySuccess: false, selectedBundle: null, voucher: '' }) }}>
