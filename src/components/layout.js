@@ -441,7 +441,7 @@ const Layout = inject("RootStore")(
                     </div>
                   )}
                   <div className="p-col-12">
-                    <p style={{ margin: 0, textAlign: 'center', color: '#00000033' }}>Versión: {version.version} {latest ? '' : <span style={{ color: 'red' }}>No es la última versión</span>}</p>
+                    <p style={{ margin: 0, textAlign: 'center', color: '#6a756d33' }}>Versión: {version.version} {latest ? '' : <span style={{ color: 'red' }}>No es la última versión</span>}</p>
                   </div>
                 </ScrollPanel>
               </div>
@@ -504,7 +504,7 @@ const Layout = inject("RootStore")(
                 store.alertDisplayed = true
                 store.showAlertAgain = false
               }} />
-              <Button style={{ backgroundColor: '#000000', color: '#fff', borderRadius: 20, border: 'none' }} label="Ir a mi configuración" onClick={() => {
+              <Button style={{ backgroundColor: '#6a756d', color: '#fff', borderRadius: 20, border: 'none' }} label="Ir a mi configuración" onClick={() => {
                 setVisibleDialog(false)
                 store.alertDisplayed = true
                 navigate('/configuracion')
@@ -848,7 +848,7 @@ const Layout = inject("RootStore")(
                     </div>
                   )}
                   <div className="p-col-12">
-                    <p style={{ margin: 0, textAlign: 'center', color: '#00000033' }}>Versión: {version.version} {latest ? '' : <span style={{ color: 'red' }}>No es la última versión</span>}</p>
+                    <p style={{ margin: 0, textAlign: 'center', color: '#6a756d33' }}>Versión: {version.version} {latest ? '' : <span style={{ color: 'red' }}>No es la última versión</span>}</p>
                   </div>
                 </ScrollPanel>
               </div>
@@ -908,7 +908,7 @@ const Layout = inject("RootStore")(
                       page === "contacto"
                       ? 2
                       : 0,
-                  color: page === "home" ? 'white' : '#00000055',
+                  color: page === "home" ? 'white' : '#6a756d55',
                   textShadow: page === "home" ? '2px 1px 7px rgba(0,0,0,0.46)' : 'none'
                 }}
               >
@@ -916,10 +916,10 @@ const Layout = inject("RootStore")(
                 {new Date().getFullYear()}
                 <br />
                 <Link to="/terminosycondiciones" style={{ textDecoration: "none" }}>
-                  <small style={{ color: page === "home" ? 'white' : '#00000055' }} className="footer">Terminos y Condiciones del Servicio</small>
+                  <small style={{ color: page === "home" ? 'white' : '#6a756d55' }} className="footer">Terminos y Condiciones del Servicio</small>
                 </Link>
                 <br/>
-                <a href="https://wa.me/+525580510715?text=Quiero Bloom" target="_blank" rel="noopener noreferrer" style={{ color: page === "home" ? 'white' : '#00000055', textDecoration: 'none', display: 'flex', justifyContent: 'center', alignItems: 'center' }}><WhatsappCircle/><span style={{ marginLeft: 10 }}>5580510715</span></a>
+                <a href="https://wa.me/+525580510715?text=Quiero Bloom" target="_blank" rel="noopener noreferrer" style={{ color: page === "home" ? 'white' : '#6a756d55', textDecoration: 'none', display: 'flex', justifyContent: 'center', alignItems: 'center' }}><WhatsappCircle/><span style={{ marginLeft: 10 }}>5580510715</span></a>
               </footer>
             </div>
           </div>
