@@ -722,7 +722,7 @@ const IndexPage = inject("RootStore")(
         for (var i in myClasses.bookings) {
           const schedule = myClasses.bookings[i].Schedule
           const location = myClasses.bookings[i].Seat.Room
-          if (location !== 'Indoor' && location !== 'Outdoor') continue 
+          if (location !== 'Indoor'  || location !== 'Outdoor') continue 
           for (var d in dates) {
             const _date = dates[d]
             const sDate = moment(`${schedule.date.substring(0, 10)} 00:00:00`)
