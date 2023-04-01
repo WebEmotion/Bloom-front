@@ -469,7 +469,7 @@ const IndexPage = inject("RootStore")(
       const item = day[k]
       const date = moment(item.date.substring(0, 10) + " " + item.start)
       const dStart = "" + date.hour()
-      if (`${dStart.padStart(2, '0')}:00:00` === hour && item.Rooms.name !== "Flow") {
+      if (`${dStart.padStart(2, '0')}:00:00` === hour && (item.Rooms.name === "Indoor" || item.Rooms.name === "Outdoor")) {
         items[j].push(item)
         eventFound = true;
       }
@@ -722,6 +722,7 @@ const IndexPage = inject("RootStore")(
         for (var i in myClasses.bookings) {
           const schedule = myClasses.bookings[i].Schedule
           const location = myClasses.bookings[i].Seat.Room
+          if (location !== 'Indoor' && location !== 'Outdoor') continue 
           for (var d in dates) {
             const _date = dates[d]
             const sDate = moment(`${schedule.date.substring(0, 10)} 00:00:00`)
