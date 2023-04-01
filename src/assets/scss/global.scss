@@ -630,6 +630,11 @@ html {
   @media screen and (max-width: $break-medium) {
     transform: scale(0.8);
   }
+  &:active{
+    color: #ffffff;
+    background: #6a756d !important;
+    border: 1px solid #ffffff !important;
+  }
 }
 
 .p-button-cancel {
