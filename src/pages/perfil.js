@@ -63,8 +63,8 @@ const IndexPage = inject("RootStore")(
         {checkToken()}
         <SEO title="Perfil" />
         <div className="p-d-flex p-flex-column p-align-center p-justify-center">
-          <Item color="#3eb978" icon="pi pi-user" store={store} />
-          <span style={{ fontSize: 12, color: '#3eb978' }}>{store.email}</span>
+          <Item color="#000000" icon="pi pi-user" store={store} />
+          <span style={{ fontSize: 12, color: '#000000' }}>{store.email}</span>
         </div>
 
         <div
@@ -87,7 +87,7 @@ const IndexPage = inject("RootStore")(
             </div>
             <div
               className="p-as-center item-text"
-              style={{ color: "#3eb978" }}
+              style={{ color: "#000000" }}
             >
               Mis clases
             </div>
@@ -108,7 +108,7 @@ const IndexPage = inject("RootStore")(
             </div>
             <div
               className="p-as-center item-text"
-              style={{ color: "#3eb978" }}
+              style={{ color: "#000000" }}
             >
               Historial
             </div>
@@ -129,7 +129,7 @@ const IndexPage = inject("RootStore")(
             </div>
             <div
               className="p-as-center item-text"
-              style={{ color: "#3eb978" }}
+              style={{ color: "#000000" }}
             >
               Configuración
             </div>
@@ -156,7 +156,7 @@ const IndexPage = inject("RootStore")(
             </div>
             <div
               className="p-as-center item-text"
-              style={{ color: "#3eb978" }}
+              style={{ color: "#000000" }}
             >
               Mi grupo
             </div>
@@ -165,7 +165,7 @@ const IndexPage = inject("RootStore")(
         {state && <div className="p-grid p-align-center p-justify-center">
           <p
             style={{
-              color: "#3eb978",
+              color: "#000000",
               marginTop: "4rem",
               textAlign: "center",
             }}
