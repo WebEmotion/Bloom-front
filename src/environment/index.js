@@ -1,6 +1,6 @@
 export const COLORS = {
     background: '#12161F',
-    primary: '#000000',
+    primary: '#6a756d',
     money: '#DE893E',
     gradient: 'linear-gradient(180deg, rgba(69,182,167,1) 0%, rgba(120,205,176,1) 100%)',
     error: '#ED4337',
