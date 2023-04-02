@@ -491,7 +491,7 @@ html {
   box-shadow: $shadow;
   border-radius: 10px !important;
   &:hover{
-    color: #ffffff;
+    color: #ffffff !important;
     background: #6a756d !important;
     border: 1px solid #ffffff !important;
   }
