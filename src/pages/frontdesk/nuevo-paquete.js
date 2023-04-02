@@ -240,14 +240,14 @@ const NuevoPaquete = inject("RootStore")(observer(({ RootStore }) => {
                         <div style={{ width: '35%', textAlign: 'right', marginRight: 20 }}>Precio de oferta:</div>
                         <InputText type="number" min={0} name='priceOffer' value={data.priceOffer} style={{ width: 'calc(65% - 20px)' }} onChange={updateField.bind(this)} />
                     </div>
-                    <div className="p-d-flex p-jc-start p-ai-center p-mb-3">
+                    {!data.isUnlimited && <div className="p-d-flex p-jc-start p-ai-center p-mb-3">
                         <div style={{ width: '35%', textAlign: 'right', marginRight: 20 }}><b>Clases limitadas:</b></div>
                         <Checkbox name="isLimited" onChange={updateCheckbox.bind(this)} inputId="cb1" checked={data.isLimited}></Checkbox>
-                    </div>
-                    <div className="p-d-flex p-jc-start p-ai-center p-mb-3">
+                    </div>}
+                    {!data.isLimited &&  <div className="p-d-flex p-jc-start p-ai-center p-mb-3">
                         <div style={{ width: '35%', textAlign: 'right', marginRight: 20 }}>Clases ilimitadas:</div>
                         <Checkbox name="isUnlimited" onChange={updateCheckbox.bind(this)} inputId="cb1" checked={data.isUnlimited}></Checkbox>
-                    </div>
+                    </div>}
                     {!data.isUnlimited && <div className="p-d-flex p-jc-start p-ai-center p-mb-3">
                         <div style={{ width: '35%', textAlign: 'right', marginRight: 20 }}>Clases:</div>
                         <InputText type="number" min={0} name='classes' onChange={updateField.bind(this)} value={data.classes} style={{ width: 'calc(65% - 20px)' }} />
