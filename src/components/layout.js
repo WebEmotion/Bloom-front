@@ -414,19 +414,19 @@ const Layout = inject("RootStore")(
                       />
                     </div>
                   )}
-                  {/* (!store.token || (store.token && !store.isAdmin)) && (
+                  { (!store.token || (store.token && !store.isAdmin)) && (
                     <div className="p-col-12">
                       <Button
                         className={
                           page === "mis-clases-flow"
-                            ? "p-button menu-button active"
-                            : "p-button menu-button"
+                            ? "p-button menu-button-flow"
+                            : "p-button menu-button-flow"
                         }
                         label="HORARIOS FLOW"
                         onClick={() => navigate("/mis-clases-flow")}
                       />
                     </div>
-                      )*/}
+                      )}
                   {(!store.token || (store.token && !store.isAdmin)) && (
                     <div className="p-col-12">
                       <Button
@@ -671,7 +671,7 @@ const Layout = inject("RootStore")(
                       <Button
                         className={
                           page === "lugares-flow"
-                            ? "p-button menu-button-flow active"
+                            ? "p-button menu-button-flow"
                             : "p-button menu-button-flow"
                         }
                         label={"CLASES FLOW"}
@@ -821,19 +821,19 @@ const Layout = inject("RootStore")(
                       />
                     </div>
                   )}
-                 {/*(!store.token || (store.token && !store.isAdmin)) &&  (
+                 {(!store.token || (store.token && !store.isAdmin)) &&  (
                     <div className="p-col-12">
                       <Button
                         className={
                           page === "mis-clases-flow"
-                            ? "p-button menu-button active"
-                            : "p-button menu-button"
+                            ? "p-button menu-button-flow"
+                            : "p-button menu-button-flow"
                         }
                         label="HORARIOS FLOW"
                         onClick={() => navigate("/mis-clases-flow")}
                       />
                     </div>
-                      )*/}
+                      )}
                   {(!store.token || (store.token && !store.isAdmin)) && (
                     <div className="p-col-12">
                       <Button
