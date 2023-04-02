@@ -277,7 +277,7 @@ const Layout = inject("RootStore")(
                       <Button
                         className={
                           page === "lugares-flow"
-                            ? "p-button menu-button-flow active"
+                            ? "p-button menu-button-flow"
                             : "p-button menu-button-flow"
                         }
                         label={"CLASES FLOW"}

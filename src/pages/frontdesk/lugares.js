@@ -206,7 +206,7 @@ const IndexPage = inject("RootStore")(
             const item = day[k]
             const date = moment(item.date.substring(0, 10) + " " + item.start)
             const dStart = "" + date.hour()
-            if (`${dStart.padStart(2, '0')}:00:00` === hour) {
+            if (`${dStart.padStart(2, '0')}:00:00` === hour && (item.Rooms.name === "Indoors" || item.Rooms.name === "Outdoors")) {
               items[j].push(item)
               break
             }
@@ -329,7 +329,7 @@ const IndexPage = inject("RootStore")(
       if (myClasses) {
         for (var i in myClasses.bookings) {
           const schedule = myClasses.bookings[i].Schedule
-          if (moment(schedule.date).week() === week) {
+          if (moment(schedule.date).week() === week && (schedule.Rooms.name === "Indoors" || schedule.Rooms.name === "Outdoors")) {
             //console.log(myClasses.bookings[i].id)
             if (!myClasses.bookings[i].isPass) {
               currents.push({ ...schedule, bookingId: myClasses.bookings[i].id, isPass: [], seat: myClasses.bookings[i].Seat })
@@ -356,7 +356,7 @@ const IndexPage = inject("RootStore")(
               const date = moment(sch.date.substring(0, 10) + " " + sch.start)
               const start = date.startOf("minute")
               const dStart = "" + start.hour()
-              if (`${dStart.padStart(2, '0')}:00:00` === hour) {
+              if (`${dStart.padStart(2, '0')}:00:00` === hour && (item.Rooms.name === "Indoors" || item.Rooms.name === "Outdoors")) {
                 let day = moment(sch.date).weekday() + 1
                 //console.log(day, sch.date)
                 if (day === 7) day = 0
