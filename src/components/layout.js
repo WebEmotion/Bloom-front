@@ -606,7 +606,7 @@ const Layout = inject("RootStore")(
                       <Button
                         className={
                           page === "mis-clases" || page === "cycling-room" || page === "reservas"
-                            ? "p-button menu-button-rode active"
+                            ? "p-button menu-button-rode"
                             : "p-button menu-button-rode"
                         }
                         label={store.isAdmin ? "RESERVAR RODE" : "MIS CLASES"}
