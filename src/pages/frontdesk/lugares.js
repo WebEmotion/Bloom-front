@@ -356,8 +356,8 @@ const IndexPage = inject("RootStore")(
               const date = moment(sch.date.substring(0, 10) + " " + sch.start)
               const start = date.startOf("minute")
               const dStart = "" + start.hour()
-              if (`${dStart.padStart(2, '0')}:00:00` === hour && (item.Rooms.name === "Indoors" || item.Rooms.name === "Outdoors")) {
-                let day = moment(sch.date).weekday() + 1
+              if (`${dStart.padStart(2, '0')}:00:00` === hour && (sch.Rooms.name === "Indoors" || sch.Rooms.name === "Outdoors")) {
+              let day = moment(sch.date).weekday() + 1
                 //console.log(day, sch.date)
                 if (day === 7) day = 0
                 items[day].push(sch)
