@@ -28,6 +28,7 @@ const NuevoPaquete = inject("RootStore")(observer(({ RootStore }) => {
         price: 0,
         priceOffer: 0,
         isUnlimited: false,
+        isLimited: false,
         classes: 0,
         expiresIn: 0,
         hasPasses: false,
@@ -82,6 +83,7 @@ const NuevoPaquete = inject("RootStore")(observer(({ RootStore }) => {
                         price: b.price,
                         priceOffer: b.offer,
                         isUnlimited: b.isUnlimited,
+                        isLimited: b.isLimited,
                         classes: b.classNumber,
                         description: b.description,
                         expiresIn: b.expirationDays,
@@ -135,6 +137,7 @@ const NuevoPaquete = inject("RootStore")(observer(({ RootStore }) => {
             expirationDays: data.expiresIn,
             passes: data.hasPasses ? data.passes : 0,
             isUnlimited: data.isUnlimited,
+            isLimited: data.isLimited,
             isGroup: data.isGroup,
             memberLimit: data.isGroup ? parseInt(data.memberLimit) : 0,
             isSpecial: data.isSpecial,
@@ -236,6 +239,10 @@ const NuevoPaquete = inject("RootStore")(observer(({ RootStore }) => {
                     <div className="p-d-flex p-jc-start p-ai-center p-mb-3">
                         <div style={{ width: '35%', textAlign: 'right', marginRight: 20 }}>Precio de oferta:</div>
                         <InputText type="number" min={0} name='priceOffer' value={data.priceOffer} style={{ width: 'calc(65% - 20px)' }} onChange={updateField.bind(this)} />
+                    </div>
+                    <div className="p-d-flex p-jc-start p-ai-center p-mb-3">
+                        <div style={{ width: '35%', textAlign: 'right', marginRight: 20 }}><b>Clases limitadas:</b></div>
+                        <Checkbox name="isLimited" onChange={updateCheckbox.bind(this)} inputId="cb1" checked={data.isLimited}></Checkbox>
                     </div>
                     <div className="p-d-flex p-jc-start p-ai-center p-mb-3">
                         <div style={{ width: '35%', textAlign: 'right', marginRight: 20 }}>Clases ilimitadas:</div>

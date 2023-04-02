@@ -327,10 +327,6 @@ const IndexPage = inject("RootStore")(
                 Clases ilimitadas
               </small>}
               <br/>
-              {paquete.isUnlimited && <small className="decoration">
-                Clases Limitadas
-              </small>}
-              <br/>
               {paquete.isGroup && <small style={{fontWeight: 'bold', marginTop: 20}}>Paquete Grupal</small>}
               {paquete.isGroup && <p>
                 <small>Para hasta {paquete.memberLimit} personas</small>
