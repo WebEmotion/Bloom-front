@@ -462,7 +462,7 @@ const NuevoInstructor = inject("RootStore")(observer(({ RootStore }) => {
                         <div className="p-col-9">
                             <label 
                                 htmlFor="myInput" 
-                                style={{ backgroundColor: '#3eb978', border: '1px solid #3eb978 !important', margin: '2px', borderRadius: 20, color: '#ffffff', padding: 5, cursor: 'pointer' }}
+                                style={{ backgroundColor: '#6a756d', border: '1px solid #6a756d !important', margin: '2px', borderRadius: 20, color: '#ffffff', padding: 5, cursor: 'pointer' }}
                             >
                                 <i 
                                     className="pi pi-file" 
@@ -495,7 +495,7 @@ const NuevoInstructor = inject("RootStore")(observer(({ RootStore }) => {
                         <div className="p-col-9">
                             <label 
                                 htmlFor="myInput2" 
-                                style={{ backgroundColor: '#3eb978', border: '1px solid #3eb978 !important', margin: '2px', borderRadius: 20, color: '#ffffff', padding: 5, cursor: 'pointer' }}
+                                style={{ backgroundColor: '#6a756d', border: '1px solid #6a756d !important', margin: '2px', borderRadius: 20, color: '#ffffff', padding: 5, cursor: 'pointer' }}
                             >
                                 <i 
                                     className="pi pi-file" 

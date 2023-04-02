@@ -619,7 +619,7 @@ const Layout = inject("RootStore")(
                       <Button
                         className={
                           page === "mis-clases-flow" || page === "flow-room" || page === "reservas-flow"
-                            ? "p-button menu-button-flow active"
+                            ? "p-button menu-button-flow"
                             : "p-button menu-button-flow"
                         }
                         label={store.isAdmin ? "RESERVAR FLOW" : "MIS CLASES FLOW"}
