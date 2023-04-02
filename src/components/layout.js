@@ -264,7 +264,7 @@ const Layout = inject("RootStore")(
                       <Button
                         className={
                           page === "lugares"
-                            ? "p-button menu-button-rode active"
+                            ? "p-button menu-button-rode"
                             : "p-button menu-button-rode"
                         }
                         label={"CLASES RODE"}
@@ -658,7 +658,7 @@ const Layout = inject("RootStore")(
                       <Button
                         className={
                           page === "lugares"
-                            ? "p-button menu-button-rode active"
+                            ? "p-button menu-button-rode"
                             : "p-button menu-button-rode"
                         }
                         label={"CLASES RODE"}
