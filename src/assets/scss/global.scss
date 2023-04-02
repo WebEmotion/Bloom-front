@@ -482,18 +482,18 @@ html {
   }
 }
 .simple-button-rode {
-  border: 1px solid #ffffff !important;
-  color: $white !important;
-  background: $green !important;
+  border: 1px solid #6a756d !important;
+  color: #6a756d !important;
+  background: #ffffff !important;
   font-family: "Poppins-Regular" !important;
   margin-bottom: 1rem !important;
   min-width: 100px;
   box-shadow: $shadow;
   border-radius: 10px !important;
-  &:hover {
-    background: $white !important;
-    box-shadow: 0 0 0 0.1rem $pink-light !important;
-    color: #000000;
+  &:hover{
+    color: #ffffff;
+    background: #6a756d !important;
+    border: 1px solid #ffffff !important;
   }
   &:focus {
     box-shadow: 0 0 0 0.1rem $pink-light !important;
