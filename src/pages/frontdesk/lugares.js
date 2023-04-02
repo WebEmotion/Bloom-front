@@ -329,7 +329,7 @@ const IndexPage = inject("RootStore")(
       if (myClasses) {
         for (var i in myClasses.bookings) {
           const schedule = myClasses.bookings[i].Schedule
-          if (moment(schedule.date).week() === week && (schedule.Rooms.name === "Indoors" || schedule.Rooms.name === "Outdoors")) {
+          if (moment(schedule.date).week() === week && ["Indoors", "Outdoors"].includes(schedule.Rooms.name)) {
             //console.log(myClasses.bookings[i].id)
             if (!myClasses.bookings[i].isPass) {
               currents.push({ ...schedule, bookingId: myClasses.bookings[i].id, isPass: [], seat: myClasses.bookings[i].Seat })
