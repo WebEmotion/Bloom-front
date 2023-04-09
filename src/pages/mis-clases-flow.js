@@ -144,7 +144,7 @@ const getWeekDays = (date, schedules) => {
         name: dayName,
         number: dayNumber
         })
-        firstDayOfWeek = firstDayOfWeek.add(1, 'days')
+        firstDayOfWeek = firstDayOfWeek.add(0, 'days')
     }
     return data
 }
