@@ -133,7 +133,7 @@ const getWeekDays = (date, schedules) => {
     }
     else {
         //firstDayOfWeek = moment().isoWeek(moment(date).week() - 1).startOf("isoWeek")
-        firstDayOfWeek = moment().day("Monday")
+        firstDayOfWeek = moment().day("Sunday")
         countDays = 7
     }
     const days = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado']
@@ -173,7 +173,7 @@ const getWeekDates = (date, events) => {
   } else {
     counter = 7
     //current = moment().isoWeek(moment(date).week() - 1).startOf("isoWeek").set({hour:0,minute:0,second:0,millisecond:0})
-    current = moment().day("Monday").set({hour:0,minute:0,second:0,millisecond:0})
+    current = moment().day("Sunday").set({hour:0,minute:0,second:0,millisecond:0})
     //let daysLess = (moment(date).weekday - 1) * -1
     //current = moment(date).add(daysLess, "days")
   }
