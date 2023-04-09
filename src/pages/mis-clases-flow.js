@@ -123,7 +123,7 @@ const getWeekDays = (date, schedules) => {
     let firstDayOfWeek
     let countDays
     if (schedules.length == 8) {
-        if (moment(date).weekday() == 0) {
+        if (moment(date).weekday() == 7) {
             firstDayOfWeek = moment(date)
         } else {
             firstDayOfWeek = moment(date).add(1, 'days')
