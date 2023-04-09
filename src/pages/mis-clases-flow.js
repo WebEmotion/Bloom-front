@@ -136,7 +136,7 @@ const getWeekDays = (date, schedules) => {
         firstDayOfWeek = moment().day("Monday")
         countDays = 7
     }
-    const days = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo']
+    const days = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado']
     const data = []
 
     for (var i = 0; i < countDays; i++) {
