@@ -157,23 +157,26 @@ const getWeekDates = (date, events) => {
   if (events.length == 8) {
     counter = 8
     if (moment(date).weekday() == 0) {
-        current = moment(date).set({hour:0,minute:0,second:0,millisecond:0})
-    } else {
-        current = moment(date).add(1, 'days').set({hour:0,minute:0,second:0,millisecond:0})
-    }
+      current = moment(date).set({hour:0,minute:0,second:0,millisecond:0})
+  } else {
+      current = moment(date).subtract(moment(date).weekday() - 1, 'days').set({hour:0,minute:0,second:0,millisecond:0})
+  }  
   } else {
     counter = 7
-    //current = moment().isoWeek(moment(date).week() - 1).startOf("isoWeek").set({hour:0,minute:0,second:0,millisecond:0})
-    current = moment().day("Monday").set({hour:0,minute:0,second:0,millisecond:0})
-    //let daysLess = (moment(date).weekday - 1) * -1
-    //current = moment(date).add(daysLess, "days")
+    current = moment().day("Sunday").set({hour:0,minute:0,second:0,millisecond:0})
+
   }
 
   for (var i = 0; i < counter; i++) {
-      const loquesea = current
-    data.push(loquesea)
+    const dayName = current.format('dddd')
+    const dayNumber = current.format('D')
+    data.push({
+        name: dayName,
+        number: dayNumber
+    })
     current = moment(current).add(1, 'days')
-  }
+}
+
   return data
 }
 
