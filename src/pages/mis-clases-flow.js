@@ -149,23 +149,22 @@ const getWeekDays = (date, schedules) => {
 const getWeekDates = (date, events) => {
   const nDate = moment(date, "YYYY-MM-DD").set('hours', 0).set('minutes', 0).set('milliseconds', 0)
   const day = `${nDate.date()}`.padStart(2, '0')
-  //let current = moment(`${nDate.year()}-${nDate.month() + 1}-${day} 00:00:00`, "YYYY-MM-DD")
-  var current
+  let current = moment(date).set({hour:0,minute:0,second:0,millisecond:0})
   const data = []
   let counter
-
   if (events.length == 8) {
     counter = 8
     if (moment(date).weekday() == 0) {
-      current = moment(date).startOf('week').day(1).set({hour:0,minute:0,second:0,millisecond:0})
-  } else {
-      current = moment(date).subtract(moment(date).weekday() - 1, 'days').set({hour:0,minute:0,second:0,millisecond:0})
-  }  
-  } else {
+      current = moment(date).set({hour:0,minute:0,second:0,millisecond:0})
+    } else {
+      current = moment(date).add(1, 'days').set({hour:0,minute:0,second:0,millisecond:0})
+    }
+  } 
+  else {
     counter = 7
-    current = moment().day("Sunday").set({hour:0,minute:0,second:0,millisecond:0})
-
+    current = moment().day("Monday").set({hour:0,minute:0,second:0,millisecond:0})
   }
+  
 
   for (var i = 0; i < counter; i++) {
     const dayName = current.format('dddd')
