@@ -123,59 +123,66 @@ const getWeekDays = (date, schedules) => {
     let firstDayOfWeek
     let countDays
     if (schedules.length == 8) {
-      firstDayOfWeek = moment(date).subtract(moment(date).day() - 1, 'days');
-      countDays = 8;
-    } else {
-      firstDayOfWeek = moment().day("Sunday");
-      countDays = 7;
+        if (moment(date).weekday() == 0) {
+            firstDayOfWeek = moment(date)
+        } else {
+            firstDayOfWeek = moment(date).add(1, 'days')
+        }
+        //firstDayOfWeek = moment().isoWeek(moment(date).week()).startOf("isoWeek").add(-1, 'days')
+        countDays = 8
     }
-    const days = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado']
+    else {
+        //firstDayOfWeek = moment().isoWeek(moment(date).week() - 1).startOf("isoWeek")
+        firstDayOfWeek = moment().day("Monday")
+        countDays = 7
+    }
+    const days = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo']
     const data = []
 
     for (var i = 0; i < countDays; i++) {
-      const dayIndex = i;
-      const dayName = days[dayIndex];
-      const dayNumber = firstDayOfWeek.format('D');
-      data.push({
+        let numberDay = firstDayOfWeek.weekday() - 1;
+        if (numberDay == -1) {
+            numberDay = 6
+        }
+        const dayName = days[numberDay]
+        const dayNumber = firstDayOfWeek.format('D')
+        data.push({
         name: dayName,
         number: dayNumber
-      });
-      firstDayOfWeek = firstDayOfWeek.add(1, 'days');
+        })
+        firstDayOfWeek = firstDayOfWeek.add(1, 'days')
     }
-  
     return data
 }
 
 const getWeekDates = (date, events) => {
   const nDate = moment(date, "YYYY-MM-DD").set('hours', 0).set('minutes', 0).set('milliseconds', 0)
   const day = `${nDate.date()}`.padStart(2, '0')
-  let current = moment(date).set({hour:0,minute:0,second:0,millisecond:0})
+  //let current = moment(`${nDate.year()}-${nDate.month() + 1}-${day} 00:00:00`, "YYYY-MM-DD")
+  var current
   const data = []
   let counter
+
   if (events.length == 8) {
     counter = 8
     if (moment(date).weekday() == 0) {
-      current = moment(date).set({hour:0,minute:0,second:0,millisecond:0})
+        current = moment(date).set({hour:0,minute:0,second:0,millisecond:0})
     } else {
-      current = moment(date).add(1, 'days').set({hour:0,minute:0,second:0,millisecond:0})
+        current = moment(date).add(1, 'days').set({hour:0,minute:0,second:0,millisecond:0})
     }
-  } 
-  else {
+  } else {
     counter = 7
+    //current = moment().isoWeek(moment(date).week() - 1).startOf("isoWeek").set({hour:0,minute:0,second:0,millisecond:0})
     current = moment().day("Monday").set({hour:0,minute:0,second:0,millisecond:0})
+    //let daysLess = (moment(date).weekday - 1) * -1
+    //current = moment(date).add(daysLess, "days")
   }
-  
 
   for (var i = 0; i < counter; i++) {
-    const dayName = current.format('dddd')
-    const dayNumber = current.format('D')
-    data.push({
-        name: dayName,
-        number: dayNumber
-    })
+      const loquesea = current
+    data.push(loquesea)
     current = moment(current).add(1, 'days')
-}
-
+  }
   return data
 }
 
