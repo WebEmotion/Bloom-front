@@ -123,29 +123,26 @@ const getWeekDays = (date, schedules) => {
     let firstDayOfWeek
     let countDays
     if (schedules.length == 8) {
-      firstDayOfWeek = moment(date).subtract(6, 'days');
+      firstDayOfWeek = moment(date).subtract(moment(date).day() - 1, 'days');
       countDays = 8;
-  } else {
+    } else {
       firstDayOfWeek = moment().day("Sunday");
       countDays = 7;
-  }
-  
+    }
     const days = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado']
     const data = []
 
     for (var i = 0; i < countDays; i++) {
-        let numberDay = firstDayOfWeek.weekday() - 1;
-        if (numberDay == -1) {
-            numberDay = 6
-        }
-        const dayName = days[numberDay]
-        const dayNumber = firstDayOfWeek.format('D')
-        data.push({
+      const dayIndex = i;
+      const dayName = days[dayIndex];
+      const dayNumber = firstDayOfWeek.format('D');
+      data.push({
         name: dayName,
         number: dayNumber
-        })
-        firstDayOfWeek = firstDayOfWeek.add(0, 'days')
+      });
+      firstDayOfWeek = firstDayOfWeek.add(1, 'days');
     }
+  
     return data
 }
 
@@ -159,16 +156,24 @@ const getWeekDates = (date, events) => {
 
   if (events.length == 8) {
     counter = 8
-    current = moment(date, "YYYY-MM-DD").startOf('week').set({hour:0,minute:0,second:0,millisecond:0})
-} else {
+    if (moment(date).weekday() == 0) {
+        current = moment(date).set({hour:0,minute:0,second:0,millisecond:0})
+    } else {
+        current = moment(date).add(1, 'days').set({hour:0,minute:0,second:0,millisecond:0})
+    }
+  } else {
     counter = 7
+    //current = moment().isoWeek(moment(date).week() - 1).startOf("isoWeek").set({hour:0,minute:0,second:0,millisecond:0})
     current = moment().day("Monday").set({hour:0,minute:0,second:0,millisecond:0})
-}
+    //let daysLess = (moment(date).weekday - 1) * -1
+    //current = moment(date).add(daysLess, "days")
+  }
 
-for (var i = 0; i < counter; i++) {
-  data.push(current)
-  current = moment(current).add(1, 'days')
-}
+  for (var i = 0; i < counter; i++) {
+      const loquesea = current
+    data.push(loquesea)
+    current = moment(current).add(1, 'days')
+  }
   return data
 }
 
