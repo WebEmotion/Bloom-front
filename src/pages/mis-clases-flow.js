@@ -157,7 +157,7 @@ const getWeekDates = (date, events) => {
   if (events.length == 8) {
     counter = 8
     if (moment(date).weekday() == 0) {
-      current = moment(date).set({hour:0,minute:0,second:0,millisecond:0})
+      current = moment(date).startOf('week').day(1).set({hour:0,minute:0,second:0,millisecond:0})
   } else {
       current = moment(date).subtract(moment(date).weekday() - 1, 'days').set({hour:0,minute:0,second:0,millisecond:0})
   }  
