@@ -126,7 +126,7 @@ const getWeekDays = (date, schedules) => {
       firstDayOfWeek = moment(date).subtract(6, 'days');
       countDays = 8;
   } else {
-      firstDayOfWeek = moment().day("Monday");
+      firstDayOfWeek = moment().day("Sunday");
       countDays = 7;
   }
   
