@@ -312,6 +312,32 @@ const Layout = inject("RootStore")(
                       />
                     </div>
                   )} */}
+                   {store.token && store.isAdmin && (
+                    <div className="p-col-12">
+                      <Button
+                        className={
+                          page === "mis-clases" || page === "cycling-room" || page === "reservas"
+                            ? "p-button menu-button-rode"
+                            : "p-button menu-button-rode"
+                        }
+                        label={store.isAdmin ? "RESERVAR RODE" : "MIS CLASES"}
+                        onClick={() => navigate("/frontdesk/mis-clases")}
+                      />
+                    </div>
+                  )}
+                  {store.token && store.isAdmin && (
+                    <div className="p-col-12">
+                      <Button
+                        className={
+                          page === "mis-clases-flow" || page === "flow-room" || page === "reservas-flow"
+                            ? "p-button menu-button-flow"
+                            : "p-button menu-button-flow"
+                        }
+                        label={store.isAdmin ? "RESERVAR FLOW" : "MIS CLASES FLOW"}
+                        onClick={() => navigate("/frontdesk/mis-clases-flow")}
+                      />
+                    </div>
+                      )}
                   {(!store.token || (store.token && !store.isAdmin)) && (<div className="p-col-12">
                     <Button
                       className={
