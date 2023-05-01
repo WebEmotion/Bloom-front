@@ -217,12 +217,12 @@ const IndexPage = inject("RootStore")(
       const voucher = generateVoucher()
       let discount = 0
       if (state.discountCode === 'VERDEAMOR15' || state.discountCode === 'OMBEAUTY15' || state.discountCode === 'ARTLAB15') {
-        discount = 15 // replace with your own discount amount
+        discount = .15 // replace with your own discount amount
       }
 
   // apply discount to order amount
   const orderAmount = state.selectedBundle.offer ? state.selectedBundle.offer : state.selectedBundle.price
-  const discountedAmount = orderAmount - discount
+  const discountedAmount = orderAmount - (orderAmount * discount)
 
   body.append('order.amount', discountedAmount)
 
