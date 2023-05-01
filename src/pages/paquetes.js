@@ -216,9 +216,9 @@ const IndexPage = inject("RootStore")(
       var body = new URLSearchParams();
       const voucher = generateVoucher()
       let discount = 0
-  if (state.discountCode === 'DISCOUNT123') { // replace with your own validation logic
-    discount = 10 // replace with your own discount amount
-  }
+      if (state.discountCode === 'VERDEAMOR15' || state.discountCode === 'OMBEAUTY15' || state.discountCode === 'ARTLAB15') {
+        discount = 15 // replace with your own discount amount
+      }
 
   // apply discount to order amount
   const orderAmount = state.selectedBundle.offer ? state.selectedBundle.offer : state.selectedBundle.price
