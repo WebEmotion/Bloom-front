@@ -945,6 +945,10 @@ const Layout = inject("RootStore")(
                   <small style={{ color: page === "home" ? 'white' : '#6a756d55' }} className="footer">Terminos y Condiciones del Servicio</small>
                 </Link>
                 <br/>
+                <Link to="/avisodeprivacidad" style={{ textDecoration: "none" }}>
+                  <small style={{ color: page === "home" ? 'white' : '#6a756d55' }} className="footer">Terminos y Condiciones del Servicio</small>
+                </Link>
+                <br/>
                 <a href="https://wa.me/+525580510715?text=Quiero Bloom" target="_blank" rel="noopener noreferrer" style={{ color: page === "home" ? 'white' : '#6a756d55', textDecoration: 'none', display: 'flex', justifyContent: 'center', alignItems: 'center' }}><WhatsappCircle/><span style={{ marginLeft: 10 }}>5580510715</span></a>
               </footer>
             </div>
